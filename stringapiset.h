@@ -1,0 +1,4 @@
+#ifndef _W32API_STRINGAPISET_H_
+#define _W32API_STRINGAPISET_H_
+
+#endif
