@@ -3,6 +3,7 @@
 
 #include <winuser.h>
 #include <winnt.h>
+#include <dlgs.h>
 #include <winver.h>
 
 #endif
