@@ -663,6 +663,11 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define SC_CLOSE 			0xF060
 #define SC_KEYMENU 			0xF100
 
+#define DS_MODALFRAME 			(0x80)
+#define DS_SETFONT 			(0x40)
+#define DS_FIXEDSYS 			(0x0008)
+#define DS_SHELLFONT 			(DS_SETFONT | DS_FIXEDSYS)
+
 #define SS_OWNERDRAW 			(0x0000000D)
 
 #define ES_PASSWORD 			(0x0020)
