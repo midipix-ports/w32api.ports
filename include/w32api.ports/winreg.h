@@ -41,6 +41,20 @@ extern "C" {
 #define REG_QWORD_LITTLE_ENDIAN		(11)
 #define REG_QWORD			(11)
 
+/* registry value flag bits */
+
+#define RRF_RT_REG_NONE			(0x00000001)
+#define RRF_RT_REG_SZ			(0x00000002)
+#define RRF_RT_REG_EXPAND_SZ		(0x00000004)
+#define RRF_RT_REG_BINARY		(0x00000008)
+#define RRF_RT_REG_DWORD		(0x00000010)
+#define RRF_RT_REG_MULTI_SZ		(0x00000020)
+#define RRF_RT_REG_QWORD		(0x00000040)
+
+#define RRF_RT_DWORD			(0x00000018)
+#define RRF_RT_QWORD			(0x00000048)
+#define RRF_RT_ANY			(0x0000FFFF)
+
 /* registry notification bits */
 #define REG_NOTIFY_CHANGE_NAME		(0x01)
 #define REG_NOTIFY_CHANGE_ATTRIBUTES	(0x02)
@@ -539,6 +553,33 @@ typedef LONG __stdcall w32api_reg_set_value_ex_utf16(
 	const BYTE*,
 	DWORD);
 
+typedef LONG __stdcall w32api_reg_get_value_ansi(
+	HKEY,
+	LPCSTR,
+	LPCSTR,
+	DWORD,
+	LPDWORD,
+	PVOID,
+	LPDWORD);
+
+typedef LONG __stdcall w32api_reg_get_value_utf8(
+	HKEY,
+	LPCSTR,
+	LPCSTR,
+	DWORD,
+	LPDWORD,
+	PVOID,
+	LPDWORD);
+
+typedef LONG __stdcall w32api_reg_get_value_utf16(
+	HKEY,
+	LPCWSTR,
+	LPCWSTR,
+	DWORD,
+	LPDWORD,
+	PVOID,
+	LPDWORD);
+
 typedef LONG __stdcall w32api_reg_set_key_security(
 	HKEY,
 	SECURITY_INFORMATION,
@@ -655,6 +696,10 @@ __dllimport w32api_reg_set_value_utf16			RegSetValueW;
 __dllimport w32api_reg_set_value_ex_ansi		RegSetValueExA;
 __dllimport w32api_reg_set_value_ex_utf8		RegSetValueExM;
 __dllimport w32api_reg_set_value_ex_utf16		RegSetValueExW;
+
+__dllimport w32api_reg_get_value_ansi			RegGetValueA;
+__dllimport w32api_reg_get_value_utf8			RegGetValueM;
+__dllimport w32api_reg_get_value_utf16			RegGetValueW;
 
 __dllimport w32api_reg_set_key_security			RegSetKeySecurity;
 __dllimport w32api_reg_get_key_security			RegGetKeySecurity;
