@@ -20,8 +20,6 @@ typedef struct tagNMHDR {
 
 typedef NMHDR *LPNMHDR;
 
-//typedef FARPROC WNDENUMPROC;
-
 typedef int (__stdcall *WNDENUMPROC) (HWND, LPARAM);
 typedef int (__stdcall *MONITORENUMPROC) (HMONITOR, HDC, LPRECT, LPARAM);
 
@@ -348,6 +346,8 @@ typedef struct tagMSG {
 #define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
 #define MAKEINTRESOURCEM(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
 #define MAKEINTRESOURCEW(i) ((LPWSTR)((ULONG_PTR)((WORD)(i))))
+
+__dllimport int __stdcall EnableWindow(HWND hwnd,BOOL enabled);
 
 __dllimport int __stdcall SetScrollInfo(HWND hwnd,int nBar,LPCSCROLLINFO lpsi,int redraw);
 __dllimport int __stdcall GetScrollInfo(HWND hwnd,int nBar,LPSCROLLINFO lpsi);
