@@ -28,6 +28,7 @@ extern "C" {
 #define MAX_PATH 				0x0104
 
 typedef struct base_file_time        FILETIME;
+typedef struct base_file_time       *PFILETIME;
 
 typedef struct base_find_data_ansi   WIN32_FIND_DATAA;
 typedef struct base_find_data_ansi  *PWIN32_FIND_DATAA;

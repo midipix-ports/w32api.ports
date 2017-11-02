@@ -8,6 +8,7 @@
 #include <winnt.h>
 #include <winnls.h>
 #include <winerror.h>
+#include <winreg.h>
 
 #include <wingdi.h>
 #include <winuser.h>

@@ -19,4 +19,25 @@
 #define FILE_ATTRIBUTE_VIRTUAL			0x00010000
 #define FILE_ATTRIBUTE_NO_SCRUB_DATA		0x00020000
 
+struct  winnt_security_descriptor;
+
+typedef uint32_t				ACCESS_MASK;
+typedef uint32_t				*PACCESS_MASK;
+
+typedef uint32_t				SECURITY_INFORMATION;
+typedef uint32_t				*PSECURITY_INFORMATION;
+
+typedef struct winnt_security_descriptor	SECURITY_DESCRIPTOR;
+typedef struct winnt_security_descriptor	*PSECURITY_DESCRIPTOR;
+
+struct winnt_security_descriptor {
+        unsigned char   revision;
+        unsigned char   sbz_1st;
+        uint16_t        control;
+        uint32_t        offset_owner;
+        uint32_t        offset_group;
+        uint32_t        offset_sacl;
+        uint32_t        offset_dacl;
+};
+
 #endif
