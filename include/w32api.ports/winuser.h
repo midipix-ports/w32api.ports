@@ -833,6 +833,7 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define KF_REPEAT 			0x4000
 #define KF_EXTENDED 			0x0100
 
+#define WM_APP 				0x8000
 #define WM_VSCROLL 			0x0115
 #define WM_SYSCOMMAND 			0x0112
 #define WM_PAINT 			0x000F
@@ -856,7 +857,9 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define WM_NOTIFY 			0x004E
 #define WM_INITDIALOG 			0x0110
 #define WM_SETICON 			0x0080
+#define WM_MENUCHAR 			0x0120
 #define WM_MOUSEMOVE 			0x0200
+#define WM_NCCREATE 			0x0081
 #define WM_NCMOUSEMOVE 			0x00A0
 #define WM_MOUSEWHEEL 			0x020A
 #define WM_LBUTTONDOWN 			0x0201
@@ -884,10 +887,12 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define WM_ACTIVATE 			0x0006
 #define WM_FONTCHANGE 			0x001D
 #define WM_SYSCOLORCHANGE 		0x0015
+#define WM_WINDOWPOSCHANGED		0x0047
 #define WM_WININICHANGE 		0x001A
 #define WM_THEMECHANGED 		0x031A
 #define WM_TIMER 			0x0113
-
+#define WM_XBUTTONDOWN			0x020B
+#define WM_XBUTTONUP 			0x020C
 
 #define WMSZ_BOTTOM 			6
 #define WMSZ_TOP 			3
@@ -897,6 +902,8 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define WA_INACTIVE 			0
 
 #define MONITOR_DEFAULTTONEAREST 	0x00000002
+
+#define MNC_CLOSE			1
 
 #define TPM_RIGHTBUTTON 		(0x0002)
 #define TPM_TOPALIGN 			(0x0000)
@@ -967,6 +974,8 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 
 #define HWND_TOP 			((HWND)0)
 #define HWND_BOTTOM 			((HWND)1)
+#define HWND_NOTOPMOST			((HWND)-2)
+#define HWND_TOPMOST			((HWND)-1)
 
 #define BDR_SUNKENOUTER 		0x0002
 #define BDR_RAISEDINNER 		0x0004
@@ -982,6 +991,8 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define LWA_ALPHA 			0x00000002
 
 #define MONITORINFOF_PRIMARY 		0x00000001
+
+
 
 #define DLGWINDOWEXTRA 			30
 
@@ -1002,5 +1013,8 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define FLASHW_STOP 			0
 
 #define MAKELPARAM(l,h) 		((LPARAM)(DWORD)MAKELONG(l,h))
+
+#define XBUTTON1			0x0001
+#define XBUTTON2			0x0002
 
 #endif
