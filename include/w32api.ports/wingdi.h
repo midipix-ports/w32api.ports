@@ -2797,7 +2797,7 @@ typedef struct gdi_text_metric_utf16		TEXTMETRIC;
 
 
 
-typedef int FONTENUMPROCW(const LOGFONTW *, const TEXTMETRICW *, DWORD, LPARAM);
+typedef int (__stdcall *FONTENUMPROCW)(const LOGFONTW *, const TEXTMETRICW *, DWORD, LPARAM);
 
 typedef INT __stdcall w32api_gdi_abort_doc(
 	HDC);
