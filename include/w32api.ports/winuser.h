@@ -745,6 +745,7 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define BN_DBLCLK 			BN_DOUBLECLICKED
 #define BN_KILLFOCUS 			7
 #define BN_SETFOCUS 			6
+#define BN_PAINT			1
 
 #define BF_ADJUST 			0x2000
 #define BF_BOTTOM 			0x0008
@@ -992,9 +993,9 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 
 #define MONITORINFOF_PRIMARY 		0x00000001
 
+#define ODA_SELECT			0x0002
 
-
-#define DLGWINDOWEXTRA 			30
+#define DLGWINDOWEXTRA			30
 
 #define ICON_BIG 			1
 
