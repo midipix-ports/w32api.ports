@@ -5,6 +5,8 @@
 #include <winbase.h>
 #include <wingdi.h>
 
+#include <msgbox.h>
+
 struct user_monitor_info {
 	DWORD	cbSize;
 	RECT	rcMonitor;
