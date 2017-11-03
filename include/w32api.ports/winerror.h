@@ -1,6 +1,10 @@
 #ifndef _W32API_WINERROR_H_
 #define _W32API_WINERROR_H_
 
+#define MAKE_HRESULT(sev,fac,code) ((int32_t) (((uint32_t)(sev)<<31) \
+                                             | ((uint32_t)(fac)<<16) \
+                                             | ((uint32_t)(code))))
+
 #define E_ABORT							(int32_t)(0x80004004)
 #define E_ACCESSDENIED						(int32_t)(0x80070005)
 #define E_FAIL							(int32_t)(0x80004005)
