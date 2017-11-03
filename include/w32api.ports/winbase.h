@@ -27,6 +27,9 @@ extern "C" {
 
 #define MAX_PATH 				0x0104
 
+#define STARTF_TITLEISLINKNAME			0x00000800
+#define STARTF_TITLEISAPPID			0x00001000
+
 typedef struct base_file_time        FILETIME;
 typedef struct base_file_time       *PFILETIME;
 
