@@ -5,6 +5,18 @@
                                              | ((uint32_t)(fac)<<16) \
                                              | ((uint32_t)(code))))
 
+#define SEVERITY_SUCCESS	(0)
+#define SEVERITY_ERROR		(1)
+
+#define FACILITY_NULL		(0)
+#define FACILITY_RPC		(1)
+#define FACILITY_DISPATCH	(2)
+#define FACILITY_STORAGE	(3)
+#define FACILITY_ITF		(4)
+#define FACILITY_WIN32		(7)
+#define FACILITY_WINDOWS	(8)
+#define FACILITY_CONTROL	(10)
+
 #define E_ABORT							(int32_t)(0x80004004)
 #define E_ACCESSDENIED						(int32_t)(0x80070005)
 #define E_FAIL							(int32_t)(0x80004005)
