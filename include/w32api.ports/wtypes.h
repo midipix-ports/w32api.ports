@@ -3,12 +3,13 @@
 
 #include <windef.h>
 
-typedef WORD CLIPFORMAT;
-typedef const RECT *LPCRECT;
+typedef WORD				CLIPFORMAT;
+typedef CLIPFORMAT			*LPCLIPFORMAT;
+
+typedef const RECT			*LPCRECT;
 
 
-
-typedef enum wtypes_dvaspect			DVASPECT;
+typedef enum wtypes_dvaspect		DVASPECT;
 
 enum wtypes_dvaspect {
 	DVASPECT_CONTENT = 1,
