@@ -671,18 +671,23 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 
 #define SPI_GETCARETWIDTH 		0x2006
 
-#define SB_VERT 			1
-#define SB_LINEDOWN 			1
-#define SB_LINEUP 			0
-#define SB_PAGEDOWN 			3
-#define SB_PAGEUP 			2
-#define SB_BOTTOM 			7
-#define SB_TOP 				6
-#define SB_THUMBTRACK 			5
-#define SB_THUMBPOSITION 		4
+#define SB_VERT				1
+#define SB_LINEDOWN			1
+#define SB_LINEUP			0
+#define SB_PAGEDOWN			3
+#define SB_PAGEUP			2
+#define SB_BOTTOM			7
+#define SB_TOP				6
+#define SB_THUMBTRACK			5
+#define SB_THUMBPOSITION		4
 
-#define SC_CLOSE 			0xF060
-#define SC_KEYMENU 			0xF100
+#define SC_CLOSE			0xF060
+#define SC_KEYMENU			0xF100
+#define SC_MOVE				0xF010
+#define SC_RESTORE			0xF120
+#define SC_SIZE				0xF000
+#define SC_MINIMIZE			0xF020
+#define SC_MAXIMIZE			0xF030
 
 #define DS_MODALFRAME 			(0x80)
 #define DS_SETFONT 			(0x40)
@@ -714,6 +719,19 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define SW_MINIMIZE 			6
 
 #define SM_CXVSCROLL 			2
+
+#define MIIM_STATE			0x00000001
+#define MIIM_FTYPE			0x00000100
+#define MIIM_DATA			0x00000020
+#define MIIM_STRING			0x00000040
+#define MIIM_BITMAP			0x00000080
+
+
+#define MF_STRING			(int32_t)(0x00000000)
+#define MF_DISABLED 			(int32_t)(0x00000002)
+#define MF_MENUBARBREAK 		(int32_t)(0x00000020)
+
+#define MFT_STRING			MF_STRING
 
 #define MK_CONTROL 			0x0008
 
@@ -933,6 +951,7 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define SPI_GETNONCLIENTMETRICS 	0x0029
 
 #define GCLP_HCURSOR 			(-12)
+#define GCLP_HICONSM			(-34)
 
 #define GWLP_WNDPROC 			(-4)
 
@@ -991,6 +1010,9 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 #define CW_USEDEFAULT 			((int)0x80000000)
 
 #define STARTF_USESHOWWINDOW 		0x00000001
+
+#define HCBT_ACTIVATE			5
+#define HCBT_CREATEWND			3
 
 #define HWND_TOP 			((HWND)0)
 #define HWND_BOTTOM 			((HWND)1)
