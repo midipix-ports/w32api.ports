@@ -1,6 +1,8 @@
 #ifndef _W32API_WINUSER_H_
 #define _W32API_WINUSER_H_
 
+#include <stdint.h>
+
 #include <windef.h>
 #include <winbase.h>
 #include <wingdi.h>
@@ -269,6 +271,21 @@ struct w32api_msgboxparams_utf16 {
     DWORD dwLanguageId;
 };
 
+struct w32api_create_struct_utf16 {
+	LPVOID lpCreateParams;
+	HINSTANCE hInstance;
+	HMENU hMenu;
+	HWND hwndParent;
+	int cy;
+	int cx;
+	int y;
+	int x;
+	LONG style;
+	LPCWSTR lpszName;
+	LPCWSTR lpszClass;
+	DWORD dwExStyle;
+};
+
 typedef struct w32api_wnd_class_ansi WNDCLASSA, *PWNDCLASSA, *NPWNDCLASSA, *LPWNDCLASSA;
 typedef struct w32api_NONCLIENTMETRICS_ansi NONCLIENTMETRICSA, *PNONCLIENTMETRICSA, *LPNONCLIENTMETRICSA;
 typedef struct w32api_msgboxparams_ansi MSGBOXPARAMSA, *PMSGBOXPARAMSA, *LPMSGBOXPARAMSA;
@@ -280,6 +297,8 @@ typedef struct w32api_msgboxparams_utf8 MSGBOXPARAMSM, *PMSGBOXPARAMSM, *LPMSGBO
 typedef struct w32api_wnd_class_utf16 WNDCLASSW, *PWNDCLASSW, *NPWNDCLASSW, *LPWNDCLASSW;
 typedef struct w32api_NONCLIENTMETRICS_utf16 NONCLIENTMETRICSW, *PNONCLIENTMETRICSW, *LPNONCLIENTMETRICSW;
 typedef struct w32api_msgboxparams_utf16 MSGBOXPARAMSW, *PMSGBOXPARAMSW, *LPMSGBOXPARAMSW;
+
+typedef struct w32api_create_struct_utf16 CREATESTRUCTW,*LPCREATESTRUCTW;
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define WNDCLASS WNDCLASSA
