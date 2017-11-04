@@ -191,6 +191,8 @@ __dllimport void __stdcall GetStartupInfoM(LPSTARTUPINFOM lpStartupInfo);
 __dllimport void __stdcall GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo);
 
 
+__dllimport DWORD GetCurrentThreadId(void);
+
 #ifdef WINAPI_ANSI_DEFAULT
 	#define FormatMessage				FormatMessageA
 	#define LoadLibrary				LoadLibraryA
