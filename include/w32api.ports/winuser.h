@@ -536,6 +536,8 @@ __dllimport ATOM __stdcall RegisterClassExW(const WNDCLASSEXW *);
 __dllimport UINT __stdcall RegisterClipboardFormatA(LPCSTR lpszFormat);
 __dllimport UINT __stdcall RegisterClipboardFormatM(LPCSTR lpszFormat);
 __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
+__dllimport BOOL __stdcall UnhookWindowsHookEx(HHOOK hhk);
+__dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
 
 
 #define CreateDialogA(hInstance,lpName,hWndParent,lpDialogFunc) CreateDialogParamA(hInstance,lpName,hWndParent,lpDialogFunc,(LPARAM)0)
