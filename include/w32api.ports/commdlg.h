@@ -98,7 +98,7 @@ struct w32api_choosecolor_utf16 {
     LPARAM lCustData;
     LPCCHOOKPROC lpfnHook;
     LPCWSTR lpTemplateName;
-};//CHOOSECOLORA,*LPCHOOSECOLORA;
+};
 
 typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
