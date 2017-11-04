@@ -616,6 +616,9 @@ __dllimport ATOM __stdcall RegisterClassExW(const WNDCLASSEXW *);
 __dllimport UINT __stdcall RegisterClipboardFormatA(LPCSTR lpszFormat);
 __dllimport UINT __stdcall RegisterClipboardFormatM(LPCSTR lpszFormat);
 __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
+__dllimport HHOOK __stdcall SetWindowsHookExA(int,HOOKPROC,HINSTANCE,DWORD);
+__dllimport HHOOK __stdcall SetWindowsHookExM(int,HOOKPROC,HINSTANCE,DWORD);
+__dllimport HHOOK __stdcall SetWindowsHookExW(int,HOOKPROC,HINSTANCE,DWORD);
 __dllimport BOOL __stdcall UnhookWindowsHookEx(HHOOK hhk);
 __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
 
