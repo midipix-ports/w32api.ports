@@ -271,6 +271,36 @@ struct w32api_msgboxparams_utf16 {
     DWORD dwLanguageId;
 };
 
+struct w32api_create_struct_ansi {
+	LPVOID lpCreateParams;
+	HINSTANCE hInstance;
+	HMENU hMenu;
+	HWND hwndParent;
+	int cy;
+	int cx;
+	int y;
+	int x;
+	LONG style;
+	LPCSTR lpszName;
+	LPCSTR lpszClass;
+	DWORD dwExStyle;
+};
+
+struct w32api_create_struct_utf8 {
+	LPVOID lpCreateParams;
+	HINSTANCE hInstance;
+	HMENU hMenu;
+	HWND hwndParent;
+	int cy;
+	int cx;
+	int y;
+	int x;
+	LONG style;
+	LPCSTR lpszName;
+	LPCSTR lpszClass;
+	DWORD dwExStyle;
+};
+
 struct w32api_create_struct_utf16 {
 	LPVOID lpCreateParams;
 	HINSTANCE hInstance;
@@ -298,7 +328,33 @@ typedef struct w32api_wnd_class_utf16 WNDCLASSW, *PWNDCLASSW, *NPWNDCLASSW, *LPW
 typedef struct w32api_NONCLIENTMETRICS_utf16 NONCLIENTMETRICSW, *PNONCLIENTMETRICSW, *LPNONCLIENTMETRICSW;
 typedef struct w32api_msgboxparams_utf16 MSGBOXPARAMSW, *PMSGBOXPARAMSW, *LPMSGBOXPARAMSW;
 
+typedef struct w32api_create_struct_utf16 CREATESTRUCTA,*LPCREATESTRUCTA;
+typedef struct w32api_create_struct_utf16 CREATESTRUCTM,*LPCREATESTRUCTM;
 typedef struct w32api_create_struct_utf16 CREATESTRUCTW,*LPCREATESTRUCTW;
+
+struct  w32api_cbt_create_wnd_ansi;
+struct  w32api_cbt_create_wnd_utf8;
+struct  w32api_cbt_create_wnd_utf16;
+
+typedef struct w32api_cbt_create_wnd_ansi		CBT_CREATEWNDA,*LPCBT_CREATEWNDA;
+typedef struct w32api_cbt_create_wnd_utf8		CBT_CREATEWNDM,*LPCBT_CREATEWNDM;
+typedef struct w32api_cbt_create_wnd_utf16		CBT_CREATEWNDW,*LPCBT_CREATEWNDW;
+
+struct  w32api_cbt_create_wnd_ansi {
+	LPCREATESTRUCTA 	lpcs;
+	HWND			hwndInsertAfter;
+};
+
+struct  w32api_cbt_create_wnd_utf8 {
+	LPCREATESTRUCTM 	lpcs;
+	HWND			hwndInsertAfter;
+};
+
+struct  w32api_cbt_create_wnd_utf16 {
+	LPCREATESTRUCTW 	lpcs;
+	HWND			hwndInsertAfter;
+};
+
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define WNDCLASS WNDCLASSA
