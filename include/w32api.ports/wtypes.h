@@ -6,4 +6,15 @@
 typedef WORD CLIPFORMAT;
 typedef const RECT *LPCRECT;
 
+
+
+typedef enum wtypes_dvaspect			DVASPECT;
+
+enum wtypes_dvaspect {
+	DVASPECT_CONTENT = 1,
+	DVASPECT_THUMBNAIL = 2,
+	DVASPECT_ICON = 4,
+	DVASPECT_DOCPRINT = 8
+};
+
 #endif
