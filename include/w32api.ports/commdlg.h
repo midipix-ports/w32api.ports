@@ -64,7 +64,7 @@ struct w32api_choosefont_utf16 {
     INT nSizeMax;
 };
 
-struct w32api_choosecolor_ansi {
+struct w32api_choose_color_ansi {
     DWORD lStructSize;
     HWND hwndOwner;
     HWND hInstance;
@@ -76,7 +76,7 @@ struct w32api_choosecolor_ansi {
     LPCSTR lpTemplateName;
 };
 
-struct w32api_choosecolor_utf8 {
+struct w32api_choose_color_utf8 {
     DWORD lStructSize;
     HWND hwndOwner;
     HWND hInstance;
@@ -88,7 +88,7 @@ struct w32api_choosecolor_utf8 {
     LPCSTR lpTemplateName;
 };
 
-struct w32api_choosecolor_utf16 {
+struct w32api_choose_color_utf16 {
     DWORD lStructSize;
     HWND hwndOwner;
     HWND hInstance;
@@ -104,16 +104,16 @@ typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
 typedef struct w32api_choosefont_utf16 CHOOSEFONTW, *LPCHOOSEFONTW;
 
-typedef struct w32api_choosecolor_ansi CHOOSECOLORA, *LPCHOOSECOLORA;
-typedef struct w32api_choosecolor_utf8 CHOOSECOLORM, *LPCHOOSECOLORM;
-typedef struct w32api_choosecolor_utf16 CHOOSECOLORW, *LPCHOOSECOLORW;
+typedef struct w32api_choose_color_ansi CHOOSECOLORA, *LPCHOOSECOLORA;
+typedef struct w32api_choose_color_utf8 CHOOSECOLORM, *LPCHOOSECOLORM;
+typedef struct w32api_choose_color_utf16 CHOOSECOLORW, *LPCHOOSECOLORW;
 
 __dllimport int __stdcall ChooseFontA(LPCHOOSEFONTA);
 __dllimport int __stdcall ChooseFontM(LPCHOOSEFONTM);
 __dllimport int __stdcall ChooseFontW(LPCHOOSEFONTW);
 __dllimport int __stdcall ChooseColorA(LPCHOOSECOLORA);
-__dllimport int __stdcall ChooseColorM(LPCHOOSECOLORA);
-__dllimport int __stdcall ChooseColorW(LPCHOOSECOLORA);
+__dllimport int __stdcall ChooseColorM(LPCHOOSECOLORM);
+__dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define CHOOSEFONT CHOOSEFONTA
