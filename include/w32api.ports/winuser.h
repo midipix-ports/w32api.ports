@@ -33,6 +33,18 @@ typedef LRESULT (__stdcall *HOOKPROC)(int,WPARAM,LPARAM);
 #define WH_MINHOOK		WH_MIN
 #define WH_MAXHOOK		WH_MAX
 
+struct  w32api_icon_info;
+
+typedef struct w32api_icon_info		ICONINFO,*PICONINFO,*LPICONINFO;
+
+struct w32api_icon_info {
+	BOOL		fIcon;
+	DWORD		xHotspot;
+	DWORD		yHotspot;
+	HBITMAP		hbmMask;
+	HBITMAP		hbmColor;
+};
+
 struct user_monitor_info {
 	DWORD	cbSize;
 	RECT	rcMonitor;
