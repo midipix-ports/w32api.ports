@@ -7,7 +7,7 @@
 #include <winbase.h>
 #include <wingdi.h>
 
-#include <msgbox.h>
+#include "msgbox.h"
 
 typedef LRESULT (__stdcall *HOOKPROC)(int,WPARAM,LPARAM);
 
@@ -1048,8 +1048,6 @@ __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam
 #define MF_UNCHECKED 			(0x00000000)
 #define MF_CHECKED 			(0x00000008)
 #define MF_GRAYED 			(0x00000001)
-
-#define MB_USERICON 			(0x00000080)
 
 #define SWP_NOSIZE 			0x0001
 #define SWP_NOACTIVATE 			0x0010
