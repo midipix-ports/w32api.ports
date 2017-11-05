@@ -1102,6 +1102,15 @@ __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam
 #define MF_CHECKED 			(0x00000008)
 #define MF_GRAYED 			(0x00000001)
 
+#define MFS_ENABLED			(0)
+#define MFS_UNHILITE			(0)
+#define MFS_UNCHECKED			(0)
+#define MFS_DISABLED			(3)
+#define MFS_GRAYED			(3)
+#define MFS_CHECKED			(8)
+#define MFS_HILITE			(128)
+#define MFS_DEFAULT			(4096)
+
 #define SWP_NOSIZE 			0x0001
 #define SWP_NOACTIVATE 			0x0010
 #define SWP_NOZORDER 			0x0004
