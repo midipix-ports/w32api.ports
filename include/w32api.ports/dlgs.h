@@ -1,6 +1,8 @@
 #ifndef _W32API_DLGS_H_
 #define _W32API_DLGS_H_
 
+#include <windef.h>
+
 #define ctlFirst 				(0x0400)
 #define ctlLast 				(0x04ff)
 
