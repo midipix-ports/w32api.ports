@@ -1161,6 +1161,9 @@ __dllimport ULONG_PTR __stdcall GetClassLongPtrW(HWND hWnd, int nIndex);
 __dllimport BOOL __stdcall SetMenuItemInfoA(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOA lpmii);
 __dllimport BOOL __stdcall SetMenuItemInfoM(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOM lpmii);
 __dllimport BOOL __stdcall SetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOW lpmii);
+__dllimport BOOL __stdcall GetMenuItemInfoA(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOA lpmii);
+__dllimport BOOL __stdcall GetMenuItemInfoM(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOM lpmii);
+__dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOW lpmii);
 
 
 #define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
