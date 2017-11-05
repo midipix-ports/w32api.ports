@@ -2,6 +2,7 @@
 #define _W32API_COMMCTRL_H_
 
 #include <windef.h>
+#include <winerror.h>
 
 typedef struct _TREEITEM *HTREEITEM;
 
