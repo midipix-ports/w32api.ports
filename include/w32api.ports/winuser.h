@@ -104,7 +104,7 @@ struct w32api_window_placement {
     POINT ptMaxPosition;
     RECT rcNormalPosition;
 };
-  
+
 typedef struct w32api_window_placement WINDOWPLACEMENT, *PWINDOWPLACEMENT, *LPWINDOWPLACEMENT;
 
 typedef w32api_wnd_proc WNDPROC;
@@ -449,6 +449,10 @@ typedef struct tagMSG {
 #define MAKEINTRESOURCEW(i) ((LPWSTR)((ULONG_PTR)((WORD)(i))))
 
 __dllimport int __stdcall EnableWindow(HWND hwnd,BOOL enabled);
+
+
+__dllimport int __stdcall GetClassNameA(HWND,LPSTR,int);
+__dllimport int __stdcall GetClassNameW(HWND,LPWSTR,int);
 
 __dllimport int __stdcall SetScrollInfo(HWND hwnd,int nBar,LPCSCROLLINFO lpsi,int redraw);
 __dllimport int __stdcall GetScrollInfo(HWND hwnd,int nBar,LPSCROLLINFO lpsi);
