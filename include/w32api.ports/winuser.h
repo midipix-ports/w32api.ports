@@ -340,6 +340,51 @@ struct w32api_create_struct_utf16 {
 	DWORD dwExStyle;
 };
 
+struct w32api_menu_item_info_ansi {
+	UINT cbSize;
+	UINT fMask;
+	UINT fType;
+	UINT fState;
+	UINT wID;
+	HMENU hSubMenu;
+	HBITMAP hbmpChecked;
+	HBITMAP hbmpUnchecked;
+	ULONG_PTR dwItemData;
+	LPSTR dwTypeData;
+	UINT cch;
+	HBITMAP hbmpItem;
+};
+
+struct w32api_menu_item_info_utf8 {
+	UINT cbSize;
+	UINT fMask;
+	UINT fType;
+	UINT fState;
+	UINT wID;
+	HMENU hSubMenu;
+	HBITMAP hbmpChecked;
+	HBITMAP hbmpUnchecked;
+	ULONG_PTR dwItemData;
+	LPSTR dwTypeData;
+	UINT cch;
+	HBITMAP hbmpItem;
+};
+
+struct w32api_menu_item_info_utf16 {
+	UINT cbSize;
+	UINT fMask;
+	UINT fType;
+	UINT fState;
+	UINT wID;
+	HMENU hSubMenu;
+	HBITMAP hbmpChecked;
+	HBITMAP hbmpUnchecked;
+	ULONG_PTR dwItemData;
+	LPWSTR dwTypeData;
+	UINT cch;
+	HBITMAP hbmpItem;
+};
+
 typedef struct w32api_wnd_class_ansi WNDCLASSA, *PWNDCLASSA, *NPWNDCLASSA, *LPWNDCLASSA;
 typedef struct w32api_NONCLIENTMETRICS_ansi NONCLIENTMETRICSA, *PNONCLIENTMETRICSA, *LPNONCLIENTMETRICSA;
 typedef struct w32api_msgboxparams_ansi MSGBOXPARAMSA, *PMSGBOXPARAMSA, *LPMSGBOXPARAMSA;
@@ -352,9 +397,13 @@ typedef struct w32api_wnd_class_utf16 WNDCLASSW, *PWNDCLASSW, *NPWNDCLASSW, *LPW
 typedef struct w32api_NONCLIENTMETRICS_utf16 NONCLIENTMETRICSW, *PNONCLIENTMETRICSW, *LPNONCLIENTMETRICSW;
 typedef struct w32api_msgboxparams_utf16 MSGBOXPARAMSW, *PMSGBOXPARAMSW, *LPMSGBOXPARAMSW;
 
-typedef struct w32api_create_struct_utf16 CREATESTRUCTA,*LPCREATESTRUCTA;
-typedef struct w32api_create_struct_utf16 CREATESTRUCTM,*LPCREATESTRUCTM;
+typedef struct w32api_create_struct_ansi CREATESTRUCTA,*LPCREATESTRUCTA;
+typedef struct w32api_create_struct_utf8 CREATESTRUCTM,*LPCREATESTRUCTM;
 typedef struct w32api_create_struct_utf16 CREATESTRUCTW,*LPCREATESTRUCTW;
+
+typedef struct w32api_menu_item_info_ansi MENUITEMINFOA,*LPMENUITEMINFOA;
+typedef struct w32api_menu_item_info_utf8 MENUITEMINFOM,*LPMENUITEMINFOM;
+typedef struct w32api_menu_item_info_utf16 MENUITEMINFOW,*LPMENUITEMINFOW;
 
 struct  w32api_cbt_create_wnd_ansi;
 struct  w32api_cbt_create_wnd_utf8;
