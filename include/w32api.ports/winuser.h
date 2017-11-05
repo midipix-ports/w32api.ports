@@ -542,9 +542,9 @@ typedef struct w32api_create_struct_ansi CREATESTRUCTA,*LPCREATESTRUCTA;
 typedef struct w32api_create_struct_utf8 CREATESTRUCTM,*LPCREATESTRUCTM;
 typedef struct w32api_create_struct_utf16 CREATESTRUCTW,*LPCREATESTRUCTW;
 
-typedef struct w32api_menu_item_info_ansi MENUITEMINFOA,*LPMENUITEMINFOA;
-typedef struct w32api_menu_item_info_utf8 MENUITEMINFOM,*LPMENUITEMINFOM;
-typedef struct w32api_menu_item_info_utf16 MENUITEMINFOW,*LPMENUITEMINFOW;
+typedef struct w32api_menu_item_info_ansi MENUITEMINFOA,*LPMENUITEMINFOA,*LPCMENUITEMINFOA;
+typedef struct w32api_menu_item_info_utf8 MENUITEMINFOM,*LPMENUITEMINFOM,*LPCMENUITEMINFOM;
+typedef struct w32api_menu_item_info_utf16 MENUITEMINFOW,*LPMENUITEMINFOW,*LPCMENUITEMINFOW;
 
 typedef struct w32api_cbt_create_wnd_ansi CBT_CREATEWNDA,*LPCBT_CREATEWNDA;
 typedef struct w32api_cbt_create_wnd_utf8 CBT_CREATEWNDM,*LPCBT_CREATEWNDM;
@@ -1051,6 +1051,8 @@ __dllimport int __stdcall SetLayeredWindowAttributes (HWND hwnd, COLORREF crKey,
 __dllimport HKL __stdcall GetKeyboardLayout(DWORD idThread);
 __dllimport BOOL __stdcall UnhookWindowsHookEx(HHOOK hhk);
 __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
+__dllimport BOOL __stdcall GetIconInfo(HICON hIcon, PICONINFO piconinfo);
+__dllimport BOOL __stdcall DestroyMenu(HMENU hMenu);
 
 
 __dllimport LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
@@ -1153,6 +1155,12 @@ __dllimport UINT __stdcall RegisterClipboardFormatW(LPCWSTR lpszFormat);
 __dllimport HHOOK __stdcall SetWindowsHookExA(int,HOOKPROC,HINSTANCE,DWORD);
 __dllimport HHOOK __stdcall SetWindowsHookExM(int,HOOKPROC,HINSTANCE,DWORD);
 __dllimport HHOOK __stdcall SetWindowsHookExW(int,HOOKPROC,HINSTANCE,DWORD);
+__dllimport ULONG_PTR __stdcall GetClassLongPtrA(HWND hWnd, int nIndex);
+__dllimport ULONG_PTR __stdcall GetClassLongPtrM(HWND hWnd, int nIndex);
+__dllimport ULONG_PTR __stdcall GetClassLongPtrW(HWND hWnd, int nIndex);
+__dllimport BOOL __stdcall SetMenuItemInfoA(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOA lpmii);
+__dllimport BOOL __stdcall SetMenuItemInfoM(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOM lpmii);
+__dllimport BOOL __stdcall SetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPositon, LPCMENUITEMINFOW lpmii);
 
 
 #define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
@@ -1196,6 +1204,7 @@ __dllimport HHOOK __stdcall SetWindowsHookExW(int,HOOKPROC,HINSTANCE,DWORD);
 #define SetWindowLong SetWindowLongA
 #define RegisterClassEx RegisterClassExA
 #define RegisterClipboardFormat RegisterClipboardFormatA
+#define GetClassLongPtr GetClassLongPtrA
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEA
@@ -1235,6 +1244,7 @@ __dllimport HHOOK __stdcall SetWindowsHookExW(int,HOOKPROC,HINSTANCE,DWORD);
 #define SetWindowLong SetWindowLongM
 #define RegisterClassEx RegisterClassExM
 #define RegisterClipboardFormat RegisterClipboardFormatM
+#define GetClassLongPtr GetClassLongPtrM
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEM
@@ -1274,6 +1284,7 @@ __dllimport HHOOK __stdcall SetWindowsHookExW(int,HOOKPROC,HINSTANCE,DWORD);
 #define SetWindowLong SetWindowLongW
 #define RegisterClassEx RegisterClassExW
 #define RegisterClipboardFormat RegisterClipboardFormatW
+#define GetClassLongPtr GetClassLongPtrW
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEW
