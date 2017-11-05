@@ -5,9 +5,9 @@
 #include <winerror.h>
 #include <winnt.h>
 
+#define DROPEFFECT_NONE 			(0)
 #define DROPEFFECT_COPY 			(1)
 #define DROPEFFECT_MOVE 			(2)
 #define DROPEFFECT_LINK 			(4)
-#define DROPEFFECT_NONE 			(0)
 
 #endif
