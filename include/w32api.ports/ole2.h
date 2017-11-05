@@ -1,7 +1,9 @@
 #ifndef _W32API_OLE2_H_
 #define _W32API_OLE2_H_
 
+#include <stdint.h>
 #include <windef.h>
+#include <oleidl.h>
 
 
 typedef UINT __stdcall w32api_register_clipboard_format_ansi(
