@@ -486,8 +486,8 @@ __dllimport int __stdcall GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCoun
 __dllimport int __stdcall GetWindowTextM(HWND hWnd, LPSTR lpString, int nMaxCount);
 __dllimport int __stdcall GetWindowTextW(HWND hWnd, LPWSTR lpString, int nMaxCount);
 __dllimport unsigned short __stdcall RegisterClassA(const WNDCLASSA *lpWndClass);
-__dllimport unsigned short __stdcall RegisterClassM(const WNDCLASSA *lpWndClass);
-__dllimport unsigned short __stdcall RegisterClassW(const WNDCLASSA *lpWndClass);
+__dllimport unsigned short __stdcall RegisterClassM(const WNDCLASSM *lpWndClass);
+__dllimport unsigned short __stdcall RegisterClassW(const WNDCLASSW *lpWndClass);
 __dllimport int __stdcall SystemParametersInfoA(UINT uiAction, UINT uiParam, PVOID pvParam, UINT fWinIni);
 __dllimport int __stdcall SystemParametersInfoM(UINT uiAction, UINT uiParam, PVOID pvParam, UINT fWinIni);
 __dllimport int __stdcall SystemParametersInfoW(UINT uiAction, UINT uiParam, PVOID pvParam, UINT fWinIni);
@@ -500,8 +500,8 @@ __dllimport int __stdcall SetDlgItemTextM(HWND hDlg, int nIDDlgItem, LPCSTR lpSt
 __dllimport int __stdcall SetDlgItemTextW(HWND hDlg, int nIDDlgItem, LPCWSTR lpString);
 __dllimport int __stdcall CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck);
 __dllimport LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
-__dllimport LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
-__dllimport LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
+__dllimport LRESULT __stdcall SendDlgItemMessageM(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
+__dllimport LRESULT __stdcall SendDlgItemMessageW(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport HWND __stdcall SetCapture(HWND hWnd);
 __dllimport LRESULT __stdcall CallWindowProcA(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall CallWindowProcM(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
