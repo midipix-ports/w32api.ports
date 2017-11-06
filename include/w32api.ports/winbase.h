@@ -101,7 +101,7 @@ typedef HANDLE __stdcall w32api_base_find_first_file_utf8(
 	LPWIN32_FIND_DATAM);
 
 typedef HANDLE __stdcall w32api_base_find_first_file_utf16(
-	LPWSTR,
+	LPCWSTR,
 	LPWIN32_FIND_DATAW);
 
 typedef BOOL __stdcall w32api_base_find_next_file_ansi(
