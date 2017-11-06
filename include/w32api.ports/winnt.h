@@ -21,6 +21,14 @@
 #define FILE_ATTRIBUTE_VIRTUAL			0x00010000
 #define FILE_ATTRIBUTE_NO_SCRUB_DATA		0x00020000
 
+#define DECLARE_HANDLE(name)      \
+	struct name##__ {          \
+		int unused;         \
+	};                           \
+                                      \
+	typedef struct name##__ * name \
+	/* ---------------------------*/
+
 struct  winnt_security_descriptor;
 
 typedef uint32_t				ACCESS_MASK;
