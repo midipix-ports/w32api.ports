@@ -9,6 +9,9 @@
 
 #include "msgbox.h"
 
+#ifndef WINVER
+#define WINVER 0x0600
+#endif
 
 /* misc, clean up later? */
 typedef void *HMONITOR;
