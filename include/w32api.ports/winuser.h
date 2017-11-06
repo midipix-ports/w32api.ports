@@ -467,6 +467,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define FLASHW_STOP 			0
 
 #define MAKELPARAM(l,h) 		((LPARAM)(DWORD)MAKELONG(l,h))
+#define MAKEWPARAM(l,h)			((WPARAM)(DWORD)MAKELONG(l,h))
 
 #define XBUTTON1			0x0001
 #define XBUTTON2			0x0002
