@@ -450,6 +450,7 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define ICON_BIG 			1
 
+#define SIZE_MINIMIZED			1
 #define SIZE_MAXIMIZED 			2
 #define SIZE_RESTORED 			0
 
@@ -460,6 +461,7 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define IDOK 				1
 
+#define FLASHW_CAPTION			0x00000001
 #define FLASHW_TRAY 			0x00000002
 #define FLASHW_TIMER 			0x00000004
 #define FLASHW_STOP 			0
