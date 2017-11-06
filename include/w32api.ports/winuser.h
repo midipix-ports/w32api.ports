@@ -1170,6 +1170,10 @@ __dllimport BOOL __stdcall SetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosi
 __dllimport BOOL __stdcall GetMenuItemInfoA(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOA lpmii);
 __dllimport BOOL __stdcall GetMenuItemInfoM(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOM lpmii);
 __dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosition, LPMENUITEMINFOW lpmii);
+__dllimport BOOL __stdcall PostMessageA (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+__dllimport BOOL __stdcall PostMessageM (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+__dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
 
 
 #define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
@@ -1214,6 +1218,7 @@ __dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosi
 #define RegisterClassEx RegisterClassExA
 #define RegisterClipboardFormat RegisterClipboardFormatA
 #define GetClassLongPtr GetClassLongPtrA
+#define PostMessage PostMessageA
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEA
@@ -1254,6 +1259,7 @@ __dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosi
 #define RegisterClassEx RegisterClassExM
 #define RegisterClipboardFormat RegisterClipboardFormatM
 #define GetClassLongPtr GetClassLongPtrM
+#define PostMessage PostMessageM
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEM
@@ -1294,6 +1300,7 @@ __dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosi
 #define RegisterClassEx RegisterClassExW
 #define RegisterClipboardFormat RegisterClipboardFormatW
 #define GetClassLongPtr GetClassLongPtrW
+#define PostMessage PostMessageW
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEW
