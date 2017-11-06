@@ -14,4 +14,7 @@
 #include <winuser.h>
 #include <winspool.h>
 
+#include <libloaderapi.h>
+#include <sysinfoapi.h>
+
 #endif
