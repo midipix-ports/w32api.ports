@@ -16,6 +16,7 @@
 
 #include <libloaderapi.h>
 #include <sysinfoapi.h>
+#include <utilapiset.h>
 #include <errhandlingapi.h>
 
 #endif
