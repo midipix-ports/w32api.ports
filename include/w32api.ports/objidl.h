@@ -9,11 +9,19 @@
 #include "olectlid.h"
 
 enum    w32api_objidl_tymed;
+struct  w32api_objidl_auth_identity;
+struct  w32api_objidl_coauth_info;
+struct  w32api_objidl_coserver_info;
+struct  w32api_objidl_multi_qi;
 struct  w32api_objidl_dvtargetdevice;
 struct  w32api_objidl_formatetc;
 struct  w32api_objidl_stdmedium;
 
 typedef enum   w32api_objidl_tymed			TYMED;
+typedef struct w32api_objidl_auth_identity		AUTH_IDENTITY;
+typedef struct w32api_objidl_coauth_info		COAUTHINFO;
+typedef struct w32api_objidl_coserver_info		COSERVERINFO;
+typedef struct w32api_objidl_multi_qi			MULTI_QI;
 typedef struct w32api_objidl_dvtargetdevice		DVTARGETDEVICE;
 typedef struct w32api_objidl_formatetc			FORMATETC;
 typedef struct w32api_objidl_stgmedium			STGMEDIUM,*LPSTGMEDIUM;
@@ -27,6 +35,39 @@ enum w32api_objidl_tymed {
 	TYMED_MFPICT =		32,
 	TYMED_ENHMF =		64,
 	TYMED_NULL =		0
+};
+
+struct w32api_objidl_auth_identity {
+	USHORT *		User;
+	ULONG			UserLength;
+	USHORT *		Domain;
+	ULONG			DomainLength;
+	USHORT *		Password;
+	ULONG			PasswordLength;
+	ULONG			Flags;
+};
+
+struct w32api_objidl_coauth_info {
+	DWORD			dwAuthnSvc;
+	DWORD			dwAuthzSvc;
+	LPWSTR			wszServerPrincName;
+	DWORD			dwAuthnLevel;
+	DWORD			dwImpersonationLevel;
+	AUTH_IDENTITY *		pAuthIdentityData;
+	DWORD			dwCapabilit;
+};
+
+struct w32api_objidl_coserver_info {
+	DWORD			dwReserved1;
+	LPWSTR			pwszName;
+	COAUTHINFO *		pAuthInfo;
+	DWORD			dwReserved2;
+};
+
+struct w32api_objidl_multi_qi {
+	const IID *		pIID;
+	IUnknown *		pItf;
+	HRESULT			hr;
 };
 
 struct w32api_objidl_dvtargetdevice {
@@ -82,6 +123,24 @@ DECLARE_INTERFACE_(IDataObject,IUnknown) {
 	STDMETHOD	(DAdvise)		(THIS_ FORMATETC*,DWORD,IAdviseSink*,PDWORD) PURE;
 	STDMETHOD	(DUnadvise)		(THIS_ DWORD) PURE;
 	STDMETHOD	(EnumDAdvise)		(THIS_ IEnumSTATDATA**) PURE;
+};
+#undef INTERFACE
+
+
+/* COM interface:  IPersistFile */
+EXTERN_C const IID IID_IPersistFile;
+
+#define INTERFACE  IPersistFile
+DECLARE_INTERFACE_(IPersistFile,IUnknown) {
+	STDMETHOD	(QueryInterface)	(THIS_ REFIID,PVOID*) PURE;
+	STDMETHOD_	(ULONG,AddRef)		(THIS) PURE;
+	STDMETHOD_	(ULONG,Release)		(THIS) PURE;
+	STDMETHOD	(GetClassID)		(THIS_ CLSID*) PURE;
+	STDMETHOD	(IsDirty)		(THIS) PURE;
+	STDMETHOD	(Load)			(THIS_ LPCOLESTR,DWORD) PURE;
+	STDMETHOD	(Save)			(THIS_ LPCOLESTR,BOOL) PURE;
+	STDMETHOD	(SaveCompleted)		(THIS_ LPCOLESTR) PURE;
+	STDMETHOD	(GetCurFile)		(THIS_ LPOLESTR*) PURE;
 };
 #undef INTERFACE
 
