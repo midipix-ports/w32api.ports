@@ -7,24 +7,34 @@
 #include <windef.h>
 #include <basetyps.h>
 
+/* wtypes macros */
+#define VARIANT_TRUE		((signed short)0xffff)
+#define VARIANT_FALSE		((signed short)0)
+
 /* scalar typedefs */
 typedef long double		DOUBLE;
+typedef signed short		VARIANT_BOOL;
+
 typedef USHORT			VARTYPE;
 typedef WORD			CLIPFORMAT;
 typedef CLIPFORMAT		*LPCLIPFORMAT;
 
-typedef LPSTR			LPOLESTR;
-typedef LPCSTR			LPCOLESTR;
 typedef LPWSTR			LPOLEWSTR;
 typedef LPCWSTR			LPCOLEWSTR;
 
+#ifdef  WINAPI_UTF16_DEFAULT
+typedef LPWSTR			LPOLESTR;
+typedef LPCWSTR			LPCOLESTR;
+#endif
+
 /* enum and struct forward declarations */
+enum   w32api_cls_ctx;
 enum   w32api_var_enum;
 enum   w32api_wtypes_dvaspect;
 struct w32api_wtypes_property_key;
 
-
 /* enum and struct typedefs */
+typedef enum   w32api_cls_ctx				CLSXTX;
 typedef enum   w32api_var_enum				VARENUM;
 typedef enum   w32api_wtypes_dvaspect			DVASPECT;
 typedef struct w32api_wtypes_property_key		PROPERTYKEY;
@@ -33,6 +43,15 @@ typedef struct w32api_wtypes_property_key		PROPERTYKEY;
 typedef const struct w32api_wtypes_property_key		*REFPROPERTYKEY;
 
 /* enum and struct definitions */
+enum  w32api_cls_ctx {
+	CLSCTX_INPROC_UNKNOWN		= 0,
+	CLSCTX_INPROC_SERVER		= 1,
+	CLSCTX_INPROC_HANDLER		= 2,
+	CLSCTX_LOCAL_SERVER		= 4,
+	CLSCTX_INPROC_SERVER16		= 8,
+	CLSCTX_REMOTE_SERVER		= 16,
+};
+
 enum w32api_var_enum {
 	VT_EMPTY,
 	VT_NULL,
