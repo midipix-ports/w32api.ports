@@ -32,6 +32,7 @@ struct w32api_prop_variant {
 		UINT			uintVal;
 		FLOAT			fltVal;
 		DOUBLE			dblVal;
+		VARIANT_BOOL		boolVal;
 		CLSID			*puuid;
 		LPSTR			pszVal;
 		LPWSTR			pwszVal;
