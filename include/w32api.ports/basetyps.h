@@ -63,12 +63,15 @@ struct  w32api_iid_iunknown;
 struct  w32api_iid_iclass_factory;
 
 typedef struct w32api_guid			GUID,*LPGUID,*REFGUID;
-typedef struct w32api_guid			IID,*LPIID,*REFIID;
-typedef struct w32api_guid			CLSID,*LPCLSID,*REFCLSID;
+typedef struct w32api_guid			IID,*LPIID;
+typedef struct w32api_guid			CLSID;
 typedef struct w32api_guid			FMTID,*LPFMTID,*REFFMTID;
 
 typedef struct IUnknown				*LPUNKNOWN;
 typedef struct IClassFactory			*LPCLASSFACTORY;
+
+typedef const  struct w32api_guid		*REFIID;
+typedef const  struct w32api_guid		*LPCLSID,*REFCLSID;
 
 struct w32api_guid {
         uint32_t        data1;
