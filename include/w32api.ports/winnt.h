@@ -29,6 +29,22 @@
 	typedef struct name##__ * name \
 	/* ---------------------------*/
 
+#define STANDARD_RIGHTS_ALL			(uint32_t)(0x001F0000)
+
+#define KEY_QUERY_VALUE				(0x0001)
+#define KEY_SET_VALUE				(0x0002)
+#define KEY_CREATE_SUB_KEY			(0x0004)
+#define KEY_ENUMERATE_SUB_KEYS			(0x0008)
+#define KEY_NOTIFY				(0x0010)
+#define KEY_CREATE_LINK				(0x0020)
+
+#define SYNCHRONIZE                      	(uint32_t)(0x00100000)
+
+#define KEY_ALL_ACCESS 				((STANDARD_RIGHTS_ALL | \
+						KEY_QUERY_VALUE | KEY_SET_VALUE | \
+						KEY_CREATE_SUB_KEY | KEY_ENUMERATE_SUB_KEYS | \
+						KEY_NOTIFY | KEY_CREATE_LINK) & (~SYNCHRONIZE))
+
 struct  winnt_security_descriptor;
 
 typedef uint32_t				ACCESS_MASK;
