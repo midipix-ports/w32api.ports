@@ -410,7 +410,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define SWP_NOOWNERZORDER 		0x0200
 #define SWP_NOREPOSITION 		SWP_NOOWNERZORDER
 
-#define WS_POPUP 			(int32_t)(0x80000000)
+#define WS_POPUP 			(0x80000000)
 #define WS_EX_TOPMOST 			(int32_t)(0x00000008)
 #define WS_EX_TOOLWINDOW 		(int32_t)(0x00000080)
 #define WS_TABSTOP 			(int32_t)(0x00010000)
@@ -420,10 +420,10 @@ typedef w32api_wnd_proc WNDPROC;
 #define WS_VSCROLL 			(int32_t)(0x00200000)
 #define WS_HSCROLL			(int32_t)(0x00100000)
 #define WS_THICKFRAME 			(int32_t)(0x00040000)
-#define WS_CAPTION 			(int32_t)(0x00C00000)
+#define WS_CAPTION 			(0x00C00000)
 #define WS_BORDER 			(int32_t)(0x00800000)
 #define WS_MAXIMIZEBOX 			(int32_t)(0x00010000)
-#define WS_SYSMENU 			(int32_t)(0x00080000)
+#define WS_SYSMENU 			(0x00080000)
 #define WS_EX_LEFTSCROLLBAR 		(int32_t)(0x00004000)
 #define WS_MINIMIZEBOX 			(int32_t)(0x00020000)
 #define WS_OVERLAPPED 			(int32_t)(0x00000000)
