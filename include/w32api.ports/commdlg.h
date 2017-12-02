@@ -6,6 +6,7 @@
 
 typedef UINT_PTR (__stdcall *LPCFHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPCCHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
+typedef UINT_PTR (__stdcall *LPFRHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 
 struct w32api_choosefont_ansi {
     DWORD lStructSize;
@@ -100,6 +101,49 @@ struct w32api_choose_color_utf16 {
     LPCWSTR lpTemplateName;
 };
 
+struct w32api_find_replace_ansi {
+    DWORD lStructSize;
+    HWND hwndOwner;
+    HINSTANCE hInstance;
+    DWORD Flags;
+    LPSTR lpstrFindWhat;
+    LPSTR lpstrReplaceWith;
+    WORD wFindWhatLen;
+    WORD wReplaceWithLen;
+    LPARAM lCustData;
+    LPFRHOOKPROC lpfnHook;
+    LPCSTR lpTemplateName;
+};// FINDREPLACEA,*LPFINDREPLACEA;
+
+struct w32api_find_replace_utf8 {
+    DWORD lStructSize;
+    HWND hwndOwner;
+    HINSTANCE hInstance;
+    DWORD Flags;
+    LPSTR lpstrFindWhat;
+    LPSTR lpstrReplaceWith;
+    WORD wFindWhatLen;
+    WORD wReplaceWithLen;
+    LPARAM lCustData;
+    LPFRHOOKPROC lpfnHook;
+    LPCSTR lpTemplateName;
+};// FINDREPLACEA,*LPFINDREPLACEA;
+
+
+struct w32api_find_replace_utf16 {
+    DWORD lStructSize;
+    HWND hwndOwner;
+    HINSTANCE hInstance;
+    DWORD Flags;
+    LPWSTR lpstrFindWhat;
+    LPWSTR lpstrReplaceWith;
+    WORD wFindWhatLen;
+    WORD wReplaceWithLen;
+    LPARAM lCustData;
+    LPFRHOOKPROC lpfnHook;
+    LPCWSTR lpTemplateName;
+};// FINDREPLACEW,*LPFINDREPLACEW;
+
 typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
 typedef struct w32api_choosefont_utf16 CHOOSEFONTW, *LPCHOOSEFONTW;
@@ -107,6 +151,10 @@ typedef struct w32api_choosefont_utf16 CHOOSEFONTW, *LPCHOOSEFONTW;
 typedef struct w32api_choose_color_ansi CHOOSECOLORA, *LPCHOOSECOLORA;
 typedef struct w32api_choose_color_utf8 CHOOSECOLORM, *LPCHOOSECOLORM;
 typedef struct w32api_choose_color_utf16 CHOOSECOLORW, *LPCHOOSECOLORW;
+
+typedef struct w32api_find_replace_ansi FINDREPLACEA, *LPFINDREPLACEA;
+typedef struct w32api_find_replace_utf8 FINDREPLACEM, *LPFINDREPLACEM;
+typedef struct w32api_find_replace_utf16 FINDREPLACEW, *LPFINDREPLACEW;
 
 __dllimport int __stdcall ChooseFontA(LPCHOOSEFONTA);
 __dllimport int __stdcall ChooseFontM(LPCHOOSEFONTM);
@@ -118,6 +166,7 @@ __dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 #ifdef WINAPI_ANSI_DEFAULT
 #define CHOOSEFONT CHOOSEFONTA
 #define CHOOSECOLOR CHOOSECOLORA
+#define FINDREPLACE FINDREPLACEA
 
 #define ChooseFont ChooseFontA
 #define ChooseColor ChooseColorA
@@ -127,6 +176,7 @@ __dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 #ifdef WINAPI_UTF8_DEFAULT
 #define CHOOSEFONT CHOOSEFONTM
 #define CHOOSECOLOR CHOOSECOLORM
+#define FINDREPLACE FINDREPLACEM
 
 #define ChooseFont ChooseFontM
 #define ChooseColor ChooseColorM
@@ -136,6 +186,7 @@ __dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 #ifdef WINAPI_UTF16_DEFAULT
 #define CHOOSEFONT CHOOSEFONTW
 #define CHOOSECOLOR CHOOSECOLORW
+#define FINDREPLACE FINDREPLACEW
 
 #define ChooseFont ChooseFontW
 #define ChooseColor ChooseColorW
@@ -158,6 +209,13 @@ __dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 #define CF_NOVERTFONTS 			(0x1000000)
 #define CF_FIXEDPITCHONLY 		(0x4000)
 #define CF_INITTOLOGFONTSTRUCT 		(0x40)
+
+#define FR_DOWN				0x1
+#define FR_MATCHCASE			0x4
+#define FR_FINDNEXT			0x8
+#define FR_REPLACE			0x10
+#define FR_REPLACEALL			0x20
+#define FR_DIALOGTERM			0x40
 
 #define WM_CHOOSEFONT_GETLOGFONT 	(WM_USER + 1)
 
