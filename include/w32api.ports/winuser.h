@@ -87,7 +87,10 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define SS_OWNERDRAW 			(0x0000000D)
 
-#define ES_PASSWORD 			(0x0020)
+#define ES_MULTILINE			(int32_t)(0x0004)
+#define ES_PASSWORD 			(int32_t)(0x0020)
+#define ES_AUTOVSCROLL			(int32_t)(0x0040)
+#define ES_NOHIDESEL			(int32_t)(0x0100)
 
 #define SIF_RANGE 			0x0001
 #define SIF_PAGE 			0x0002
@@ -109,6 +112,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define SW_MAXIMIZE 			3
 #define SW_MINIMIZE 			6
 
+#define SM_CXSCREEN			0
+#define SM_CYSCREEN			1
 #define SM_CXVSCROLL 			2
 #define SM_CYSMICON			50
 #define SM_CXSMICON			49
@@ -119,7 +124,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define MIIM_STRING			0x00000040
 #define MIIM_BITMAP			0x00000080
 
-
+#define MF_BYCOMMAND			(int32_t)(0x00000000)
 #define MF_STRING			(int32_t)(0x00000000)
 #define MF_DISABLED 			(int32_t)(0x00000002)
 #define MF_MENUBARBREAK 		(int32_t)(0x00000020)
@@ -152,8 +157,11 @@ typedef w32api_wnd_proc WNDPROC;
 #define EN_SETFOCUS 			0x0100
 #define EN_UPDATE 			0x0400
 
+#define EM_GETSEL			0x00B0
 #define EM_SETSEL 			0x00B1
+#define EM_REPLACESEL			0x00C2
 #define EM_LIMITTEXT			0x00C5
+#define EM_CANUNDO			0x00C6
 
 #define CBN_EDITCHANGE 			5
 #define CBN_SELCHANGE 			1
