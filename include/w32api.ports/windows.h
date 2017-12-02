@@ -19,4 +19,6 @@
 #include <utilapiset.h>
 #include <errhandlingapi.h>
 
+#include <processenv.h>
+
 #endif
