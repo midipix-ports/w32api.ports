@@ -113,7 +113,7 @@ struct w32api_find_replace_ansi {
     LPARAM lCustData;
     LPFRHOOKPROC lpfnHook;
     LPCSTR lpTemplateName;
-};// FINDREPLACEA,*LPFINDREPLACEA;
+};
 
 struct w32api_find_replace_utf8 {
     DWORD lStructSize;
@@ -127,8 +127,7 @@ struct w32api_find_replace_utf8 {
     LPARAM lCustData;
     LPFRHOOKPROC lpfnHook;
     LPCSTR lpTemplateName;
-};// FINDREPLACEA,*LPFINDREPLACEA;
-
+};
 
 struct w32api_find_replace_utf16 {
     DWORD lStructSize;
@@ -142,7 +141,7 @@ struct w32api_find_replace_utf16 {
     LPARAM lCustData;
     LPFRHOOKPROC lpfnHook;
     LPCWSTR lpTemplateName;
-};// FINDREPLACEW,*LPFINDREPLACEW;
+};
 
 typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
@@ -193,7 +192,7 @@ __dllimport int __stdcall ChooseColorW(LPCHOOSECOLORW);
 
 #endif
 
-
+#define FINDMSGSTRINGW			(uint16_t[]){'c','o','m','m','d','l','g','_','F','i','n','d','R','e','p','l','a','c','e',0}
 
 #define CF_FORCEFONTEXIST 		(0x10000)
 
