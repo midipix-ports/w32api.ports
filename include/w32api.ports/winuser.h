@@ -110,6 +110,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define SW_MINIMIZE 			6
 
 #define SM_CXVSCROLL 			2
+#define SM_CYSMICON			50
+#define SM_CXSMICON			49
 
 #define MIIM_STATE			0x00000001
 #define MIIM_FTYPE			0x00000100
@@ -137,6 +139,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define LB_SETCURSEL 			0x0186
 #define LB_SETTABSTOPS 			0x0192
 
+#define LR_SHARED			0x8000
+
 #define CB_RESETCONTENT 		0x014B
 #define CB_ADDSTRING 			0x0143
 #define CB_GETLBTEXT 			0x0148
@@ -149,6 +153,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define EN_UPDATE 			0x0400
 
 #define EM_SETSEL 			0x00B1
+#define EM_LIMITTEXT			0x00C5
 
 #define CBN_EDITCHANGE 			5
 #define CBN_SELCHANGE 			1
@@ -263,6 +268,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define KF_EXTENDED 			0x0100
 
 #define WM_APP 				0x8000
+#define WM_CREATE			0x0001
 #define WM_VSCROLL 			0x0115
 #define WM_SYSCOMMAND 			0x0112
 #define WM_PAINT 			0x000F
@@ -270,6 +276,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_NCHITTEST 			0x0084
 #define WM_ERASEBKGND 			0x0014
 #define WM_DESTROY 			0x0002
+#define WM_DESTROYCLIPBOARD		0x0307
+#define WM_DROPFILES			0x0233
 #define WM_SETFONT 			0x0030
 #define WM_KEYDOWN 			0x0100
 #define WM_SYSKEYDOWN 			0x0104
@@ -278,6 +286,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_PASTE 			0x0302
 #define WM_COMMAND 			0x0111
 #define WM_SHOWWINDOW 			0x0018
+#define WM_QUERYENDSESSION              0x0011
 #define WM_QUIT 			0x0012
 #define WM_DRAWITEM 			0x002B
 #define WM_GETFONT 			0x0031
@@ -285,6 +294,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_CLOSE 			0x0010
 #define WM_NOTIFY 			0x004E
 #define WM_INITDIALOG 			0x0110
+#define WM_INITMENUPOPUP		0x0117
 #define WM_SETICON 			0x0080
 #define WM_MENUCHAR 			0x0120
 #define WM_MOUSEMOVE 			0x0200
@@ -330,6 +340,7 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define WA_INACTIVE 			0
 
+#define MONITOR_DEFAULTTOPRIMARY	0x00000001
 #define MONITOR_DEFAULTTONEAREST	0x00000002
 
 #define MNC_CLOSE			1
@@ -358,8 +369,13 @@ typedef w32api_wnd_proc WNDPROC;
 #define HBMMENU_POPUP_MAXIMIZE		((HBITMAP)10)
 #define HBMMENU_POPUP_MINIMIZE		((HBITMAP)11)
 
+#define IDYES				6
+#define IDNO				7
+
 #define IDC_IBEAM 			MAKEINTRESOURCE(32513)
 #define IDC_ARROW 			MAKEINTRESOURCE(32512)
+
+#define IMAGE_ICON			1
 
 #define MF_ENABLED 			(0x00000000)
 #define MF_SEPARATOR 			(0x00000800)
@@ -386,25 +402,26 @@ typedef w32api_wnd_proc WNDPROC;
 #define SWP_NOOWNERZORDER 		0x0200
 #define SWP_NOREPOSITION 		SWP_NOOWNERZORDER
 
-#define WS_POPUP 			(0x80000000)
-#define WS_EX_TOPMOST 			(0x00000008)
-#define WS_EX_TOOLWINDOW 		(0x00000080)
-#define WS_TABSTOP 			(0x00010000)
-#define WS_EX_CLIENTEDGE 		(0x00000200)
-#define WS_VISIBLE 			(0x10000000)
-#define WS_CHILD 			(0x40000000)
-#define WS_VSCROLL 			(0x00200000)
-#define WS_THICKFRAME 			(0x00040000)
-#define WS_CAPTION 			(0x00C00000)
-#define WS_BORDER 			(0x00800000)
-#define WS_MAXIMIZEBOX 			(0x00010000)
-#define WS_SYSMENU 			(0x00080000)
-#define WS_EX_LEFTSCROLLBAR 		(0x00004000)
-#define WS_MINIMIZEBOX 			(0x00020000)
-#define WS_OVERLAPPED 			(0x00000000)
+#define WS_POPUP 			(int32_t)(0x80000000)
+#define WS_EX_TOPMOST 			(int32_t)(0x00000008)
+#define WS_EX_TOOLWINDOW 		(int32_t)(0x00000080)
+#define WS_TABSTOP 			(int32_t)(0x00010000)
+#define WS_EX_CLIENTEDGE 		(int32_t)(0x00000200)
+#define WS_VISIBLE 			(int32_t)(0x10000000)
+#define WS_CHILD 			(int32_t)(0x40000000)
+#define WS_VSCROLL 			(int32_t)(0x00200000)
+#define WS_HSCROLL			(int32_t)(0x00100000)
+#define WS_THICKFRAME 			(int32_t)(0x00040000)
+#define WS_CAPTION 			(int32_t)(0x00C00000)
+#define WS_BORDER 			(int32_t)(0x00800000)
+#define WS_MAXIMIZEBOX 			(int32_t)(0x00010000)
+#define WS_SYSMENU 			(int32_t)(0x00080000)
+#define WS_EX_LEFTSCROLLBAR 		(int32_t)(0x00004000)
+#define WS_MINIMIZEBOX 			(int32_t)(0x00020000)
+#define WS_OVERLAPPED 			(int32_t)(0x00000000)
 #define WS_OVERLAPPEDWINDOW 		(WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX)
 #define WS_EX_LAYERED 			0x00080000
-#define WS_GROUP 			(0x00020000)
+#define WS_GROUP 			(int32_t)(0x00020000)
 
 #define ES_AUTOHSCROLL 			(0x0080)
 
