@@ -21,6 +21,11 @@
 #define FILE_ATTRIBUTE_VIRTUAL			0x00010000
 #define FILE_ATTRIBUTE_NO_SCRUB_DATA		0x00020000
 
+#define FILE_SHARE_READ				0x00000001
+#define FILE_SHARE_WRITE			0x00000002
+#define FILE_SHARE_DELETE			0x00000004
+#define FILE_SHARE_VALID_FLAGS			0x00000007
+
 #define DECLARE_HANDLE(name)      \
 	struct name##__ {          \
 		int unused;         \
