@@ -19,6 +19,8 @@ typedef USHORT			VARTYPE;
 typedef WORD			CLIPFORMAT;
 typedef CLIPFORMAT		*LPCLIPFORMAT;
 
+typedef void			*HACCEL;
+
 typedef LPWSTR			LPOLEWSTR;
 typedef LPCWSTR			LPCOLEWSTR;
 

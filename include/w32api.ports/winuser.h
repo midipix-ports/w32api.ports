@@ -1085,6 +1085,8 @@ __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam
 __dllimport BOOL __stdcall GetIconInfo(HICON hIcon, PICONINFO piconinfo);
 __dllimport BOOL __stdcall DestroyMenu(HMENU hMenu);
 __dllimport BOOL __stdcall SetForegroundWindow(HWND hWnd);
+__dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
+
 
 __dllimport LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall DefWindowProcM(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
@@ -1198,8 +1200,12 @@ __dllimport BOOL __stdcall GetMenuItemInfoW(HMENU hmenu, UINT item, BOOL fByPosi
 __dllimport BOOL __stdcall PostMessageA (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport BOOL __stdcall PostMessageM (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-
-
+__dllimport HANDLE __stdcall LoadImageA(HINSTANCE hInst, LPCSTR name, UINT type, int cx, int cy, UINT fuLoad);
+__dllimport HANDLE __stdcall LoadImageM(HINSTANCE hInst, LPCSTR name, UINT type, int cx, int cy, UINT fuLoad);
+__dllimport HANDLE __stdcall LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad);
+__dllimport HACCEL __stdcall LoadAcceleratorsA(HINSTANCE hInstance, LPCSTR lpTableName);
+__dllimport HACCEL __stdcall LoadAcceleratorsM(HINSTANCE hInstance, LPCSTR lpTableName);
+__dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTableName);
 
 #define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
 #define MAKEINTRESOURCEM(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
@@ -1208,6 +1214,10 @@ __dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPA
 #define CreateDialogA(hInstance,lpName,hWndParent,lpDialogFunc) CreateDialogParamA(hInstance,lpName,hWndParent,lpDialogFunc,(LPARAM)0)
 #define CreateDialogM(hInstance,lpName,hWndParent,lpDialogFunc) CreateDialogParamA(hInstance,lpName,hWndParent,lpDialogFunc,(LPARAM)0)
 #define CreateDialogW(hInstance,lpName,hWndParent,lpDialogFunc) CreateDialogParamW(hInstance,lpName,hWndParent,lpDialogFunc,(LPARAM)0)
+
+#define CreateWindowA(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExA((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
+#define CreateWindowM(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExM((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
+#define CreateWindowW(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExW((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define DefWindowProc DefWindowProcA
@@ -1244,6 +1254,7 @@ __dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPA
 #define RegisterClipboardFormat RegisterClipboardFormatA
 #define GetClassLongPtr GetClassLongPtrA
 #define PostMessage PostMessageA
+#define LoadImage LoadImageA
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEA
@@ -1285,6 +1296,7 @@ __dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPA
 #define RegisterClipboardFormat RegisterClipboardFormatM
 #define GetClassLongPtr GetClassLongPtrM
 #define PostMessage PostMessageM
+#define LoadImage LoadImageM
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEM
@@ -1326,6 +1338,7 @@ __dllimport BOOL __stdcall PostMessageW (HWND hWnd, UINT Msg, WPARAM wParam, LPA
 #define RegisterClipboardFormat RegisterClipboardFormatW
 #define GetClassLongPtr GetClassLongPtrW
 #define PostMessage PostMessageW
+#define LoadImage LoadImageW
 
 
 #define MAKEINTRESOURCE MAKEINTRESOURCEW
