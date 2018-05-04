@@ -4,6 +4,20 @@
 #include <windef.h>
 #include <winerror.h>
 
+
+struct commctrl_init_common_controls_ex;
+
+
+typedef struct commctrl_init_common_controls_ex				INITCOMMONCONTROLSEX, *LPINITCOMMONCONTROLSEX;
+
+
+struct commctrl_init_common_controls_ex {
+	DWORD dwSize;
+	DWORD dwICC;
+};
+
+
+
 typedef struct _TREEITEM *HTREEITEM;
 
 
@@ -185,7 +199,11 @@ typedef struct w32api_tvinsertstruct_utf16 TVINSERTSTRUCTW, *LPTVINSERTSTRUCTW;
 
 #define TVGN_CARET 			0x9
 
+
+#define ICC_TREEVIEW_CLASSES		0x2
+
 __dllimport void __stdcall InitCommonControls(void);
+__dllimport int __stdcall InitCommonControlsEx(const INITCOMMONCONTROLSEX *);
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define WC_TREEVIEW WC_TREEVIEWA
