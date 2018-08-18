@@ -1092,6 +1092,7 @@ __dllimport HMENU __stdcall CreatePopupMenu(void);
 __dllimport HDC __stdcall GetDC(HWND hWnd);
 __dllimport int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
 __dllimport HANDLE __stdcall GetClipboardData(UINT uFormat);
+__dllimport HWND __stdcall GetClipboardOwner(void);
 __dllimport int __stdcall GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT *lpwndpl);
 __dllimport int __stdcall IsIconic(HWND hWnd);
 __dllimport int __stdcall GetWindowInfo(HWND hWnd, PWINDOWINFO pwi);
