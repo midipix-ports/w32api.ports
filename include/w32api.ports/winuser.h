@@ -1025,24 +1025,24 @@ struct w32api_non_client_metrics_utf16 {
 };
 
 #ifdef WINAPI_ANSI_DEFAULT
-#define WNDCLASS WNDCLASSA
-#define NONCLIENTMETRICS NONCLIENTMETRICSA
-#define MSGBOXPARAMS MSGBOXPARAMSA
-
+typedef struct w32api_create_struct_ansi		CREATESTRUCT;
+typedef struct w32api_wnd_class_ansi			WNDCLASS;
+typedef struct w32api_non_client_metrics_ansi		NONCLIENTMETRICS;
+typedef struct w32api_msgboxparams_asni			MSGBOXPARAMS;
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
-#define WNDCLASS WNDCLASSM
-#define NONCLIENTMETRICS NONCLIENTMETRICSM
-#define MSGBOXPARAMS MSGBOXPARAMSM
-
+typedef struct w32api_create_struct_utf8		CREATESTRUCT;
+typedef struct w32api_wnd_class_utf8			WNDCLASS;
+typedef struct w32api_non_client_metrics_utf8		NONCLIENTMETRICS;
+typedef struct w32api_msgboxparams_utf8			MSGBOXPARAMS;
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
-#define WNDCLASS WNDCLASSW
-#define NONCLIENTMETRICS NONCLIENTMETRICSW
-#define MSGBOXPARAMS MSGBOXPARAMSW
-
+typedef struct w32api_create_struct_utf16		CREATESTRUCT;
+typedef struct w32api_wnd_class_utf16			WNDCLASS;
+typedef struct w32api_non_client_metrics_utf16		NONCLIENTMETRICS;
+typedef struct w32api_msgboxparams_utf16		MSGBOXPARAMS;
 #endif
 
 
@@ -1087,6 +1087,7 @@ __dllimport int __stdcall GetCursorPos(LPPOINT lpPoint);
 __dllimport UINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc);
 __dllimport int __stdcall CloseClipboard(void);
 __dllimport int __stdcall EmptyClipboard(void);
+__dllimport HWND __stdcall GetOpenClipboardWindow(void);
 __dllimport int __stdcall OpenClipboard(HWND hWndNewOwner);
 __dllimport HANDLE __stdcall SetClipboardData(UINT uFormat, HANDLE hMem);
 __dllimport HWND __stdcall GetParent(HWND hWnd);
