@@ -1043,6 +1043,7 @@ struct w32api_non_client_metrics_utf16 {
 
 
 __dllimport int __stdcall EnableWindow(HWND hwnd,BOOL enabled);
+__dllimport int __stdcall UpdateWindow(HWND hwnd);
 __dllimport int __stdcall GetClassNameA(HWND,LPSTR,int);
 __dllimport int __stdcall GetClassNameW(HWND,LPWSTR,int);
 __dllimport int __stdcall SetScrollInfo(HWND hwnd,int nBar,LPCSCROLLINFO lpsi,int redraw);
@@ -1093,6 +1094,8 @@ __dllimport HDC __stdcall GetDC(HWND hWnd);
 __dllimport int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
 __dllimport HANDLE __stdcall GetClipboardData(UINT uFormat);
 __dllimport HWND __stdcall GetClipboardOwner(void);
+__dllimport HWND __stdcall GetClipboardViewer(void);
+__dllimport HWND __stdcall SetClipboardViewer(HWND hwnd);
 __dllimport int __stdcall GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT *lpwndpl);
 __dllimport int __stdcall IsIconic(HWND hWnd);
 __dllimport int __stdcall GetWindowInfo(HWND hWnd, PWINDOWINFO pwi);
