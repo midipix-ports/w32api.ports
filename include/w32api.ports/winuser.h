@@ -1027,22 +1027,31 @@ struct w32api_non_client_metrics_utf16 {
 #ifdef WINAPI_ANSI_DEFAULT
 typedef struct w32api_create_struct_ansi		CREATESTRUCT;
 typedef struct w32api_wnd_class_ansi			WNDCLASS;
+typedef struct w32api_wnd_class_ex_ansi			WNDCLASSEX;
 typedef struct w32api_non_client_metrics_ansi		NONCLIENTMETRICS;
 typedef struct w32api_msgboxparams_asni			MSGBOXPARAMS;
+typedef struct w32api_cbt_create_wnd_ansi		CBT_CREATEWND;
+typedef struct w32api_menu_item_info_ansi		MENUITEMINFO;
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
 typedef struct w32api_create_struct_utf8		CREATESTRUCT;
 typedef struct w32api_wnd_class_utf8			WNDCLASS;
+typedef struct w32api_wnd_class_ex_utf8                 WNDCLASSEX;
 typedef struct w32api_non_client_metrics_utf8		NONCLIENTMETRICS;
 typedef struct w32api_msgboxparams_utf8			MSGBOXPARAMS;
+typedef struct w32api_cbt_create_wnd_utf8               CBT_CREATEWND;
+typedef struct w32api_menu_item_info_utf8               MENUITEMINFO;
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
 typedef struct w32api_create_struct_utf16		CREATESTRUCT;
 typedef struct w32api_wnd_class_utf16			WNDCLASS;
+typedef struct w32api_wnd_class_ex_utf16		WNDCLASSEX;
 typedef struct w32api_non_client_metrics_utf16		NONCLIENTMETRICS;
 typedef struct w32api_msgboxparams_utf16		MSGBOXPARAMS;
+typedef struct w32api_cbt_create_wnd_utf16		CBT_CREATEWND;
+typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
