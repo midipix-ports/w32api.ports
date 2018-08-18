@@ -51,6 +51,7 @@
 						KEY_NOTIFY | KEY_CREATE_LINK) & (~SYNCHRONIZE))
 
 struct  winnt_security_descriptor;
+union   winnt_large_integer;
 
 typedef uint32_t				ACCESS_MASK;
 typedef uint32_t				*PACCESS_MASK;
@@ -61,6 +62,8 @@ typedef uint32_t				*PSECURITY_INFORMATION;
 typedef struct winnt_security_descriptor	SECURITY_DESCRIPTOR;
 typedef struct winnt_security_descriptor	*PSECURITY_DESCRIPTOR;
 
+typedef union winnt_large_integer		LARGE_INTEGER;
+
 struct winnt_security_descriptor {
         unsigned char   revision;
         unsigned char   sbz_1st;
@@ -69,6 +72,14 @@ struct winnt_security_descriptor {
         uint32_t        offset_group;
         uint32_t        offset_sacl;
         uint32_t        offset_dacl;
+};
+
+union winnt_large_integer {
+	struct {
+		uint32_t	ulow;
+		int32_t		ihigh;
+	};
+	long long		quad;
 };
 
 #endif
