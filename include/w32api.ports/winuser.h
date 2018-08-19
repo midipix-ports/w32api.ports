@@ -61,6 +61,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define COLOR_3DFACE 			COLOR_BTNFACE
 
 #define SPI_GETCARETWIDTH 		0x2006
+#define SPI_GETKEYBOARDDELAY		0x0016
+#define SPI_GETKEYBOARDSPEED		0x000A
 
 #define SB_VERT				1
 #define SB_LINEDOWN			1
@@ -1250,8 +1252,15 @@ __dllimport BOOL __stdcall GetIconInfo(HICON hIcon, PICONINFO piconinfo);
 __dllimport BOOL __stdcall DestroyMenu(HMENU hMenu);
 __dllimport BOOL __stdcall SetForegroundWindow(HWND hWnd);
 __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
+__dllimport int __stdcall GetKeyboardType(int nTypeFlag);
 
 
+__dllimport int __stdcall GetKeyboardLayoutNameA(LPSTR pwszKLID);
+__dllimport int __stdcall GetKeyboardLayoutNameM(LPSTR pwszKLID);
+__dllimport int __stdcall GetKeyboardLayoutNameW(LPWSTR pwszKLID);
+__dllimport HKL __stdcall LoadKeyboardLayoutA(LPCSTR pwszKLID, UINT Flags);
+__dllimport HKL __stdcall LoadKeyboardLayoutM(LPCSTR pwszKLID, UINT Flags);
+__dllimport HKL __stdcall LoadKeyboardLayoutW(LPCWSTR pwszKLID, UINT Flags);
 __dllimport LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall DefWindowProcM(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall DefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
@@ -1384,6 +1393,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define CreateWindowW(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExW((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define GetKeyboardLayoutName GetKeyboardLayoutNameA
+#define LoadKeyboardLayout LoadKeyboardLayoutA
 #define DefWindowProc DefWindowProcA
 #define SendMessage SendMessageA
 #define CreateWindowEx CreateWindowExA
@@ -1426,6 +1437,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define GetKeyboardLayoutName GetKeyboardLayoutNameM
+#define LoadKeyboardLayout LoadKeyboardLayoutM
 #define DefWindowProc DefWindowProcM
 #define SendMessage SendMessageM
 #define CreateWindowEx CreateWindowExM
@@ -1468,6 +1481,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define GetKeyboardLayoutName GetKeyboardLayoutNameW
+#define LoadKeyboardLayout LoadKeyboardLayoutW
 #define DefWindowProc DefWindowProcW
 #define SendMessage SendMessageW
 #define CreateWindowEx CreateWindowExW
