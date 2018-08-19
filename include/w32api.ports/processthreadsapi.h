@@ -2,74 +2,98 @@
 #define _W32API_PROCESSTHREADSAPI_H_
 
 #include <windef.h>
-
 #include <minwinbase.h>
 
 typedef struct _PROC_THREAD_ATTRIBUTE_LIST *PPROC_THREAD_ATTRIBUTE_LIST, *LPPROC_THREAD_ATTRIBUTE_LIST;
 
-typedef struct _STARTUPINFOA {
-    DWORD cb;
-    LPSTR lpReserved;
-    LPSTR lpDesktop;
-    LPSTR lpTitle;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwXSize;
-    DWORD dwYSize;
-    DWORD dwXCountChars;
-    DWORD dwYCountChars;
-    DWORD dwFillAttribute;
-    DWORD dwFlags;
-    WORD wShowWindow;
-    WORD cbReserved2;
-    LPBYTE lpReserved2;
-    HANDLE hStdInput;
-    HANDLE hStdOutput;
-    HANDLE hStdError;
-} STARTUPINFOA, *LPSTARTUPINFOA;
+struct processthreadsapi_startupinfo_ansi;
+struct processthreadsapi_startupinfo_utf8;
+struct processthreadsapi_startupinfo_utf16;
 
-typedef struct _STARTUPINFOM {
-    DWORD cb;
-    LPSTR lpReserved;
-    LPSTR lpDesktop;
-    LPSTR lpTitle;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwXSize;
-    DWORD dwYSize;
-    DWORD dwXCountChars;
-    DWORD dwYCountChars;
-    DWORD dwFillAttribute;
-    DWORD dwFlags;
-    WORD wShowWindow;
-    WORD cbReserved2;
-    LPBYTE lpReserved2;
-    HANDLE hStdInput;
-    HANDLE hStdOutput;
-    HANDLE hStdError;
-} STARTUPINFOM, *LPSTARTUPINFOM;
+typedef struct processthreadsapi_startupinfo_ansi		STARTUPINFOA, *LPSTARTUPINFOA;
+typedef struct processthreadsapi_startupinfo_utf8		STARTUPINFOM, *LPSTARTUPINFOM;
+typedef struct processthreadsapi_startupinfo_utf16		STARTUPINFOW, *LPSTARTUPINFOW;
 
-typedef struct _STARTUPINFOW {
-    DWORD cb;
-    LPWSTR lpReserved;
-    LPWSTR lpDesktop;
-    LPWSTR lpTitle;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwXSize;
-    DWORD dwYSize;
-    DWORD dwXCountChars;
-    DWORD dwYCountChars;
-    DWORD dwFillAttribute;
-    DWORD dwFlags;
-    WORD wShowWindow;
-    WORD cbReserved2;
-    LPBYTE lpReserved2;
-    HANDLE hStdInput;
-    HANDLE hStdOutput;
-    HANDLE hStdError;
-} STARTUPINFOW, *LPSTARTUPINFOW;
+
+struct processthreadsapi_startupinfo_ansi {
+	DWORD cb;
+	LPSTR lpReserved;
+	LPSTR lpDesktop;
+	LPSTR lpTitle;
+	DWORD dwX;
+	DWORD dwY;
+	DWORD dwXSize;
+	DWORD dwYSize;
+	DWORD dwXCountChars;
+	DWORD dwYCountChars;
+	DWORD dwFillAttribute;
+	DWORD dwFlags;
+	WORD wShowWindow;
+	WORD cbReserved2;
+	LPBYTE lpReserved2;
+	HANDLE hStdInput;
+	HANDLE hStdOutput;
+	HANDLE hStdError;
+};
+
+struct processthreadsapi_startupinfo_utf8 {
+	DWORD cb;
+	LPSTR lpReserved;
+	LPSTR lpDesktop;
+	LPSTR lpTitle;
+	DWORD dwX;
+	DWORD dwY;
+	DWORD dwXSize;
+	DWORD dwYSize;
+	DWORD dwXCountChars;
+	DWORD dwYCountChars;
+	DWORD dwFillAttribute;
+	DWORD dwFlags;
+	WORD wShowWindow;
+	WORD cbReserved2;
+	LPBYTE lpReserved2;
+	HANDLE hStdInput;
+	HANDLE hStdOutput;
+	HANDLE hStdError;
+};
+
+struct processthreadsapi_startupinfo_utf16 {
+	DWORD cb;
+	LPWSTR lpReserved;
+	LPWSTR lpDesktop;
+	LPWSTR lpTitle;
+	DWORD dwX;
+	DWORD dwY;
+	DWORD dwXSize;
+	DWORD dwYSize;
+	DWORD dwXCountChars;
+	DWORD dwYCountChars;
+	DWORD dwFillAttribute;
+	DWORD dwFlags;
+	WORD wShowWindow;
+	WORD cbReserved2;
+	LPBYTE lpReserved2;
+	HANDLE hStdInput;
+	HANDLE hStdOutput;
+	HANDLE hStdError;
+};
 
 __dllimport HANDLE __stdcall CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
+
+
+#ifdef WINAPI_ANSI_DEFAULT
+typedef struct processthreadsapi_startupinfo_ansi		STARTUPINFO, *LPSTARTUPINFO;
+#endif
+
+
+#ifdef WINAPI_UTF8_DEFAULT
+typedef struct processthreadsapi_startupinfo_utf8		STARTUPINFO, *LPSTARTUPINFO;
+#endif
+
+
+#ifdef WINAPI_UTF16_DEFAULT
+typedef struct processthreadsapi_startupinfo_utf16		STARTUPINFO, *LPSTARTUPINFO;
+#endif
+
 
 #endif
