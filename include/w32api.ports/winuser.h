@@ -1600,6 +1600,8 @@ __dllimport UINT __stdcall GetDoubleClickTime(void);
 __dllimport long __stdcall GetMessageTime(void);
 __dllimport HWND __stdcall WindowFromPoint(POINT Point);
 __dllimport int __stdcall ShowCursor(int bShow);
+__dllimport HCURSOR __stdcall CreateCursor(HINSTANCE hInst, int xHotSpot, int yHotSpot, int nWidth, int nHeight, const void *pvANDPlane, const void *pvXORPlane);
+__dllimport int __stdcall DestroyCursor(HCURSOR hCursor);
 __dllimport HCURSOR __stdcall SetCursor(HCURSOR hCursor);
 __dllimport int __stdcall GetCursorPos(LPPOINT lpPoint);
 __dllimport UINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc);
