@@ -1652,6 +1652,9 @@ __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
 __dllimport int __stdcall GetKeyboardType(int nTypeFlag);
 
 
+__dllimport HANDLE __stdcall GetPropA(HWND hwnd, LPCSTR lpString);
+__dllimport HANDLE __stdcall GetPropM(HWND hwnd, LPCSTR lpString);
+__dllimport HANDLE __stdcall GetPropW(HWND hwnd, LPCWSTR lpString);
 __dllimport int __stdcall GetKeyboardLayoutNameA(LPSTR pwszKLID);
 __dllimport int __stdcall GetKeyboardLayoutNameM(LPSTR pwszKLID);
 __dllimport int __stdcall GetKeyboardLayoutNameW(LPWSTR pwszKLID);
@@ -1793,6 +1796,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define CreateWindowW(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExW((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define GetProp GetPropA
 #define GetKeyboardLayoutName GetKeyboardLayoutNameA
 #define LoadKeyboardLayout LoadKeyboardLayoutA
 #define DefWindowProc DefWindowProcA
@@ -1838,6 +1842,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define GetProp GetPropM
 #define GetKeyboardLayoutName GetKeyboardLayoutNameM
 #define LoadKeyboardLayout LoadKeyboardLayoutM
 #define DefWindowProc DefWindowProcM
@@ -1883,6 +1888,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define GetProp GetPropW
 #define GetKeyboardLayoutName GetKeyboardLayoutNameW
 #define LoadKeyboardLayout LoadKeyboardLayoutW
 #define DefWindowProc DefWindowProcW
