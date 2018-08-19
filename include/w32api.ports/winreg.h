@@ -42,7 +42,6 @@ extern "C" {
 #define REG_QWORD			(11)
 
 /* registry value flag bits */
-
 #define RRF_RT_REG_NONE			(0x00000001)
 #define RRF_RT_REG_SZ			(0x00000002)
 #define RRF_RT_REG_EXPAND_SZ		(0x00000004)
@@ -51,9 +50,9 @@ extern "C" {
 #define RRF_RT_REG_MULTI_SZ		(0x00000020)
 #define RRF_RT_REG_QWORD		(0x00000040)
 
-#define RRF_RT_DWORD			(0x00000018)
-#define RRF_RT_QWORD			(0x00000048)
-#define RRF_RT_ANY			(0x0000FFFF)
+#define RRF_RT_DWORD			(RRF_RT_REG_BINARY | RRF_RT_REG_DWORD)
+#define RRF_RT_QWORD			(RRF_RT_REG_BINARY | RRF_RT_REG_QWORD)
+#define RRF_RT_ANY			(0x0000ffff)
 
 /* registry notification bits */
 #define REG_NOTIFY_CHANGE_NAME		(0x01)
@@ -707,6 +706,88 @@ __dllimport w32api_reg_get_key_security			RegGetKeySecurity;
 __dllimport w32api_reg_close_key			RegCloseKey;
 __dllimport w32api_reg_flush_key			RegFlushKey;
 __dllimport w32api_reg_notify_change_key_value		RegNotifyChangeKeyValue;
+
+
+#ifdef WINAPI_ANSI_DEFAULT
+__dllimport win32api_abort_system_shutdown_ansi         AbortSystemShutdown;
+__dllimport win32api_initiate_system_shutdown_ansi      InitiateSystemShutdown;
+__dllimport w32api_reg_connect_registry_ansi            RegConnectRegistry;
+__dllimport w32api_reg_create_key_ansi                  RegCreateKey;
+__dllimport w32api_reg_create_key_ex_ansi               RegCreateKeyEx;
+__dllimport w32api_reg_delete_key_ansi                  RegDeleteKey;
+__dllimport w32api_reg_delete_value_ansi                RegDeleteValue;
+__dllimport w32api_reg_enum_key_ansi                    RegEnumKey;
+__dllimport w32api_reg_enum_key_ex_ansi                 RegEnumKeyEx;
+__dllimport w32api_reg_enum_value_ansi                  RegEnumValue;
+__dllimport w32api_reg_load_key_ansi                    RegLoadKey;
+__dllimport w32api_reg_load_key_ansi                    RegUnLoadKey;
+__dllimport w32api_reg_open_key_ansi                    RegOpenKey;
+__dllimport w32api_reg_open_key_ex_ansi                 RegOpenKeyEx;
+__dllimport w32api_reg_query_info_key_ansi              RegQueryInfoKey;
+__dllimport w32api_reg_query_value_ansi                 RegQueryValue;
+__dllimport w32api_reg_query_value_ex_ansi              RegQueryValueEx;
+__dllimport w32api_reg_query_multiple_values_ansi       RegQueryMultipleValues;
+__dllimport w32api_reg_replace_key_ansi                 RegReplaceKey;
+__dllimport w32api_reg_restore_key_ansi                 RegRestoreKey;
+__dllimport w32api_reg_save_key_ansi                    RegSaveKey;
+__dllimport w32api_reg_set_value_ansi                   RegSetValue;
+__dllimport w32api_reg_set_value_ex_ansi                RegSetValueEx;
+__dllimport w32api_reg_get_value_ansi                   RegGetValue;
+#endif
+
+#ifdef WINAPI_UTF8_DEFAULT
+__dllimport win32api_abort_system_shutdown_utf8         AbortSystemShutdown;
+__dllimport win32api_initiate_system_shutdown_utf8      InitiateSystemShutdown;
+__dllimport w32api_reg_connect_registry_utf8            RegConnectRegistry;
+__dllimport w32api_reg_create_key_utf8                  RegCreateKey;
+__dllimport w32api_reg_create_key_ex_utf8               RegCreateKeyEx;
+__dllimport w32api_reg_delete_key_utf8                  RegDeleteKey;
+__dllimport w32api_reg_delete_value_utf8                RegDeleteValue;
+__dllimport w32api_reg_enum_key_utf8                    RegEnumKey;
+__dllimport w32api_reg_enum_key_ex_utf8                 RegEnumKeyEx;
+__dllimport w32api_reg_enum_value_utf8                  RegEnumValue;
+__dllimport w32api_reg_load_key_utf8                    RegLoadKey;
+__dllimport w32api_reg_load_key_utf8                    RegUnLoadKey;
+__dllimport w32api_reg_open_key_utf8                    RegOpenKey;
+__dllimport w32api_reg_open_key_ex_utf8                 RegOpenKeyEx;
+__dllimport w32api_reg_query_info_key_ex_utf8           RegQueryInfoKey;
+__dllimport w32api_reg_query_value_utf8                 RegQueryValue;
+__dllimport w32api_reg_query_value_ex_utf8              RegQueryValueEx;
+__dllimport w32api_reg_query_multiple_values_utf8       RegQueryMultipleValues;
+__dllimport w32api_reg_replace_key_utf8                 RegReplaceKey;
+__dllimport w32api_reg_restore_key_utf8                 RegRestoreKey;
+__dllimport w32api_reg_save_key_utf8                    RegSaveKey;
+__dllimport w32api_reg_set_value_utf8                   RegSetValue;
+__dllimport w32api_reg_set_value_ex_utf8                RegSetValueEx;
+__dllimport w32api_reg_get_value_utf8                   RegGetValue;
+#endif
+
+#ifdef WINAPI_UTF16_DEFAULT
+__dllimport win32api_abort_system_shutdown_utf16	AbortSystemShutdown;
+__dllimport win32api_initiate_system_shutdown_utf16	InitiateSystemShutdown;
+__dllimport w32api_reg_connect_registry_utf16		RegConnectRegistry;
+__dllimport w32api_reg_create_key_utf16			RegCreateKey;
+__dllimport w32api_reg_create_key_ex_utf16		RegCreateKeyEx;
+__dllimport w32api_reg_delete_key_utf16			RegDeleteKey;
+__dllimport w32api_reg_delete_value_utf16		RegDeleteValue;
+__dllimport w32api_reg_enum_key_utf16			RegEnumKey;
+__dllimport w32api_reg_enum_key_ex_utf16		RegEnumKeyEx;
+__dllimport w32api_reg_enum_value_utf16			RegEnumValue;
+__dllimport w32api_reg_load_key_utf16			RegLoadKey;
+__dllimport w32api_reg_load_key_utf16			RegUnLoadKey;
+__dllimport w32api_reg_open_key_utf16			RegOpenKey;
+__dllimport w32api_reg_open_key_ex_utf16		RegOpenKeyEx;
+__dllimport w32api_reg_query_info_key_utf16		RegQueryInfoKey;
+__dllimport w32api_reg_query_value_utf16		RegQueryValue;
+__dllimport w32api_reg_query_value_ex_utf16		RegQueryValueEx;
+__dllimport w32api_reg_query_multiple_values_utf16	RegQueryMultipleValues;
+__dllimport w32api_reg_replace_key_utf16		RegReplaceKey;
+__dllimport w32api_reg_restore_key_utf16		RegRestoreKey;
+__dllimport w32api_reg_save_key_utf16			RegSaveKey;
+__dllimport w32api_reg_set_value_utf16			RegSetValue;
+__dllimport w32api_reg_set_value_ex_utf16		RegSetValueEx;
+__dllimport w32api_reg_get_value_utf16			RegGetValue;
+#endif
 
 
 #ifdef __cplusplus
