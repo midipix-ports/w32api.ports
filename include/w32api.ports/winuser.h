@@ -1563,6 +1563,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport HWND __stdcall GetActiveWindow(void);
 __dllimport HWND __stdcall GetForegroundWindow(void);
 __dllimport int __stdcall EnableWindow(HWND hwnd,BOOL enabled);
 __dllimport int __stdcall UpdateWindow(HWND hwnd);
