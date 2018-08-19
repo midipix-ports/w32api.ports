@@ -956,7 +956,9 @@ typedef w32api_wnd_proc WNDPROC;
 #define GWL_STYLE 			(-16)
 #define GWL_EXSTYLE 			(-20)
 
-#define PM_REMOVE 			0x0001
+#define PM_NOREMOVE			0x0000
+#define PM_REMOVE			0x0001
+#define PM_NOYIELD			0x0002
 
 #define CW_USEDEFAULT 			((int)0x80000000)
 
