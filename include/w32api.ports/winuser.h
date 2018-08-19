@@ -1816,9 +1816,6 @@ __dllimport int __stdcall InsertMenuW(HMENU hMenu, UINT uPosition, UINT uFlags, 
 __dllimport ULONG_PTR __stdcall SetClassLongPtrA(HWND hWnd, int nIndex, LONG_PTR dwNewLong);
 __dllimport ULONG_PTR __stdcall SetClassLongPtrM(HWND hWnd, int nIndex, LONG_PTR dwNewLong);
 __dllimport ULONG_PTR __stdcall SetClassLongPtrW(HWND hWnd, int nIndex, LONG_PTR dwNewLong);
-__dllimport LONG_PTR __stdcall SetWindowLongPtrA(HWND, int nIndex, LONG_PTR dwNewLong);
-__dllimport LONG_PTR __stdcall SetWindowLongPtrM(HWND, int nIndex, LONG_PTR dwNewLong);
-__dllimport LONG_PTR __stdcall SetWindowLongPtrW(HWND, int nIndex, LONG_PTR dwNewLong);
 __dllimport LRESULT __stdcall DispatchMessageA(const MSG *lpMsg);
 __dllimport LRESULT __stdcall DispatchMessageM(const MSG *lpMsg);
 __dllimport LRESULT __stdcall DispatchMessageW(const MSG *lpMsg);
@@ -1837,6 +1834,14 @@ __dllimport int __stdcall PeekMessageW(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMi
 __dllimport int __stdcall GetMonitorInfoA(HMONITOR hMonitor,LPMONITORINFO lpmi);
 __dllimport int __stdcall GetMonitorInfoM(HMONITOR hMonitor,LPMONITORINFO lpmi);
 __dllimport int __stdcall GetMonitorInfoW(HMONITOR hMonitor,LPMONITORINFO lpmi);
+#if defined(__NT64)
+__dllimport LONG_PTR __stdcall SetWindowLongPtrA(HWND, int nIndex, LONG_PTR dwNewLong);
+__dllimport LONG_PTR __stdcall SetWindowLongPtrM(HWND, int nIndex, LONG_PTR dwNewLong);
+__dllimport LONG_PTR __stdcall SetWindowLongPtrW(HWND, int nIndex, LONG_PTR dwNewLong);
+__dllimport LONG_PTR __stdcall GetWindowLongPtrA(HWND hwnd, int nIndex);
+__dllimport LONG_PTR __stdcall GetWindowLongPtrM(HWND hwnd, int nIndex);
+__dllimport LONG_PTR __stdcall GetWindowLongPtrW(HWND hwnd, int nIndex);
+#endif
 __dllimport LONG __stdcall GetWindowLongA(HWND hWnd, int nIndex);
 __dllimport LONG __stdcall GetWindowLongM(HWND hWnd, int nIndex);
 __dllimport LONG __stdcall GetWindowLongW(HWND hWnd, int nIndex);
@@ -1883,6 +1888,15 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define CreateWindowM(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExM((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 #define CreateWindowW(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExW((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 
+#if defined(__NT32)
+#define GetWindowLongPtrA GetWindowLongA
+#define GetWindowLongPtrM GetWindowLongM
+#define GetWindowLongPtrW GetWindowLongW
+#define SetWindowLongPtrA SetWindowLongA
+#define SetWindowLongPtrM SetWindowLongM
+#define SetWindowLongPtrW SetWindowLongW
+#endif
+
 #ifdef WINAPI_ANSI_DEFAULT
 #define GetProp GetPropA
 #define GetKeyboardLayoutName GetKeyboardLayoutNameA
@@ -1916,6 +1930,10 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define SendDlgItemMessage SendDlgItemMessageA
 #define PeekMessage PeekMessageA
 #define GetMonitorInfo GetMonitorInfoA
+#if defined(__NT32)
+#define GetWindowLongPtr GetWindowLongA
+#define SetWindowLongPtr SetWindowLongA
+#endif
 #define GetWindowLong GetWindowLongA
 #define SetWindowLong SetWindowLongA
 #define RegisterClassEx RegisterClassExA
@@ -1962,6 +1980,10 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define SendDlgItemMessage SendDlgItemMessageM
 #define PeekMessage PeekMessageM
 #define GetMonitorInfo GetMonitorInfoM
+#if defined(__NT32)
+#define GetWindowLongPtr GetWindowLongM
+#define SetWindowLongPtr SetWindowLongM
+#endif
 #define GetWindowLong GetWindowLongM
 #define SetWindowLong SetWindowLongM
 #define RegisterClassEx RegisterClassExM
@@ -2008,6 +2030,10 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define SendDlgItemMessage SendDlgItemMessageW
 #define PeekMessage PeekMessageW
 #define GetMonitorInfo GetMonitorInfoW
+#if defined(__NT32)
+#define GetWindowLongPtr GetWindowLongW
+#define SetWindowLongPtr SetWindowLongW
+#endif
 #define GetWindowLong GetWindowLongW
 #define SetWindowLong SetWindowLongW
 #define RegisterClassEx RegisterClassExW
