@@ -1577,6 +1577,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport HICON __stdcall CreateIconIndirect(PICONINFO piconinfo);
 __dllimport int _stdcall MapWindowPoints(HWND hWndFrom, HWND hWndTo, LPPOINT lpPoints, UINT cPoints);
 __dllimport HWND __stdcall GetActiveWindow(void);
 __dllimport HWND __stdcall GetForegroundWindow(void);
