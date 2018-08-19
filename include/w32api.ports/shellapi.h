@@ -3,6 +3,19 @@
 
 #include <windef.h>
 
+struct shellapi_appbardata;
+
+typedef struct shellapi_appbardata		APPBARDATA,*PAPPBARDATA;
+
+struct shellapi_appbardata {
+	DWORD cbSize;
+	HWND hWnd;
+	UINT uCallbackMessage;
+	UINT uEdge;
+	RECT rc;
+	LPARAM lParam;
+};
+
 __dllimport UINT __stdcall ExtractIconExW(LPCWSTR lpszFile, int nIconIndex, HICON *phiconLarge, HICON *phiconSmall, UINT nIcons);
 __dllimport UINT __stdcall DragQueryFileW(HDROP hDrop, UINT iFile, LPWSTR lpszFile, UINT cch);
 __dllimport HINSTANCE __stdcall ShellExecuteW(HWND hWnd, LPCWSTR lpOperation, LPCWSTR pFile, LPCWSTR lpParameters, LPCWSTR lpDirectory, INT nShowCmd);
