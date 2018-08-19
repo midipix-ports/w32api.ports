@@ -786,8 +786,12 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define KL_NAMELENGTH			9
 
-#define WM_APP 				0x8000
+#define WM_NULL				0x0000
 #define WM_CREATE			0x0001
+#define WM_APP                          0x8000
+#define WM_NEXTDLGCTL			0x0028
+#define WM_DISPLAYCHANGE		0x007E
+#define WM_SETCURSOR			0x0020
 #define WM_VSCROLL 			0x0115
 #define WM_SYSCOMMAND 			0x0112
 #define WM_PAINT 			0x000F
