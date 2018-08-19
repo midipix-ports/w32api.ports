@@ -1202,6 +1202,7 @@ __dllimport int __stdcall EndPaint(HWND hwnd, const PAINTSTRUCT *lpPaint);
 __dllimport int __stdcall DestroyWindow(HWND hwnd);
 __dllimport unsigned long __stdcall GetSysColor(int nIndex);
 __dllimport int __stdcall TranslateMessage(const MSG *lpMsg);
+__dllimport void __stdcall PostQuitMessage(int exitCode);
 __dllimport short __stdcall GetKeyState(int nVirtKey);
 __dllimport int __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, int bErase);
 __dllimport int __stdcall CheckRadioButton(HWND hDlg, int nIDFirstButton, int nIDLastButton, int nIDCheckButton);
