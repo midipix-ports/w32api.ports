@@ -20,6 +20,9 @@ __dllimport UINT __stdcall ExtractIconExW(LPCWSTR lpszFile, int nIconIndex, HICO
 __dllimport UINT __stdcall DragQueryFileW(HDROP hDrop, UINT iFile, LPWSTR lpszFile, UINT cch);
 __dllimport HINSTANCE __stdcall ShellExecuteW(HWND hWnd, LPCWSTR lpOperation, LPCWSTR pFile, LPCWSTR lpParameters, LPCWSTR lpDirectory, INT nShowCmd);
 
+__dllimport UINT_PTR __stdcall SHAppBarMessage(DWORD dwMessage, PAPPBARDATA pData);
+
+
 #define ABM_NEW					0x00000000
 #define ABM_REMOVE				0x00000001
 #define ABM_QUERYPOS				0x00000002
