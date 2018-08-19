@@ -905,7 +905,11 @@ typedef w32api_wnd_proc WNDPROC;
 #define GCLP_HCURSOR 			(-12)
 #define GCLP_HICONSM			(-34)
 
-#define GWLP_WNDPROC 			(-4)
+#define GWLP_WNDPROC			(-4)
+#define GWLP_HINSTANCE			(-6)
+#define GWLP_HWNDPARENT			(-8)
+#define GWLP_USERDATA			(-21)
+#define GWLP_ID				(-12)
 
 #define HBMMENU_CALLBACK		((HBITMAP)(-1))
 #define HBMMENU_SYSTEM			((HBITMAP)1)
