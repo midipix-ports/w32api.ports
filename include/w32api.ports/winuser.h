@@ -873,9 +873,6 @@ typedef w32api_wnd_proc WNDPROC;
 #define TPM_TOPALIGN 			(0x0000)
 #define TPM_LEFTALIGN 			(0x0000)
 
-#define SPI_GETWHEELSCROLLLINES		(0x0068)
-#define SPI_GETNONCLIENTMETRICS		(0x0029)
-
 #define GCLP_HCURSOR 			(-12)
 #define GCLP_HICONSM			(-34)
 
@@ -1057,6 +1054,8 @@ struct  w32api_msgboxparams_asni;
 struct  w32api_msgboxparams_utf8;
 struct  w32api_msgboxparams_utf16;
 
+struct winuser_kb_dll_hook_struct;
+
 
 typedef struct w32api_nmhdr *LPNMHDR;
 typedef struct w32api_icon_info	ICONINFO,*PICONINFO,*LPICONINFO;
@@ -1070,6 +1069,7 @@ typedef struct w32api_scroll_info SCROLLINFO,*LPSCROLLINFO,*LPCSCROLLINFO;
 typedef struct w32api_paint_struct PAINTSTRUCT,*PPAINTSTRUCT,*NPPAINTSTRUCT,*LPPAINTSTRUCT;
 typedef struct w32api_draw_item_struct DRAWITEMSTRUCT,*PDRAWITEMSTRUCT,*LPDRAWITEMSTRUCT;
 
+typedef struct winuser_kd_dll_hook_struct KBDLLHOOKSTRUCT,*LPKBDLLHOOKSTRUCT,*PKBDLLHOOKSTRUCT;
 
 typedef struct w32api_wnd_class_ansi WNDCLASSA, *PWNDCLASSA, *NPWNDCLASSA, *LPWNDCLASSA;
 typedef struct w32api_wnd_class_utf8 WNDCLASSM, *PWNDCLASSM, *NPWNDCLASSM, *LPWNDCLASSM;
@@ -1210,7 +1210,13 @@ struct w32api_draw_item_struct {
     ULONG_PTR itemData;
 };
 
-
+struct winuser_kd_dll_hook_struct {
+	DWORD vkCode;
+	DWORD scanCode;
+	DWORD flags;
+	DWORD time;
+	ULONG_PTR dwExtraInfo;
+};
 
 //ansi-utf8-utf16 structs
 struct  w32api_cbt_create_wnd_ansi {
