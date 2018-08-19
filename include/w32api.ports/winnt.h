@@ -48,6 +48,9 @@
 
 #define SYNCHRONIZE                      	(uint32_t)(0x00100000)
 
+#define LANG_NEUTRAL				0x00
+#define SUBLANG_NEUTRAL				0x00
+
 #define KEY_ALL_ACCESS 				((STANDARD_RIGHTS_ALL | \
 						KEY_QUERY_VALUE | KEY_SET_VALUE | \
 						KEY_CREATE_SUB_KEY | KEY_ENUMERATE_SUB_KEYS | \
