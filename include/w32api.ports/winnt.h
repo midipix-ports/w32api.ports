@@ -2,6 +2,9 @@
 #define _W32API_WINNT_H_
 
 #include <stdint.h>
+#include <windef.h>
+
+#define ES_DISPLAY_REQUIRED			((DWORD)0x00000002)
 
 #define FILE_ATTRIBUTE_READONLY			0x00000001
 #define FILE_ATTRIBUTE_HIDDEN			0x00000002
