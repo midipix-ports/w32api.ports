@@ -797,8 +797,12 @@ typedef w32api_wnd_proc WNDPROC;
 #define VK_PA1				0xFD
 #define VK_OEM_CLEAR			0xFE
 
-#define KF_REPEAT 			0x4000
-#define KF_EXTENDED 			0x0100
+#define KF_EXTENDED			0x0100
+#define KF_DLGMODE			0x0800
+#define KF_MENUMODE			0x1000
+#define KF_ALTDOWN			0x2000
+#define KF_REPEAT			0x4000
+#define KF_UP				0x8000
 
 #define KLF_ACTIVATE			0x00000001
 #define KLF_SUBSTITUTE_OK		0x00000002
@@ -810,6 +814,11 @@ typedef w32api_wnd_proc WNDPROC;
 #define KLF_RESET			0x40000000
 
 #define KL_NAMELENGTH			9
+
+#define LLKHF_EXTENDED			(KF_EXTENDED >> 8)
+#define LLKHF_INJECTED			0x00000010
+#define LLKHF_ALTDOWN			(KF_ALTDOWN >> 8)
+#define LLKHF_UP			(KF_UP >> 8)
 
 #define WM_NULL				0x0000
 #define WM_CREATE			0x0001
