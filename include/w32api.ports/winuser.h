@@ -984,6 +984,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define HCBT_SYSCOMMAND			8
 #define HCBT_SETFOCUS			9
 
+#define HWND_DESKTOP			((HWND)0)
 #define HWND_TOP 			((HWND)0)
 #define HWND_BOTTOM 			((HWND)1)
 #define HWND_NOTOPMOST			((HWND)-2)
