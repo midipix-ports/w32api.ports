@@ -192,6 +192,7 @@ __dllimport void __stdcall GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo);
 
 
 __dllimport DWORD GetCurrentThreadId(void);
+__dllimport EXECUTION_STATE __stdcall SetThreadExecutionState(EXECUTION_STATE es);
 
 #ifdef WINAPI_ANSI_DEFAULT
 	#define FormatMessage				FormatMessageA

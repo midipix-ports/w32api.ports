@@ -68,6 +68,9 @@ typedef uint32_t				*PSECURITY_INFORMATION;
 typedef struct winnt_security_descriptor	SECURITY_DESCRIPTOR;
 typedef struct winnt_security_descriptor	*PSECURITY_DESCRIPTOR;
 
+typedef DWORD					EXECUTION_STATE;
+typedef DWORD					*PEXECUTION_STATE;
+
 typedef union winnt_large_integer		LARGE_INTEGER;
 
 struct winnt_security_descriptor {
