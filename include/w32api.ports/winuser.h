@@ -992,10 +992,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define SWP_NOREPOSITION 		SWP_NOOWNERZORDER
 
 #define WS_POPUP 			(0x80000000)
-#define WS_EX_TOPMOST 			(int32_t)(0x00000008)
-#define WS_EX_TOOLWINDOW 		(int32_t)(0x00000080)
 #define WS_TABSTOP 			(int32_t)(0x00010000)
-#define WS_EX_CLIENTEDGE 		(int32_t)(0x00000200)
 #define WS_VISIBLE 			(int32_t)(0x10000000)
 #define WS_CHILD 			(int32_t)(0x40000000)
 #define WS_VSCROLL 			(int32_t)(0x00200000)
@@ -1005,12 +1002,17 @@ typedef w32api_wnd_proc WNDPROC;
 #define WS_BORDER 			(int32_t)(0x00800000)
 #define WS_MAXIMIZEBOX 			(int32_t)(0x00010000)
 #define WS_SYSMENU 			(0x00080000)
-#define WS_EX_LEFTSCROLLBAR 		(int32_t)(0x00004000)
 #define WS_MINIMIZEBOX 			(int32_t)(0x00020000)
 #define WS_OVERLAPPED 			(int32_t)(0x00000000)
 #define WS_OVERLAPPEDWINDOW 		(WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX)
-#define WS_EX_LAYERED 			0x00080000
 #define WS_GROUP 			(int32_t)(0x00020000)
+
+#define WS_EX_TOPMOST                   (int32_t)(0x00000008)
+#define WS_EX_CLIENTEDGE                (int32_t)(0x00000200)
+#define WS_EX_TOOLWINDOW                (int32_t)(0x00000080)
+#define WS_EX_LEFTSCROLLBAR             (int32_t)(0x00004000)
+#define WS_EX_APPWINDOW			(int32_t)(0x00040000)
+#define WS_EX_LAYERED                   0x00080000
 
 #define ES_AUTOHSCROLL 			(0x0080)
 
