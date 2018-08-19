@@ -961,8 +961,24 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define STARTF_USESHOWWINDOW 		0x00000001
 
-#define HCBT_ACTIVATE			5
+#define HC_ACTION			0
+#define HC_GETNEXT			1
+#define HC_SKIP				2
+#define HC_NOREMOVE			3
+#define HC_NOREM			HC_NOREMOVE
+#define HC_SYSMODALON			4
+#define HC_SYSMODALOFF			5
+
+#define HCBT_MOVESIZE			0
+#define HCBT_MINMAX			1
+#define HCBT_QS				2
 #define HCBT_CREATEWND			3
+#define HCBT_DESTROYWND			4
+#define HCBT_ACTIVATE			5
+#define HCBT_CLICKSKIPPED		6
+#define HCBT_KEYSKIPPED			7
+#define HCBT_SYSCOMMAND			8
+#define HCBT_SETFOCUS			9
 
 #define HWND_TOP 			((HWND)0)
 #define HWND_BOTTOM 			((HWND)1)
