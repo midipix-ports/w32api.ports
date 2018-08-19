@@ -24,10 +24,8 @@ typedef void			*HACCEL;
 typedef LPWSTR			LPOLEWSTR;
 typedef LPCWSTR			LPCOLEWSTR;
 
-#ifdef  WINAPI_UTF16_DEFAULT
 typedef LPWSTR			LPOLESTR;
 typedef LPCWSTR			LPCOLESTR;
-#endif
 
 /* enum and struct forward declarations */
 enum   w32api_cls_ctx;
