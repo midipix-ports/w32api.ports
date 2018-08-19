@@ -1933,6 +1933,9 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #if defined(__NT32)
 #define GetWindowLongPtr GetWindowLongA
 #define SetWindowLongPtr SetWindowLongA
+#else
+#define GetWindowLongPtr GetWindowLongPtrA
+#define SetWindowLongPtr SetWindowLongPtrA
 #endif
 #define GetWindowLong GetWindowLongA
 #define SetWindowLong SetWindowLongA
@@ -1983,6 +1986,9 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #if defined(__NT32)
 #define GetWindowLongPtr GetWindowLongM
 #define SetWindowLongPtr SetWindowLongM
+#else
+#define GetWindowLongPtr GetWindowLongPtrM
+#define SetWindowLongPtr SetWindowLongPtrM
 #endif
 #define GetWindowLong GetWindowLongM
 #define SetWindowLong SetWindowLongM
@@ -2033,6 +2039,9 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #if defined(__NT32)
 #define GetWindowLongPtr GetWindowLongW
 #define SetWindowLongPtr SetWindowLongW
+#else
+#define GetWindowLongPtr GetWindowLongPtrW
+#define SetWindowLongPtr SetWindowLongPtrW
 #endif
 #define GetWindowLong GetWindowLongW
 #define SetWindowLong SetWindowLongW
