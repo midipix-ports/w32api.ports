@@ -994,7 +994,7 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define EDGE_ETCHED 			(BDR_SUNKENOUTER | BDR_RAISEDINNER)
 
-#define IDCANCEL 				2
+#define IDCANCEL 			2
 
 #define DM_SETDEFID 			(WM_USER+1)
 
@@ -1008,6 +1008,8 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define DLGWINDOWEXTRA			30
 
+#define ICON_SMALL			0
+#define ICON_SMALL2			2
 #define ICON_BIG 			1
 
 #define SIZE_MINIMIZED			1
