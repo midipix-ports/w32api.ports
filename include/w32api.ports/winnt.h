@@ -53,6 +53,8 @@
 						KEY_CREATE_SUB_KEY | KEY_ENUMERATE_SUB_KEYS | \
 						KEY_NOTIFY | KEY_CREATE_LINK) & (~SYNCHRONIZE))
 
+#define MAKELANGID(p,s)				((((WORD)(s)) << 10) | (WORD)(p))
+
 #define RtlZeroMemory(destination,length)	memset((destination),0,(length))
 #define ZeroMemory				RtlZeroMemory
 
