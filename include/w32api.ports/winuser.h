@@ -1558,6 +1558,7 @@ __dllimport int __stdcall DestroyWindow(HWND hwnd);
 __dllimport unsigned long __stdcall GetSysColor(int nIndex);
 __dllimport int __stdcall TranslateMessage(const MSG *lpMsg);
 __dllimport void __stdcall PostQuitMessage(int exitCode);
+__dllimport short __stdcall GetAsyncKeyState(int vKey);
 __dllimport short __stdcall GetKeyState(int nVirtKey);
 __dllimport int __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, int bErase);
 __dllimport int __stdcall CheckRadioButton(HWND hDlg, int nIDFirstButton, int nIDLastButton, int nIDCheckButton);
@@ -1674,6 +1675,9 @@ __dllimport int __stdcall MessageBoxIndirectW(const MSGBOXPARAMSW *lpmbp);
 __dllimport UINT __stdcall MapVirtualKeyA(UINT uCode, UINT uMapType);
 __dllimport UINT __stdcall MapVirtualKeyM(UINT uCode, UINT uMapType);
 __dllimport UINT __stdcall MapVirtualKeyW(UINT uCode, UINT uMapType);
+__dllimport UINT __stdcall MapVirtualKeyExA(UINT uCode, UINT uMapType, HKL dwhkl);
+__dllimport UINT __stdcall MapVirtualKeyExM(UINT uCode, UINT uMapType, HKL dwhkl);
+__dllimport UINT __stdcall MapVirtualKeyExW(UINT uCode, UINT uMapType, HKL dwhkl);
 __dllimport HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName);
 __dllimport HCURSOR __stdcall LoadCursorM(HINSTANCE hInstance, LPCSTR lpCursorName);
 __dllimport HCURSOR __stdcall LoadCursorW(HINSTANCE hInstance, LPCWSTR lpCursorName);
@@ -1777,6 +1781,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define DefDlgProc DefDlgProcA
 #define MessageBoxIndirect MessageBoxIndirectA
 #define MapVirtualKey MapVirtualKeyA
+#define MapVirtualKeyEx MapVirtualKeyExA
 #define ModifyMenu ModifyMenuA
 #define LoadCursor LoadCursorA
 #define LoadIcon LoadIconA
@@ -1821,6 +1826,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define DefDlgProc DefDlgProcM
 #define MessageBoxIndirect MessageBoxIndirectM
 #define MapVirtualKey MapVirtualKeyM
+#define MapVirtualKeyEx MapVirtualKeyExM
 #define ModifyMenu ModifyMenuM
 #define LoadCursor LoadCursorM
 #define LoadIcon LoadIconM
@@ -1865,6 +1871,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define DefDlgProc DefDlgProcW
 #define MessageBoxIndirect MessageBoxIndirectW
 #define MapVirtualKey MapVirtualKeyW
+#define MapVirtualKeyEx MapVirtualKeyExW
 #define ModifyMenu ModifyMenuW
 #define LoadCursor LoadCursorW
 #define LoadIcon LoadIconW
