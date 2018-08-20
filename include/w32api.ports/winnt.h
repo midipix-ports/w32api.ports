@@ -103,6 +103,10 @@ struct	winnt_os_version_info_ansi;
 struct	winnt_os_version_info_utf8;
 struct	winnt_os_version_info_utf16;
 
+struct	winnt_os_version_info_ex_ansi;
+struct	winnt_os_version_info_ex_utf8;
+struct	winnt_os_version_info_ex_utf16;
+
 typedef uint32_t				ACCESS_MASK;
 typedef uint32_t				*PACCESS_MASK;
 
@@ -123,6 +127,9 @@ typedef struct winnt_os_version_info_ansi		OSVERSIONINFOA,*POSVERSIONINFOA,*LPOS
 typedef struct winnt_os_version_info_utf8		OSVERSIONINFOM,*POSVERSIONINFOM,*LPOSVERSIONINFOM;
 typedef struct winnt_os_version_info_utf16		OSVERSIONINFOW,*POSVERSIONINFOW,*LPOSVERSIONINFOW,RTL_OSVERSIONINFOW,*PRTL_OSVERSIONINFOW;
 
+typedef struct winnt_os_version_info_ex_ansi		OSVERSIONINFOEXA,*POSVERSIONINFOEXA,*LPOSVERSIONINFOEXA;
+typedef struct winnt_os_version_info_ex_utf8		OSVERSIONINFOEXM,*POSVERSIONINFOEXM,*LPOSVERSIONINFOEXM;
+typedef struct winnt_os_version_info_ex_utf16		OSVERSIONINFOEXW,*POSVERSIONINFOEXW,*LPOSVERSIONINFOEXW,RTL_OSVERSIONINFOEXW,*PRTL_OSVERSIONINFOEXW;
 
 struct winnt_os_version_info_ansi {
 	DWORD dwOSVersionInfoSize;
@@ -149,6 +156,49 @@ struct winnt_os_version_info_utf16 {
 	DWORD dwBuildNumber;
 	DWORD dwPlatformId;
 	WCHAR szCSDVersion[128];
+};
+
+
+struct winnt_os_version_info_ex_ansi {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	CHAR szCSDVersion[128];
+	WORD wServicePackMajor;
+	WORD wServicePackMinor;
+	WORD wSuiteMask;
+	BYTE wProductType;
+	BYTE wReserved;
+};
+
+struct winnt_os_version_info_ex_utf8 {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	CHAR szCSDVersion[128];
+	WORD wServicePackMajor;
+	WORD wServicePackMinor;
+	WORD wSuiteMask;
+	BYTE wProductType;
+	BYTE wReserved;
+};
+
+struct winnt_os_version_info_ex_utf16 {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	WCHAR szCSDVersion[128];
+	WORD wServicePackMajor;
+	WORD wServicePackMinor;
+	WORD wSuiteMask;
+	BYTE wProductType;
+	BYTE wReserved;
 };
 
 struct winnt_security_descriptor {
@@ -182,14 +232,17 @@ __dllimport ULONGLONG __stdcall VerSetConditionMask(ULONGLONG ConditionMask, DWO
 
 #ifdef WINAPI_ANSI_DEFAULT
 typedef struct  winnt_os_version_info_ansi		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+typedef struct	winnt_os_version_info_ex_ansi		OSVERSIONINFOEX,*POSVERSIONINFOEX,*LPOSVERSIONINFOEX;
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
 typedef struct winnt_os_version_info_utf8		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+typedef struct  winnt_os_version_info_ex_utf8		OSVERSIONINFOEX,*POSVERSIONINFOEX,*LPOSVERSIONINFOEX;
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
 typedef struct winnt_os_version_info_utf16		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+typedef struct  winnt_os_version_info_ex_utf16		OSVERSIONINFOEX,*POSVERSIONINFOEX,*LPOSVERSIONINFOEX;
 #endif
 
 
