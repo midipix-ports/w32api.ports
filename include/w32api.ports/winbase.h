@@ -183,6 +183,8 @@ __dllimport LPVOID __stdcall GlobalLock(HGLOBAL hMem);
 __dllimport int __stdcall GlobalUnlock(HGLOBAL hMem);
 __dllimport HGLOBAL __stdcall GlobalFree(HGLOBAL hMem);
 __dllimport HGLOBAL __stdcall GlobalAlloc(UINT uFlags, SIZE_T dwBytes);
+__dllimport HLOCAL __stdcall LocalFree(HLOCAL hMem);
+__dllimport HLOCAL __stdcall LocalAlloc(UINT uFlags, SIZE_T uBytes);
 __dllimport HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName);
 __dllimport HMODULE __stdcall LoadLibraryM(LPCSTR lpLibFileName);
 __dllimport HMODULE __stdcall LoadLibraryW(LPCWSTR lpLibFileName);
