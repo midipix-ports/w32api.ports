@@ -67,6 +67,8 @@
 struct  winnt_security_descriptor;
 union   winnt_large_integer;
 
+struct winnt_io_counters;
+
 typedef uint32_t				ACCESS_MASK;
 typedef uint32_t				*PACCESS_MASK;
 
@@ -80,6 +82,8 @@ typedef DWORD					EXECUTION_STATE;
 typedef DWORD					*PEXECUTION_STATE;
 
 typedef union winnt_large_integer		LARGE_INTEGER;
+
+typedef struct winnt_io_counters		IO_COUNTERS,*PIO_COUNTERS;
 
 struct winnt_security_descriptor {
         unsigned char   revision;
@@ -97,6 +101,15 @@ union winnt_large_integer {
 		int32_t		ihigh;
 	};
 	long long		quad;
+};
+
+struct winnt_io_counters {
+	ULONGLONG ReadOperationCount;
+	ULONGLONG WriteOperationCount;
+	ULONGLONG OtherOperationCount;
+	ULONGLONG ReadTransferCount;
+	ULONGLONG WriteTransferCount;
+	ULONGLONG OtherTransferCount;
 };
 
 #endif
