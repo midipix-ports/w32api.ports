@@ -1746,6 +1746,7 @@ __dllimport int __stdcall DestroyCaret(void);
 __dllimport int __stdcall ShowCaret(HWND hWnd);
 __dllimport int __stdcall RedrawWindow(HWND hWnd, const RECT *lprcUpdate, HRGN hrgnUpdate, UINT flags);
 __dllimport int __stdcall MessageBeep(UINT uType);
+__dllimport int __stdcall EnumThreadWindows(DWORD dwThreadId, WNDENUMPROC lpfn, LPARAM lParam);
 __dllimport int __stdcall EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam);
 __dllimport int __stdcall BringWindowToTop(HWND hWnd);
 __dllimport HMONITOR __stdcall MonitorFromWindow(HWND hWnd, DWORD dwFlags);
@@ -1758,6 +1759,7 @@ __dllimport int __stdcall SetLayeredWindowAttributes (HWND hwnd, COLORREF crKey,
 __dllimport HKL __stdcall GetKeyboardLayout(DWORD idThread);
 __dllimport BOOL __stdcall UnhookWindowsHookEx(HHOOK hhk);
 __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
+__dllimport int __stdcall DestroyIcon(HICON hIcon);
 __dllimport BOOL __stdcall GetIconInfo(HICON hIcon, PICONINFO piconinfo);
 __dllimport BOOL __stdcall DestroyMenu(HMENU hMenu);
 __dllimport BOOL __stdcall SetForegroundWindow(HWND hWnd);
