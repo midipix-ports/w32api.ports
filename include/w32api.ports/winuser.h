@@ -524,10 +524,34 @@ typedef w32api_wnd_proc WNDPROC;
 #define MIIM_STRING			0x00000040
 #define MIIM_BITMAP			0x00000080
 
+#define MF_INSERT			(int32_t)(0x00000000)
+#define MF_CHANGE			(int32_t)(0x00000080)
+#define MF_APPEND			(int32_t)(0x00000100)
+#define MF_DELETE			(int32_t)(0x00000200)
+#define MF_REMOVE			(int32_t)(0x00001000)
 #define MF_BYCOMMAND			(int32_t)(0x00000000)
+#define MF_BYPOSITION			(int32_t)(0x00000400)
+#define MF_SEPARATOR			(int32_t)(0x00000800)
+#define MF_ENABLED			(int32_t)(0x00000000)
+#define MF_GRAYED			(int32_t)(0x00000001)
+#define MF_DISABLED			(int32_t)(0x00000002)
+#define MF_UNCHECKED			(int32_t)(0x00000000)
+#define MF_CHECKED			(int32_t)(0x00000008)
+#define MF_USECHECKBITMAPS		(int32_t)(0x00000200)
 #define MF_STRING			(int32_t)(0x00000000)
-#define MF_DISABLED 			(int32_t)(0x00000002)
-#define MF_MENUBARBREAK 		(int32_t)(0x00000020)
+#define MF_BITMAP			(int32_t)(0x00000004)
+#define MF_OWNERDRAW			(int32_t)(0x00000100)
+#define MF_POPUP			(int32_t)(0x00000010)
+#define MF_MENUBARBREAK			(int32_t)(0x00000020)
+#define MF_MENUBREAK			(int32_t)(0x00000040)
+#define MF_UNHILITE			(int32_t)(0x00000000)
+#define MF_HILITE			(int32_t)(0x00000080)
+#define MF_DEFAULT			(int32_t)(0x00001000)
+#define MF_SYSMENU			(int32_t)(0x00002000)
+#define MF_HELP				(int32_t)(0x00004000)
+#define MF_RIGHTJUSTIFY			(int32_t)(0x00004000)
+#define MF_MOUSESELECT			(int32_t)(0x00008000)
+#define MF_END				(int32_t)(0x00000080)
 
 #define MFT_STRING			MF_STRING
 
