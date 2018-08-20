@@ -1681,6 +1681,7 @@ __dllimport int __stdcall PtInRect(const RECT *lprc, POINT pt);
 __dllimport int __stdcall SetCursorPos(int x, int y);
 __dllimport HICON __stdcall CreateIconIndirect(PICONINFO piconinfo);
 __dllimport int __stdcall MapWindowPoints(HWND hWndFrom, HWND hWndTo, LPPOINT lpPoints, UINT cPoints);
+__dllimport HWND __stdcall GetDesktopWindow(void);
 __dllimport HWND __stdcall GetActiveWindow(void);
 __dllimport HWND __stdcall GetForegroundWindow(void);
 __dllimport int __stdcall EnableWindow(HWND hwnd,BOOL enabled);
