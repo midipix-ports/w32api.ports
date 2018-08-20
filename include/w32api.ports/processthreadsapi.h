@@ -10,10 +10,22 @@ struct processthreadsapi_startupinfo_ansi;
 struct processthreadsapi_startupinfo_utf8;
 struct processthreadsapi_startupinfo_utf16;
 
+struct processthreadsapi_process_information;
+
+
 typedef struct processthreadsapi_startupinfo_ansi		STARTUPINFOA, *LPSTARTUPINFOA;
 typedef struct processthreadsapi_startupinfo_utf8		STARTUPINFOM, *LPSTARTUPINFOM;
 typedef struct processthreadsapi_startupinfo_utf16		STARTUPINFOW, *LPSTARTUPINFOW;
 
+typedef struct processthreadsapi_process_information		PROCESS_INFORMATION,*PPROCESS_INFORMATION,*LPPROCESS_INFORMATION;
+
+
+struct processthreadsapi_process_information {
+	HANDLE hProcess;
+	HANDLE hThread;
+	DWORD dwProcessId;
+	DWORD dwThreadId;
+};
 
 struct processthreadsapi_startupinfo_ansi {
 	DWORD cb;
