@@ -97,7 +97,11 @@
 struct  winnt_security_descriptor;
 union   winnt_large_integer;
 
-struct winnt_io_counters;
+struct	winnt_io_counters;
+
+struct	winnt_os_version_info_ansi;
+struct	winnt_os_version_info_utf8;
+struct	winnt_os_version_info_utf16;
 
 typedef uint32_t				ACCESS_MASK;
 typedef uint32_t				*PACCESS_MASK;
@@ -105,15 +109,47 @@ typedef uint32_t				*PACCESS_MASK;
 typedef uint32_t				SECURITY_INFORMATION;
 typedef uint32_t				*PSECURITY_INFORMATION;
 
-typedef struct winnt_security_descriptor	SECURITY_DESCRIPTOR;
-typedef struct winnt_security_descriptor	*PSECURITY_DESCRIPTOR;
+typedef	struct winnt_security_descriptor	SECURITY_DESCRIPTOR;
+typedef	struct winnt_security_descriptor	*PSECURITY_DESCRIPTOR;
 
-typedef DWORD					EXECUTION_STATE;
-typedef DWORD					*PEXECUTION_STATE;
+typedef	DWORD					EXECUTION_STATE;
+typedef	DWORD					*PEXECUTION_STATE;
 
 typedef union winnt_large_integer		LARGE_INTEGER;
 
 typedef struct winnt_io_counters		IO_COUNTERS,*PIO_COUNTERS;
+
+typedef struct winnt_os_version_info_ansi		OSVERSIONINFOA,*POSVERSIONINFOA,*LPOSVERSIONINFOA;
+typedef struct winnt_os_version_info_utf8		OSVERSIONINFOM,*POSVERSIONINFOM,*LPOSVERSIONINFOM;
+typedef struct winnt_os_version_info_utf16		OSVERSIONINFOW,*POSVERSIONINFOW,*LPOSVERSIONINFOW,RTL_OSVERSIONINFOW,*PRTL_OSVERSIONINFOW;
+
+
+struct winnt_os_version_info_ansi {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	CHAR szCSDVersion[128];
+};
+
+struct winnt_os_version_info_utf8 {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	CHAR szCSDVersion[128];
+};
+
+struct winnt_os_version_info_utf16 {
+	DWORD dwOSVersionInfoSize;
+	DWORD dwMajorVersion;
+	DWORD dwMinorVersion;
+	DWORD dwBuildNumber;
+	DWORD dwPlatformId;
+	WCHAR szCSDVersion[128];
+};
 
 struct winnt_security_descriptor {
         unsigned char   revision;
@@ -143,5 +179,18 @@ struct winnt_io_counters {
 };
 
 __dllimport ULONGLONG __stdcall VerSetConditionMask(ULONGLONG ConditionMask, DWORD TypeMask, BYTE Condition);
+
+#ifdef WINAPI_ANSI_DEFAULT
+typedef struct  winnt_os_version_info_ansi		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+#endif
+
+#ifdef WINAPI_UTF8_DEFAULT
+typedef struct winnt_os_version_info_utf8		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+#endif
+
+#ifdef WINAPI_UTF16_DEFAULT
+typedef struct winnt_os_version_info_utf16		OSVERSIONINFO,*POSVERSIONINFO,*LPOSVERSIONINFO;
+#endif
+
 
 #endif
