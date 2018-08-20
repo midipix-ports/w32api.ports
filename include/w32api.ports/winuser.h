@@ -929,6 +929,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_TIMER 			0x0113
 #define WM_XBUTTONDOWN			0x020B
 #define WM_XBUTTONUP 			0x020C
+#define WM_ENDSESSION			0x0016
 
 #define WMSZ_BOTTOM 			6
 #define WMSZ_TOP 			3
