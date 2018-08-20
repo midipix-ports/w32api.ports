@@ -24,4 +24,6 @@
 #include <heapapi.h>
 #include <fileapi.h>
 
+#include <winternl.h>
+
 #endif
