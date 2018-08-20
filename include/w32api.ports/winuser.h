@@ -1791,6 +1791,9 @@ __dllimport LRESULT __stdcall DefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam,
 __dllimport LRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall SendMessageM(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 __dllimport LRESULT __stdcall SendMessageW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+__dllimport int __stdcall GetMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
+__dllimport int __stdcall GetMessageM(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
+__dllimport int __stdcall GetMessageW(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
 __dllimport HWND __stdcall CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassname, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
 __dllimport HWND __stdcall CreateWindowExM(DWORD dwExStyle, LPCSTR lpClassname, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
 __dllimport HWND __stdcall CreateWindowExW(DWORD dwExStyle, LPCWSTR lpClassname, LPCWSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
@@ -1938,6 +1941,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define GetKeyboardLayoutName GetKeyboardLayoutNameA
 #define LoadKeyboardLayout LoadKeyboardLayoutA
 #define DefWindowProc DefWindowProcA
+#define GetMessage GetMessageA
 #define SendMessage SendMessageA
 #define CreateWindowEx CreateWindowExA
 #define GetWindowTextLength GetWindowTextLengthA
@@ -1991,6 +1995,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define GetKeyboardLayoutName GetKeyboardLayoutNameM
 #define LoadKeyboardLayout LoadKeyboardLayoutM
 #define DefWindowProc DefWindowProcM
+#define GetMessage GetMessageM
 #define SendMessage SendMessageM
 #define CreateWindowEx CreateWindowExM
 #define GetWindowTextLength GetWindowTextLengthM
@@ -2044,6 +2049,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define GetKeyboardLayoutName GetKeyboardLayoutNameW
 #define LoadKeyboardLayout LoadKeyboardLayoutW
 #define DefWindowProc DefWindowProcW
+#define GetMessage GetMessageW
 #define SendMessage SendMessageW
 #define CreateWindowEx CreateWindowExW
 #define GetWindowTextLength GetWindowTextLengthW
