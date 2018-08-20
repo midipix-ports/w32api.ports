@@ -555,7 +555,13 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define MFT_STRING			MF_STRING
 
-#define MK_CONTROL 			0x0008
+#define MK_LBUTTON			0x0001
+#define MK_RBUTTON			0x0002
+#define MK_SHIFT			0x0004
+#define MK_CONTROL			0x0008
+#define MK_MBUTTON			0x0010
+#define MK_XBUTTON1			0x0020
+#define MK_XBUTTON2			0x0040
 
 #define LB_GETCURSEL 			0x0188
 #define LB_GETTEXTLEN 			0x018A
@@ -930,6 +936,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_XBUTTONDOWN			0x020B
 #define WM_XBUTTONUP 			0x020C
 #define WM_ENDSESSION			0x0016
+
+#define WHEEL_DELTA			120
 
 #define WMSZ_BOTTOM 			6
 #define WMSZ_TOP 			3
