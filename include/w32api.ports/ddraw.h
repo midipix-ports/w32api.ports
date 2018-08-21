@@ -32,33 +32,33 @@ struct ddraw_dd_pixel_format {
 	DWORD	dwAlphaBitDepth;
 	DWORD	dwLuminanceBitCount;
 	DWORD	dwBumpBitCount;
-    };
+    } u1;
     union {
 	DWORD	dwRBitMask;
 	DWORD	dwYBitMask;
 	DWORD	dwStencilBitDepth;
 	DWORD	dwLuminanceBitMask;
 	DWORD	dwBumpDuBitMask;
-    };
+    } u2;
     union {
 	DWORD	dwGBitMask;
 	DWORD	dwUBitMask;
 	DWORD	dwZBitMask;
 	DWORD	dwBumpDvBitMask;
-    };
+    } u3;
     union {
 	DWORD   dwBBitMask;
 	DWORD   dwVBitMask;
 	DWORD	dwStencilBitMask;
 	DWORD	dwBumpLuminanceBitMask;
-    };
+    } u4;
     union {
     	DWORD	dwRGBAlphaBitMask;
     	DWORD	dwYUVAlphaBitMask;
 	DWORD	dwLuminanceAlphaBitMask;
 	DWORD	dwRGBZBitMask;
 	DWORD	dwYUVZBitMask;
-    };
+    } u5;
 };
 
 struct ddraw_dd_scaps_2 {
@@ -68,7 +68,7 @@ struct ddraw_dd_scaps_2 {
 	union {
 	  DWORD dwCaps4;
 	  DWORD dwVolumeDepth;
-	};
+	} u1;
 };
 
 struct ddraw_dd_surface_desc_2
@@ -80,23 +80,23 @@ struct ddraw_dd_surface_desc_2
 	union {
 		LONG	lPitch;
 		DWORD   dwLinearSize;
-	};
+	} u1;
 	union {
 	  DWORD dwBackBufferCount;
 	  DWORD dwDepth;
-	};
+	} u5;
 	union {
 		DWORD	dwMipMapCount;
 		DWORD	dwRefreshRate;
 		DWORD   dwSrcVBHandle;
-	};
+	} u2;
 	DWORD	dwAlphaBitDepth;
 	DWORD	dwReserved;
 	LPVOID	lpSurface;
 	union {
 		DDCOLORKEY	ddckCKDestOverlay;
 		DWORD 		dwEmptyFaceColor;
-	};
+	} u3;
 	DDCOLORKEY	ddckCKDestBlt;
 	DDCOLORKEY	ddckCKSrcOverlay;
 	DDCOLORKEY	ddckCKSrcBlt;
@@ -104,7 +104,7 @@ struct ddraw_dd_surface_desc_2
 	union {
 		DDPIXELFORMAT	ddpfPixelFormat;
 		DWORD 		dwFVF;
-	};
+	} u4;
 	DDSCAPS2	ddsCaps;
 	DWORD		dwTextureStage;
 };
