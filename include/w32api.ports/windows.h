@@ -26,4 +26,6 @@
 
 #include <winternl.h>
 
+#include <ddraw.h>
+
 #endif
