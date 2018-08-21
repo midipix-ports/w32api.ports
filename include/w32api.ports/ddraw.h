@@ -2,6 +2,36 @@
 #define _W32API_DDRAW_H_
 
 #include <windef.h>
+#include <basetyps.h>
+
+typedef struct interface;
+
+#define INTERFACE IDirectDraw
+#define INTERFACE IDirectDraw2
+#define INTERFACE IDirectDraw3
+#define INTERFACE IDirectDraw4
+#define INTERFACE IDirectDraw7
+#define INTERFACE IDirectDrawSurface
+#define INTERFACE IDirectDrawSurface2
+#define INTERFACE IDirectDrawSurface3
+#define INTERFACE IDirectDrawSurface4
+#define INTERFACE IDirectDrawSurface7
+
+/* ddstream.h */
+typedef interface IDirectDraw IDirectDraw;
+typedef interface IDirectDrawPalette IDirectDrawPalette;
+/* !ddstream.h */
+
+typedef struct IDirectDraw *LPDIRECTDRAW;
+typedef struct IDirectDraw2 *LPDIRECTDRAW2;
+typedef struct IDirectDraw3 *LPDIRECTDRAW3;
+typedef struct IDirectDraw4 *LPDIRECTDRAW4;
+typedef struct IDirectDraw7 *LPDIRECTDRAW7;
+
+typedef struct IDirectDrawPalette *LPDIRECTDRAWPALETTE;
+typedef struct IDirectDrawClipper *LPDIRECTDRAWCLIPPER;
+typedef struct IDirectDrawSurface4 *LPDIRECTDRAWSURFACE4;
+
 
 
 struct ddraw_dd_surface_desc_2;
