@@ -5,7 +5,17 @@
 
 struct shellapi_appbardata;
 
+struct shellapi_notify_icon_data_ansi;
+struct shellapi_notify_icon_data_utf8;
+struct shellapi_notify_icon_data_utf16;
+
+
 typedef struct shellapi_appbardata		APPBARDATA,*PAPPBARDATA;
+
+struct shellapi_notify_icon_data_ansi		NOTIFYICONDATAA,*PNOTIFYICONDATAA;
+struct shellapi_notify_icon_data_utf8		NOTIFYICONDATAM,*PNOTIFYICONDATAM;
+struct shellapi_notify_icon_data_utf16		NOTIFYICONDATAW,*PNOTIFYICONDATAW;
+
 
 struct shellapi_appbardata {
 	DWORD cbSize;
@@ -14,6 +24,75 @@ struct shellapi_appbardata {
 	UINT uEdge;
 	RECT rc;
 	LPARAM lParam;
+};
+
+struct shellapi_notify_icon_data_ansi {
+	DWORD cbSize;
+	HWND hWnd;
+	UINT uID;
+	UINT uFlags;
+	UINT uCallbackMessage;
+	HICON hIcon;
+	CHAR szTip[128];
+	DWORD dwState;
+	DWORD dwStateMask;
+	CHAR szInfo[256];
+	union {
+		UINT uTimeout;
+		UINT uVersion;
+	};
+	CHAR szInfoTitle[64];
+	DWORD dwInfoFlags;
+	GUID guidItem;
+#if NTDDI_VERSION >= 0x06000000
+	HICON hBalloonIcon;
+#endif
+};
+
+struct shellapi_notify_icon_data_utf8 {
+	DWORD cbSize;
+	HWND hWnd;
+	UINT uID;
+	UINT uFlags;
+	UINT uCallbackMessage;
+	HICON hIcon;
+	CHAR szTip[128];
+	DWORD dwState;
+	DWORD dwStateMask;
+	CHAR szInfo[256];
+	union {
+		UINT uTimeout;
+		UINT uVersion;
+	};
+	CHAR szInfoTitle[64];
+	DWORD dwInfoFlags;
+	GUID guidItem;
+#if NTDDI_VERSION >= 0x06000000
+	HICON hBalloonIcon;
+#endif
+};
+
+struct shellapi_notify_icon_data_utf16 {
+	DWORD cbSize;
+	HWND hWnd;
+	UINT uID;
+	UINT uFlags;
+	UINT uCallbackMessage;
+	HICON hIcon;
+	WCHAR szTip[128];
+	DWORD dwState;
+	DWORD dwStateMask;
+	WCHAR szInfo[256];
+	union {
+		UINT uTimeout;
+		UINT uVersion;
+	};
+	WCHAR szInfoTitle[64];
+	DWORD dwInfoFlags;
+	GUID guidItem;
+#if NTDDI_VERSION >= 0x06000000
+	HICON hBalloonIcon;
+#endif
 };
 
 __dllimport UINT __stdcall ExtractIconExW(LPCWSTR lpszFile, int nIconIndex, HICON *phiconLarge, HICON *phiconSmall, UINT nIcons);
