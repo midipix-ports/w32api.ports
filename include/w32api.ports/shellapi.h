@@ -136,4 +136,19 @@ __dllimport UINT_PTR __stdcall SHAppBarMessage(DWORD dwMessage, PAPPBARDATA pDat
 #define ABE_RIGHT				2
 #define ABE_BOTTOM				3
 
+#define NIM_ADD					0x00000000
+#define NIM_MODIFY				0x00000001
+#define NIM_DELETE				0x00000002
+#define NIM_SETFOCUS				0x00000003
+#define NIM_SETVERSION				0x00000004
+
+#define NIF_MESSAGE				0x00000001
+#define NIF_ICON				0x00000002
+#define NIF_TIP					0x00000004
+#define NIF_STATE				0x00000008
+#define NIF_INFO				0x00000010
+#define NIF_GUID				0x00000020
+#define NIF_REALTIME				0x00000040
+#define NIF_SHOWTIP				0x00000080
+
 #endif
