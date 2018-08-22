@@ -360,6 +360,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define DS_SETFONT 			(0x40)
 #define DS_FIXEDSYS 			(0x0008)
 #define DS_SHELLFONT 			(DS_SETFONT | DS_FIXEDSYS)
+#define DS_CENTERMOUSE			(0x1000)
 
 #define SS_OWNERDRAW 			(0x0000000D)
 
