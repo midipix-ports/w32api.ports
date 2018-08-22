@@ -1694,6 +1694,7 @@ __dllimport int __stdcall ShowWindow(HWND hwnd, int nCmdShow);
 __dllimport int __stdcall IsWindowVisible(HWND hwnd);
 __dllimport int __stdcall ClientToScreen(HWND hwnd, LPPOINT lpPoint);
 __dllimport int __stdcall GetWindowRect(HWND hwnd, LPRECT lpRect);
+__dllimport int __stdcall SetWindowRgn(HWND hWnd, HRGN hRgn, int bRedraw);
 __dllimport int __stdcall SetWindowPos(HWND hwnd, HWND hwnInsertAfter, int X, int Y, int cx, int cy, UINT uFlags);
 __dllimport int __stdcall GetClientRect(HWND hwnd, LPRECT lpRect);
 __dllimport int __stdcall SetFocus(HWND hwnd);
