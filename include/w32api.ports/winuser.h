@@ -1054,8 +1054,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define SWP_NOREPOSITION 		SWP_NOOWNERZORDER
 
 #define WS_POPUP 			(0x80000000)
-#define WS_TABSTOP 			(int32_t)(0x00010000)
-#define WS_VISIBLE 			(int32_t)(0x10000000)
+#define WS_TABSTOP 			(0x00010000)
+#define WS_VISIBLE 			(0x10000000)
 #define WS_CHILD 			(int32_t)(0x40000000)
 #define WS_VSCROLL 			(int32_t)(0x00200000)
 #define WS_HSCROLL			(int32_t)(0x00100000)
