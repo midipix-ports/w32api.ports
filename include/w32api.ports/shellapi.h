@@ -2,6 +2,7 @@
 #define _W32_SHELLAPI_H_
 
 #include <windef.h>
+#include <basetyps.h>
 
 struct shellapi_appbardata;
 
