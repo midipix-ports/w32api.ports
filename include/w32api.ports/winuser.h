@@ -952,9 +952,27 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define MNC_CLOSE			1
 
-#define TPM_RIGHTBUTTON 		(0x0002)
-#define TPM_TOPALIGN 			(0x0000)
-#define TPM_LEFTALIGN 			(0x0000)
+#define TPM_LEFTBUTTON			(int32_t)(0x0000)
+#define TPM_RIGHTBUTTON			(int32_t)(0x0002)
+#define TPM_LEFTALIGN			(int32_t)(0x0000)
+#define TPM_CENTERALIGN			(int32_t)(0x0004)
+#define TPM_RIGHTALIGN			(int32_t)(0x0008)
+#define TPM_TOPALIGN			(int32_t)(0x0000)
+#define TPM_VCENTERALIGN		(int32_t)(0x0010)
+#define TPM_BOTTOMALIGN			(int32_t)(0x0020)
+
+#define TPM_HORIZONTAL			(int32_t)(0x0000)
+#define TPM_VERTICAL			(int32_t)(0x0040)
+#define TPM_NONOTIFY			(int32_t)(0x0080)
+#define TPM_RETURNCMD			(int32_t)(0x0100)
+#define TPM_RECURSE			(int32_t)(0x0001)
+#define TPM_HORPOSANIMATION		(int32_t)(0x0400)
+#define TPM_HORNEGANIMATION		(int32_t)(0x0800)
+#define TPM_VERPOSANIMATION		(int32_t)(0x1000)
+#define TPM_VERNEGANIMATION		(int32_t)(0x2000)
+#define TPM_NOANIMATION			(int32_t)(0x4000)
+#define TPM_LAYOUTRTL			(int32_t)(0x8000)
+#define TPM_WORKAREA			(int32_t)(0x10000)
 
 #define GCLP_HCURSOR 			(-12)
 #define GCLP_HICONSM			(-34)
