@@ -13,9 +13,22 @@ struct shellapi_notify_icon_data_utf16;
 
 typedef struct shellapi_appbardata		APPBARDATA,*PAPPBARDATA;
 
-struct shellapi_notify_icon_data_ansi		NOTIFYICONDATAA,*PNOTIFYICONDATAA;
-struct shellapi_notify_icon_data_utf8		NOTIFYICONDATAM,*PNOTIFYICONDATAM;
-struct shellapi_notify_icon_data_utf16		NOTIFYICONDATAW,*PNOTIFYICONDATAW;
+typedef struct shellapi_notify_icon_data_ansi		NOTIFYICONDATAA,*PNOTIFYICONDATAA;
+typedef struct shellapi_notify_icon_data_utf8		NOTIFYICONDATAM,*PNOTIFYICONDATAM;
+typedef struct shellapi_notify_icon_data_utf16		NOTIFYICONDATAW,*PNOTIFYICONDATAW;
+
+#ifdef WINAPI_ANSI_DEFAULT
+typedef struct shellapi_notify_icon_data_ansi           NOTIFYICONDATA,*PNOTIFYICONDATA;
+#endif
+
+#ifdef WINAPI_UTF8_DEFAULT
+typedef struct shellapi_notify_icon_data_utf8           NOTIFYICONDATA,*PNOTIFYICONDATA;
+#endif
+
+#ifdef WINAPI_UTF16_DEFAULT
+typedef struct shellapi_notify_icon_data_utf16          NOTIFYICONDATA,*PNOTIFYICONDATA;
+#endif
+
 
 
 struct shellapi_appbardata {
