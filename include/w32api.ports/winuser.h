@@ -1104,6 +1104,8 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define STARTF_USESHOWWINDOW 		0x00000001
 
+#define HTCLIENT			1
+
 #define HC_ACTION			0
 #define HC_GETNEXT			1
 #define HC_SKIP				2
