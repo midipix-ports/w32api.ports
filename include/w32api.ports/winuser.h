@@ -1719,6 +1719,8 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall CopyRect(LPRECT lprcDest, const RECT *lprcSrc);
+__dllimport int __stdcall OffsetRect(LPRECT lprc, int dx, int dy);
 __dllimport int __stdcall PtInRect(const RECT *lprc, POINT pt);
 __dllimport int __stdcall SetCursorPos(int x, int y);
 __dllimport HICON __stdcall CreateIconIndirect(PICONINFO piconinfo);
