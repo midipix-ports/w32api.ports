@@ -91,6 +91,7 @@ struct processthreadsapi_startupinfo_utf16 {
 };
 
 __dllimport HANDLE __stdcall CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
+__dllimport DWORD __stdcall GetCurrentProcessId(void);
 
 
 #ifdef WINAPI_ANSI_DEFAULT
