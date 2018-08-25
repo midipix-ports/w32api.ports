@@ -974,6 +974,12 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define MNC_CLOSE			1
 
+#define TME_HOVER			0x00000001
+#define TME_LEAVE			0x00000002
+#define TME_NONCLIENT			0x00000010
+#define TME_QUERY			0x40000000
+#define TME_CANCEL			0x80000000
+
 #define TPM_LEFTBUTTON			(int32_t)(0x0000)
 #define TPM_RIGHTBUTTON			(int32_t)(0x0002)
 #define TPM_LEFTALIGN			(int32_t)(0x0000)
