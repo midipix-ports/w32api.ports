@@ -1750,6 +1750,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport DWORD __stdcall GetWindowThreadProcessId(HWND hWnd, LPDWORD lpdwProcessId);
 __dllimport int __stdcall IsWindow(HWND hWnd);
 __dllimport int __stdcall IsWindowVisible(HWND hWnd);
 __dllimport int __stdcall IsWindowUnicode(HWND hWnd);
