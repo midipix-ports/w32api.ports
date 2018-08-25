@@ -542,6 +542,11 @@ typedef w32api_wnd_proc WNDPROC;
 #define MIIM_STRING			0x00000040
 #define MIIM_BITMAP			0x00000080
 
+#define MA_ACTIVATE			1
+#define MA_ACTIVATEANDEAT		2
+#define MA_NOACTIVATE			3
+#define MA_NOACTIVATEANDEAT		4
+
 #define MF_INSERT			(int32_t)(0x00000000)
 #define MF_CHANGE			(int32_t)(0x00000080)
 #define MF_APPEND			(int32_t)(0x00000100)
