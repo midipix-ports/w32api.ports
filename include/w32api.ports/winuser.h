@@ -1757,6 +1757,7 @@ __dllimport int __stdcall IsWindowEnabled(HWND hWnd);
 __dllimport int __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, int bMenu, DWORD dwExStyle);
 __dllimport int __stdcall ScrollWindowEx(HWND hWnd, int dx, int dy, const RECT *prcScroll, const RECT *prcClip, HRGN hrgnUpdate, LPRECT prcUpdate, UINT flags);
 __dllimport int __stdcall TrackMouseEvent(LPTRACKMOUSEEVENT lpEventTrack);
+__dllimport int __stdcall SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom);
 __dllimport int __stdcall CopyRect(LPRECT lprcDest, const RECT *lprcSrc);
 __dllimport int __stdcall OffsetRect(LPRECT lprc, int dx, int dy);
 __dllimport int __stdcall PtInRect(const RECT *lprc, POINT pt);
