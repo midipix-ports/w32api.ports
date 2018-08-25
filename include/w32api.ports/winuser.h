@@ -44,6 +44,10 @@ typedef w32api_wnd_proc WNDPROC;
 #define WH_KEYBOARD_LL			(13)
 #define WH_MOUSE_LL			(14)
 
+#define WA_INACTIVE			0
+#define WA_ACTIVE			1
+#define WA_CLICKACTIVE			2
+
 #define WH_MIN				(-1)
 #define WH_MAX				WH_MOUSE_LL
 #define WH_MINHOOK			WH_MIN
