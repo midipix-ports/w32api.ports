@@ -885,6 +885,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_NEXTDLGCTL			0x0028
 #define WM_DISPLAYCHANGE		0x007E
 #define WM_SETCURSOR			0x0020
+#define WM_HSCROLL			0x0114
 #define WM_VSCROLL 			0x0115
 #define WM_SYSCOMMAND 			0x0112
 #define WM_PAINT 			0x000F
