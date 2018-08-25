@@ -1750,6 +1750,10 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall IsWindow(HWND hWnd);
+__dllimport int __stdcall IsWindowVisible(HWND hWnd);
+__dllimport int __stdcall IsWindowUnicode(HWND hWnd);
+__dllimport int __stdcall IsWindowEnabled(HWND hWnd);
 __dllimport int __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, int bMenu, DWORD dwExStyle);
 __dllimport int __stdcall ScrollWindowEx(HWND hWnd, int dx, int dy, const RECT *prcScroll, const RECT *prcClip, HRGN hrgnUpdate, LPRECT prcUpdate, UINT flags);
 __dllimport int __stdcall TrackMouseEvent(LPTRACKMOUSEEVENT lpEventTrack);
@@ -1769,7 +1773,6 @@ __dllimport int __stdcall GetClassNameW(HWND,LPWSTR,int);
 __dllimport int __stdcall SetScrollInfo(HWND hwnd,int nBar,LPCSCROLLINFO lpsi,int redraw);
 __dllimport int __stdcall GetScrollInfo(HWND hwnd,int nBar,LPSCROLLINFO lpsi);
 __dllimport int __stdcall ShowWindow(HWND hwnd, int nCmdShow);
-__dllimport int __stdcall IsWindowVisible(HWND hwnd);
 __dllimport int __stdcall ClientToScreen(HWND hwnd, LPPOINT lpPoint);
 __dllimport int __stdcall GetWindowRect(HWND hwnd, LPRECT lpRect);
 __dllimport HWND __stdcall SetActiveWindow(HWND hWnd);
