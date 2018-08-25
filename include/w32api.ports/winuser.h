@@ -985,6 +985,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_ACTIVATEAPP			0x001C
 #define WM_GETICON			0x007F
 #define WM_DEADCHAR			0x0103
+#define WM_SYSDEADCHAR			0x0107
 #define WM_HOTKEY			0x0312
 #define WM_STYLECHANGING		0x007C
 #define WM_STYLECHANGED			0x007D
