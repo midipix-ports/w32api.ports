@@ -968,10 +968,15 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define WHEEL_DELTA			120
 
-#define WMSZ_BOTTOM 			6
-#define WMSZ_TOP 			3
-#define WMSZ_RIGHT 			2
-#define WMSZ_LEFT 			1
+#define WMSZ_LEFT			1
+#define WMSZ_RIGHT			2
+#define WMSZ_TOP			3
+#define WMSZ_TOPLEFT			4
+#define WMSZ_TOPRIGHT			5
+#define WMSZ_BOTTOM			6
+#define WMSZ_BOTTOMLEFT			7
+#define WMSZ_BOTTOMRIGHT		8
+
 
 #define WA_INACTIVE 			0
 
