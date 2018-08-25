@@ -1259,6 +1259,7 @@ struct  w32api_paint_struct;
 struct  w32api_draw_item_struct;
 struct	w32api_min_max_info;
 struct	w32api_window_pos;
+struct	w32api_style_struct;
 
 struct  w32api_cbt_create_wnd_ansi;
 struct  w32api_cbt_create_wnd_utf8;
@@ -1307,6 +1308,7 @@ typedef struct w32api_draw_item_struct DRAWITEMSTRUCT,*PDRAWITEMSTRUCT,*LPDRAWIT
 typedef struct w32api_track_mouse_event TRACKMOUSEEVENT,*LPTRACKMOUSEEVENT;
 typedef struct w32api_min_max_info MINMAXINFO,*PMINMAXINFO,*LPMINMAXINFO;
 typedef struct w32api_window_pos WINDOWPOS,*LPWINDOWPOS,*PWINDOWPOS;
+typedef struct w32api_style_struct STYLESTRUCT,*LPSTYLESTRUCT;
 
 typedef struct winuser_kd_dll_hook_struct KBDLLHOOKSTRUCT,*LPKBDLLHOOKSTRUCT,*PKBDLLHOOKSTRUCT;
 
@@ -1472,6 +1474,11 @@ struct w32api_window_pos {
 	int cx;
 	int cy;
 	UINT flags;
+};
+
+struct w32api_style_struct {
+       DWORD styleOld;
+       DWORD styleNew;
 };
 
 struct winuser_kd_dll_hook_struct {
