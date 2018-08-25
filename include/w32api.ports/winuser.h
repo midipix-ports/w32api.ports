@@ -49,6 +49,15 @@ typedef w32api_wnd_proc WNDPROC;
 #define WH_MINHOOK			WH_MIN
 #define WH_MAXHOOK			WH_MAX
 
+#define GW_HWNDFIRST			0
+#define GW_HWNDLAST			1
+#define GW_HWNDNEXT			2
+#define GW_HWNDPREV			3
+#define GW_OWNER			4
+#define GW_CHILD			5
+#define GW_ENABLEDPOPUP			6
+#define GW_MAX				6
+
 #define GET_WHEEL_DELTA_WPARAM(wParam) 	((short)HIWORD(wParam))
 
 #define BS_GROUPBOX 			(0x00000007)
