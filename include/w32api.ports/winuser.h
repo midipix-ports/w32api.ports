@@ -1772,6 +1772,8 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport HWND __stdcall GetTopWindow(HWND hWnd);
+__dllimport HWND __stdcall GetWindow(HWND hWnd, UINT uCmd);
 __dllimport int __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, int bRepaint);
 __dllimport HDWP __stdcall BeginDeferWindowPos (int nNumWindows);
 __dllimport int __stdcall EndDeferWindowPos (HDWP hWinPosInfo);
@@ -2042,6 +2044,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #define CreateWindowA(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExA((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 #define CreateWindowM(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExM((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
 #define CreateWindowW(lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam) CreateWindowExW((DWORD)0,lpClassName,lpWindowName,dwStyle,x,y,nWidth,nHeight,hWndParent,hMenu,hInstance,lpParam)
+
+#define GetNextWindow(hWnd,wCmd) GetWindow(hWnd,wCmd)
 
 #if defined(__NT32)
 #define GetWindowLongPtrA GetWindowLongA
