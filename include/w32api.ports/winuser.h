@@ -1902,6 +1902,12 @@ __dllimport UINT __stdcall RegisterWindowMessageW(LPCWSTR lpString);
 __dllimport HANDLE __stdcall GetPropA(HWND hwnd, LPCSTR lpString);
 __dllimport HANDLE __stdcall GetPropM(HWND hwnd, LPCSTR lpString);
 __dllimport HANDLE __stdcall GetPropW(HWND hwnd, LPCWSTR lpString);
+__dllimport HANDLE __stdcall RemovePropA(HWND hWnd, LPCSTR lpString);
+__dllimport HANDLE __stdcall RemovePropM(HWND hWnd, LPCSTR lpString);
+__dllimport HANDLE __stdcall RemovePropW(HWND hWnd, LPCWSTR lpString);
+__dllimport int __stdcall SetPropA(HWND hWnd, LPCSTR lpString, HANDLE hData);
+__dllimport int __stdcall SetPropM(HWND hWnd, LPCSTR lpString, HANDLE hData);
+__dllimport int __stdcall SetPropW(HWND hWnd, LPCWSTR lpString, HANDLE hData);
 __dllimport int __stdcall GetKeyboardLayoutNameA(LPSTR pwszKLID);
 __dllimport int __stdcall GetKeyboardLayoutNameM(LPSTR pwszKLID);
 __dllimport int __stdcall GetKeyboardLayoutNameW(LPWSTR pwszKLID);
@@ -2064,6 +2070,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #ifdef WINAPI_ANSI_DEFAULT
 #define RegisterWindowMessage RegisterWindowMessageA
 #define GetProp GetPropA
+#define RemoveProp RemovePropA
+#define SetProp SetPropA
 #define GetKeyboardLayoutName GetKeyboardLayoutNameA
 #define LoadKeyboardLayout LoadKeyboardLayoutA
 #define DefWindowProc DefWindowProcA
@@ -2119,6 +2127,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #ifdef WINAPI_UTF8_DEFAULT
 #define RegisterWindowMessage RegisterWindowMessageM
 #define GetProp GetPropM
+#define RemoveProp RemovePropM
+#define SetProp SetPropM
 #define GetKeyboardLayoutName GetKeyboardLayoutNameM
 #define LoadKeyboardLayout LoadKeyboardLayoutM
 #define DefWindowProc DefWindowProcM
@@ -2174,6 +2184,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #ifdef WINAPI_UTF16_DEFAULT
 #define RegisterWindowMessage RegisterWindowMessageW
 #define GetProp GetPropW
+#define RemoveProp RemovePropW
+#define SetProp SetPropW
 #define GetKeyboardLayoutName GetKeyboardLayoutNameW
 #define LoadKeyboardLayout LoadKeyboardLayoutW
 #define DefWindowProc DefWindowProcW
