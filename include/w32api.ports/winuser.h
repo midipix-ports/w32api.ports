@@ -1096,6 +1096,8 @@ typedef w32api_wnd_proc WNDPROC;
 #define SWP_NOOWNERZORDER 		0x0200
 #define SWP_NOREPOSITION 		SWP_NOOWNERZORDER
 
+#define WS_CLIPSIBLINGS			(int32_t)(0x04000000)
+#define WS_CLIPCHILDREN			(int32_t)(0x02000000)
 #define WS_POPUP 			(0x80000000)
 #define WS_TABSTOP 			(0x00010000)
 #define WS_VISIBLE 			(0x10000000)
@@ -1103,6 +1105,7 @@ typedef w32api_wnd_proc WNDPROC;
 #define WS_VSCROLL 			(int32_t)(0x00200000)
 #define WS_HSCROLL			(int32_t)(0x00100000)
 #define WS_THICKFRAME 			(int32_t)(0x00040000)
+#define WS_SIZEBOX			WS_THICKFRAME
 #define WS_CAPTION 			(0x00C00000)
 #define WS_BORDER 			(int32_t)(0x00800000)
 #define WS_MAXIMIZEBOX 			(int32_t)(0x00010000)
