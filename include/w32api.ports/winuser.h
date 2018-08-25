@@ -1772,6 +1772,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, int bRepaint);
 __dllimport HDWP __stdcall BeginDeferWindowPos (int nNumWindows);
 __dllimport int __stdcall EndDeferWindowPos (HDWP hWinPosInfo);
 __dllimport HDWP __stdcall DeferWindowPos (HDWP hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, UINT uFlags);
