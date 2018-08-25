@@ -24,6 +24,7 @@
 #include <heapapi.h>
 #include <fileapi.h>
 #include <shellapi.h>
+#include <synchapi.h>
 
 #include <winternl.h>
 
