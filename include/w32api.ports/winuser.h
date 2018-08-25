@@ -1849,6 +1849,9 @@ __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
 __dllimport int __stdcall GetKeyboardType(int nTypeFlag);
 
 
+__dllimport UINT __stdcall RegisterWindowMessageA(LPCSTR lpString);
+__dllimport UINT __stdcall RegisterWindowMessageM(LPCSTR lpString);
+__dllimport UINT __stdcall RegisterWindowMessageW(LPCWSTR lpString);
 __dllimport HANDLE __stdcall GetPropA(HWND hwnd, LPCSTR lpString);
 __dllimport HANDLE __stdcall GetPropM(HWND hwnd, LPCSTR lpString);
 __dllimport HANDLE __stdcall GetPropW(HWND hwnd, LPCWSTR lpString);
@@ -2010,6 +2013,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define RegisterWindowMessage RegisterWindowMessageA
 #define GetProp GetPropA
 #define GetKeyboardLayoutName GetKeyboardLayoutNameA
 #define LoadKeyboardLayout LoadKeyboardLayoutA
@@ -2064,6 +2068,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define RegisterWindowMessage RegisterWindowMessageM
 #define GetProp GetPropM
 #define GetKeyboardLayoutName GetKeyboardLayoutNameM
 #define LoadKeyboardLayout LoadKeyboardLayoutM
@@ -2118,6 +2123,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define RegisterWindowMessage RegisterWindowMessageW
 #define GetProp GetPropW
 #define GetKeyboardLayoutName GetKeyboardLayoutNameW
 #define LoadKeyboardLayout LoadKeyboardLayoutW
