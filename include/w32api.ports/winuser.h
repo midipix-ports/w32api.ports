@@ -15,6 +15,7 @@
 
 /* misc, clean up later? */
 typedef void *HMONITOR;
+typedef HANDLE HWDP;
 
 typedef LRESULT (__stdcall * w32api_wnd_proc)(
 	HWND,
@@ -1762,6 +1763,9 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport HDWP __stdcall BeginDeferWindowPos (int nNumWindows);
+__dllimport int __stdcall EndDeferWindowPos (HDWP hWinPosInfo);
+__dllimport HDWP __stdcall DeferWindowPos (HDWP hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, UINT uFlags);
 __dllimport DWORD __stdcall GetWindowThreadProcessId(HWND hWnd, LPDWORD lpdwProcessId);
 __dllimport int __stdcall IsWindow(HWND hWnd);
 __dllimport int __stdcall IsWindowVisible(HWND hWnd);
