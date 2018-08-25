@@ -896,6 +896,7 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define WM_NULL				0x0000
 #define WM_CREATE			0x0001
+#define WM_MOVE				0x0003
 #define WM_APP                          0x8000
 #define WM_NEXTDLGCTL			0x0028
 #define WM_DISPLAYCHANGE		0x007E
@@ -978,7 +979,12 @@ typedef w32api_wnd_proc WNDPROC;
 #define WM_PALETTECHANGED		0x0311
 #define WM_CTLCOLORSCROLLBAR		0x0137
 #define WM_ACTIVATEAPP			0x001C
-
+#define WM_GETICON			0x007F
+#define WM_DEADCHAR			0x0103
+#define WM_HOTKEY			0x0312
+#define WM_STYLECHANGING		0x007C
+#define WM_STYLECHANGED			0x007D
+#define WM_MOUSEACTIVATE		0x0021
 
 #define WHEEL_DELTA			120
 
