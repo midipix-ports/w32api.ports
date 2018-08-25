@@ -1232,6 +1232,8 @@ struct  w32api_msgboxparams_asni;
 struct  w32api_msgboxparams_utf8;
 struct  w32api_msgboxparams_utf16;
 
+struct	w32api_track_mouse_event;
+
 struct winuser_kb_dll_hook_struct;
 
 
@@ -1246,6 +1248,7 @@ typedef struct w32api_msg MSG, *PMSG, *LPMSG;
 typedef struct w32api_scroll_info SCROLLINFO,*LPSCROLLINFO,*LPCSCROLLINFO;
 typedef struct w32api_paint_struct PAINTSTRUCT,*PPAINTSTRUCT,*NPPAINTSTRUCT,*LPPAINTSTRUCT;
 typedef struct w32api_draw_item_struct DRAWITEMSTRUCT,*PDRAWITEMSTRUCT,*LPDRAWITEMSTRUCT;
+typedef struct w32api_track_mouse_event TRACKMOUSEEVENT,*LPTRACKMOUSEEVENT;
 
 typedef struct winuser_kd_dll_hook_struct KBDLLHOOKSTRUCT,*LPKBDLLHOOKSTRUCT,*PKBDLLHOOKSTRUCT;
 
@@ -1386,6 +1389,13 @@ struct w32api_draw_item_struct {
     HDC hDC;
     RECT rcItem;
     ULONG_PTR itemData;
+};
+
+struct w32api_track_mouse_event {
+	DWORD cbSize;
+	DWORD dwFlags;
+	HWND hwndTrack;
+	DWORD dwHoverTime;
 };
 
 struct winuser_kd_dll_hook_struct {
@@ -1719,6 +1729,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall TrackMouseEvent(LPTRACKMOUSEEVENT lpEventTrack);
 __dllimport int __stdcall CopyRect(LPRECT lprcDest, const RECT *lprcSrc);
 __dllimport int __stdcall OffsetRect(LPRECT lprc, int dx, int dy);
 __dllimport int __stdcall PtInRect(const RECT *lprc, POINT pt);
