@@ -412,6 +412,11 @@ typedef w32api_wnd_proc WNDPROC;
 #define SW_PARENTOPENING		3
 #define SW_OTHERUNZOOM			4
 
+#define SW_SCROLLCHILDREN		0x0001
+#define SW_INVALIDATE			0x0002
+#define SW_ERASE			0x0004
+#define SW_SMOOTHSCROLL			0x0010
+
 #define SM_CXSCREEN			0
 #define SM_CYSCREEN			1
 #define SM_CXVSCROLL			2
