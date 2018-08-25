@@ -313,6 +313,7 @@ typedef int (*winapi_farproc)();
 //TEMP
 #define CALLBACK __stdcall
 #define WINAPI __stdcall
+#define WINOLEAPI __stdcall
 
 typedef const RECT *LPCRECT;
 
