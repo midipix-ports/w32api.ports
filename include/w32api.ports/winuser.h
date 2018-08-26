@@ -1925,6 +1925,7 @@ __dllimport BOOL __stdcall UnhookWindowsHookEx(HHOOK hhk);
 __dllimport LRESULT __stdcall CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
 __dllimport int __stdcall DestroyIcon(HICON hIcon);
 __dllimport BOOL __stdcall GetIconInfo(HICON hIcon, PICONINFO piconinfo);
+__dllimport int __stdcall RemoveMenu(HMENU hMenu, UINT uPosition, UINT uFlags);
 __dllimport BOOL __stdcall DestroyMenu(HMENU hMenu);
 __dllimport BOOL __stdcall SetForegroundWindow(HWND hWnd);
 __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
