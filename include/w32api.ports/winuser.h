@@ -1812,6 +1812,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall TrackPopupMenuEx(HMENU hMenu, UINT uFlags, int X, int, Y, HWND hWnd, LPTPMPARAMS lptpm);
 __dllimport int __stdcall ChangeClipboardChain(HWND hWndRemove, HWND hWndNewNext);
 __dllimport HMENU __stdcall GetSubMenu(HMENU hMenu, int nPos);
 __dllimport HWND __stdcall GetTopWindow(HWND hWnd);
@@ -2109,6 +2110,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define SetMenuItemInfo SetMenuItemInfoA
+#define GetMenuItemInfo GetMenuItemInfoA
 #define LoadMenu LoadMenuA
 #define RegisterWindowMessage RegisterWindowMessageA
 #define GetProp GetPropA
@@ -2167,6 +2170,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define SetMenuItemInfo SetMenuItemInfoM
+#define GetMenuItemInfo GetMenuItemInfoM
 #define LoadMenu LoadMenuM
 #define RegisterWindowMessage RegisterWindowMessageM
 #define GetProp GetPropM
@@ -2225,6 +2230,8 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define SetMenuItemInfo SetMenuItemInfoW
+#define GetMenuItemInfo GetMenuItemInfoW
 #define LoadMenu LoadMenuW
 #define RegisterWindowMessage RegisterWindowMessageW
 #define GetProp GetPropW
