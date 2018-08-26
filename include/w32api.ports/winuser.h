@@ -2117,6 +2117,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define CreateDialogParam CreateDialogParamA
 #define SetWindowsHookEx SetWindowsHookExA
 #define SetMenuItemInfo SetMenuItemInfoA
 #define GetMenuItemInfo GetMenuItemInfoA
@@ -2178,6 +2179,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define CreateDialogParam CreateDialogParamM
 #define SetWindowsHookEx SetWindowsHookExM
 #define SetMenuItemInfo SetMenuItemInfoM
 #define GetMenuItemInfo GetMenuItemInfoM
@@ -2239,6 +2241,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define CreateDialogParam CreateDialogParamW
 #define SetWindowsHookEx SetWindowsHookExW
 #define SetMenuItemInfo SetMenuItemInfoW
 #define GetMenuItemInfo GetMenuItemInfoW
