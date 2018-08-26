@@ -1812,6 +1812,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport HMENU __stdcall GetSubMenu(HMENU hMenu, int nPos);
 __dllimport HWND __stdcall GetTopWindow(HWND hWnd);
 __dllimport HWND __stdcall GetWindow(HWND hWnd, UINT uCmd);
 __dllimport int __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, int bRepaint);
