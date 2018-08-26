@@ -1942,6 +1942,9 @@ __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
 __dllimport int __stdcall GetKeyboardType(int nTypeFlag);
 
 
+__dllimport int __stdcall DrawTextA(HDC hdc, LPCSTR lpchText, int cchText, LPRECT lprc, UINT format);
+__dllimport int __stdcall DrawTextM(HDC hdc, LPCSTR lpchText, int cchText, LPRECT lprc, UINT format);
+__dllimport int __stdcall DrawTextW(HDC hdc, LPCWSTR lpchText, int cchText, LPRECT lprc, UINT format);
 __dllimport HMENU __stdcall LoadMenuA(HINSTANCE hInstance, LPCSTR lpMenuName);
 __dllimport HMENU __stdcall LoadMenuM(HINSTANCE hInstance, LPCSTR lpMenuName);
 __dllimport HMENU __stdcall LoadMenuW(HINSTANCE hInstance, LPCWSTR lpMenuName);
@@ -2117,6 +2120,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define DrawText DrawTextA
 #define CreateDialogParam CreateDialogParamA
 #define SetWindowsHookEx SetWindowsHookExA
 #define SetMenuItemInfo SetMenuItemInfoA
@@ -2179,6 +2183,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define DrawText DrawTextM
 #define CreateDialogParam CreateDialogParamM
 #define SetWindowsHookEx SetWindowsHookExM
 #define SetMenuItemInfo SetMenuItemInfoM
@@ -2241,6 +2246,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define DrawText DrawTextW
 #define CreateDialogParam CreateDialogParamW
 #define SetWindowsHookEx SetWindowsHookExW
 #define SetMenuItemInfo SetMenuItemInfoW
