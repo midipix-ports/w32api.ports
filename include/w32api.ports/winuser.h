@@ -2117,6 +2117,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define SetWindowsHookEx SetWindowsHookExA
 #define SetMenuItemInfo SetMenuItemInfoA
 #define GetMenuItemInfo GetMenuItemInfoA
 #define LoadMenu LoadMenuA
@@ -2177,6 +2178,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define SetWindowsHookEx SetWindowsHookExM
 #define SetMenuItemInfo SetMenuItemInfoM
 #define GetMenuItemInfo GetMenuItemInfoM
 #define LoadMenu LoadMenuM
@@ -2237,6 +2239,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define SetWindowsHookEx SetWindowsHookExW
 #define SetMenuItemInfo SetMenuItemInfoW
 #define GetMenuItemInfo GetMenuItemInfoW
 #define LoadMenu LoadMenuW
