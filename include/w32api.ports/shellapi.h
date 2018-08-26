@@ -111,9 +111,30 @@ struct shellapi_notify_icon_data_utf16 {
 
 __dllimport UINT __stdcall ExtractIconExW(LPCWSTR lpszFile, int nIconIndex, HICON *phiconLarge, HICON *phiconSmall, UINT nIcons);
 __dllimport UINT __stdcall DragQueryFileW(HDROP hDrop, UINT iFile, LPWSTR lpszFile, UINT cch);
+__dllimport HINSTANCE __stdcall ShellExecuteA(HWND hwnd, LPCSTR lpOperation, LPCSTR lpFile, LPCSTR lpParameters, LPCSTR lpDirectory, INT nShowCmd);
+__dllimport HINSTANCE __stdcall ShellExecuteM(HWND hwnd, LPCSTR lpOperation, LPCSTR lpFile, LPCSTR lpParameters, LPCSTR lpDirectory, INT nShowCmd);
 __dllimport HINSTANCE __stdcall ShellExecuteW(HWND hWnd, LPCWSTR lpOperation, LPCWSTR pFile, LPCWSTR lpParameters, LPCWSTR lpDirectory, INT nShowCmd);
+__dllimport int __stdcall Shell_NotifyIconA(DWORD dwMessage, PNOTIFYICONDATAA lpData);
+__dllimport int __stdcall Shell_NotifyIconM(DWORD dwMessage, PNOTIFYICONDATAM lpData);
+__dllimport int __stdcall Shell_NotifyIconW(DWORD dwMessage, PNOTIFYICONDATAW lpData);
+
 
 __dllimport UINT_PTR __stdcall SHAppBarMessage(DWORD dwMessage, PAPPBARDATA pData);
+
+#ifdef WINAPI_ANSI_DEFAULT
+#define ShellExecute ShellExecuteA
+#define Shell_NotifyIcon Shell_NotifyIconA
+#endif
+
+#ifdef WINAPI_UTF8_DEFAULT
+#define ShellExecute ShellExecuteM
+#define Shell_NotifyIcon Shell_NotifyIconM
+#endif
+
+#ifdef WINAPI_UTF16_DEFAULT
+#define ShellExecute ShellExecuteW
+#define Shell_NotifyIcon Shell_NotifyIconW
+#endif
 
 
 #define ABM_NEW					0x00000000
