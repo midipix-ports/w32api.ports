@@ -1819,7 +1819,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
-__dllimport int __stdcall TrackPopupMenuEx(HMENU hMenu, UINT uFlags, int X, int, Y, HWND hWnd, LPTPMPARAMS lptpm);
+__dllimport int __stdcall TrackPopupMenuEx(HMENU hMenu, UINT uFlags, int X, int Y, HWND hWnd, LPTPMPARAMS lptpm);
 __dllimport int __stdcall ChangeClipboardChain(HWND hWndRemove, HWND hWndNewNext);
 __dllimport HMENU __stdcall GetSubMenu(HMENU hMenu, int nPos);
 __dllimport HWND __stdcall GetTopWindow(HWND hWnd);
