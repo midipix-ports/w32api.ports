@@ -191,6 +191,9 @@ __dllimport HMODULE __stdcall LoadLibraryW(LPCWSTR lpLibFileName);
 __dllimport void __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo);
 __dllimport void __stdcall GetStartupInfoM(LPSTARTUPINFOM lpStartupInfo);
 __dllimport void __stdcall GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo);
+__dllimport int __stdcall VerifyVersionInfoA(LPOSVERSIONINFOEXA lpVersionInformation, DWORD dwTypeMask, DWORDLONG dwlConditionMask);
+__dllimport int __stdcall VerifyVersionInfoM(LPOSVERSIONINFOEXM lpVersionInformation, DWORD dwTypeMask, DWORDLONG dwlConditionMask);
+__dllimport int __stdcall VerifyVersionInfoW(LPOSVERSIONINFOEXW lpVersionInformation, DWORD dwTypeMask, DWORDLONG dwlConditionMask);
 
 
 __dllimport DWORD GetCurrentThreadId(void);
@@ -200,7 +203,7 @@ __dllimport EXECUTION_STATE __stdcall SetThreadExecutionState(EXECUTION_STATE es
 	#define FormatMessage				FormatMessageA
 	#define LoadLibrary				LoadLibraryA
 	#define GetStartupInfo				GetStartupInfoA
-
+#define VerifyVersionInfo VerifyVersionInfoA
 
 #endif
 
@@ -208,14 +211,14 @@ __dllimport EXECUTION_STATE __stdcall SetThreadExecutionState(EXECUTION_STATE es
 	#define FormatMessage				FormatMessageM
 	#define LoadLibrary				LoadLibraryM
 	#define GetStartupInfo				GetStartupInfoM
-
+#define VerifyVersionInfo VerifyVersionInfoM
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
 	#define FormatMessage				FormatMessageW
 	#define LoadLibrary				LoadLibraryW
 	#define GetStartupInfo				GetStartupInfoW
-
+#define VerifyVersionInfo VerifyVersionInfoW
 #endif
 
 #ifdef __cplusplus
