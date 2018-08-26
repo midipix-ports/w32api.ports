@@ -1934,6 +1934,9 @@ __dllimport HMONITOR __stdcall MonitorFromRect(LPCRECT lprc,DWORD dwFlags);
 __dllimport int __stdcall GetKeyboardType(int nTypeFlag);
 
 
+__dllimport HMENU __stdcall LoadMenuA(HINSTANCE hInstance, LPCSTR lpMenuName);
+__dllimport HMENU __stdcall LoadMenuM(HINSTANCE hInstance, LPCSTR lpMenuName);
+__dllimport HMENU __stdcall LoadMenuW(HINSTANCE hInstance, LPCWSTR lpMenuName);
 __dllimport UINT __stdcall RegisterWindowMessageA(LPCSTR lpString);
 __dllimport UINT __stdcall RegisterWindowMessageM(LPCSTR lpString);
 __dllimport UINT __stdcall RegisterWindowMessageW(LPCWSTR lpString);
@@ -2106,6 +2109,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_ANSI_DEFAULT
+#define LoadMenu LoadMenuA
 #define RegisterWindowMessage RegisterWindowMessageA
 #define GetProp GetPropA
 #define RemoveProp RemovePropA
@@ -2163,6 +2167,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF8_DEFAULT
+#define LoadMenu LoadMenuM
 #define RegisterWindowMessage RegisterWindowMessageM
 #define GetProp GetPropM
 #define RemoveProp RemovePropM
@@ -2220,6 +2225,7 @@ __dllimport HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTa
 #endif
 
 #ifdef WINAPI_UTF16_DEFAULT
+#define LoadMenu LoadMenuW
 #define RegisterWindowMessage RegisterWindowMessageW
 #define GetProp GetPropW
 #define RemoveProp RemovePropW
