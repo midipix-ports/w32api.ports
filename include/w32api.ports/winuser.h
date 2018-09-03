@@ -1082,12 +1082,6 @@ typedef w32api_wnd_proc WNDPROC;
 
 #define IMAGE_ICON			1
 
-#define MF_ENABLED 			(0x00000000)
-#define MF_SEPARATOR 			(0x00000800)
-#define MF_UNCHECKED 			(0x00000000)
-#define MF_CHECKED 			(0x00000008)
-#define MF_GRAYED 			(0x00000001)
-
 #define MFS_ENABLED			(0)
 #define MFS_UNHILITE			(0)
 #define MFS_UNCHECKED			(0)
