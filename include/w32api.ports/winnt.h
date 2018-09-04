@@ -46,6 +46,11 @@
 #define IS_TEXT_UNICODE_NOT_UNICODE_MASK	0x0F00
 #define IS_TEXT_UNICODE_NOT_ASCII_MASK		0xF000
 
+#define GENERIC_READ				(uint32_t)(0x80000000)
+#define GENERIC_WRITE				(uint32_t)(0x40000000)
+#define GENERIC_EXECUTE				(uint32_t)(0x20000000)
+#define GENERIC_ALL				(uint32_t)(0x10000000)
+
 
 #define DECLARE_HANDLE(name)      \
 	struct name##__ {          \
