@@ -32,12 +32,14 @@ enum   w32api_cls_ctx;
 enum   w32api_var_enum;
 enum   w32api_wtypes_dvaspect;
 struct w32api_wtypes_property_key;
+struct w32api_wtypes_system_time;
 
 /* enum and struct typedefs */
 typedef enum   w32api_cls_ctx				CLSXTX;
 typedef enum   w32api_var_enum				VARENUM;
 typedef enum   w32api_wtypes_dvaspect			DVASPECT;
 typedef struct w32api_wtypes_property_key		PROPERTYKEY;
+typedef struct w32api_wtypes_system_time		SYSTEMTIME,*PSYSTEMTIME,*LPSYSTEMTIME;
 
 /* const struct typedefs */
 typedef const struct w32api_wtypes_property_key		*REFPROPERTYKEY;
@@ -119,6 +121,17 @@ enum w32api_wtypes_dvaspect {
 struct w32api_wtypes_property_key {
 	GUID  fmtid;
 	DWORD pid;
+};
+
+struct w32api_wtypes_system_time {
+	WORD wYear;
+	WORD wMonth;
+	WORD wDayOfWeek;
+	WORD wDay;
+	WORD wHour;
+	WORD wMinute;
+	WORD wSecond;
+	WORD wMilliseconds;
 };
 
 #endif
