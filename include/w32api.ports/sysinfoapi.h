@@ -12,6 +12,7 @@ __dllimport int __stdcall GetVersionExM(LPOSVERSIONINFOM lpVersionInformation);
 __dllimport int __stdcall GetVersionExW(LPOSVERSIONINFOW lpVersionInformation);
 
 __dllimport DWORD __stdcall GetTickCount(void);
+__dllimport void __stdcall GetLocalTime(LPSYSTEMTIME lpSystemTime);
 
 
 #ifdef WINAPI_ANSI_DEFAULT
