@@ -1289,7 +1289,7 @@ struct	w32api_track_mouse_event;
 struct winuser_kb_dll_hook_struct;
 
 
-typedef struct w32api_nmhdr *LPNMHDR;
+typedef struct w32api_nmhdr NMHDR,*LPNMHDR;
 typedef struct w32api_icon_info	ICONINFO,*PICONINFO,*LPICONINFO;
 typedef struct w32api_monitor_info MONITORINFO, *LPMONITORINFO;
 typedef struct w32api_flash_winfo FLASHWINFO,*PFLASHWINFO;
