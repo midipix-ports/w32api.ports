@@ -9,6 +9,7 @@ typedef UINT_PTR (__stdcall *LPCCHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPFRHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPPRINTHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPSETUPHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
+typedef UINT_PTR (__stdcall *LPOFNHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 
 struct w32api_choosefont_ansi {
     DWORD lStructSize;
@@ -211,6 +212,84 @@ struct w32api_print_dlg_utf16 {
 	HGLOBAL hSetupTemplate;
 };
 
+struct w32api_open_file_name_ansi {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HINSTANCE hInstance;
+	LPCSTR lpstrFilter;
+	LPSTR lpstrCustomFilter;
+	DWORD nMaxCustFilter;
+	DWORD nFilterIndex;
+	LPSTR lpstrFile;
+	DWORD nMaxFile;
+	LPSTR lpstrFileTitle;
+	DWORD nMaxFileTitle;
+	LPCSTR lpstrInitialDir;
+	LPCSTR lpstrTitle;
+	DWORD Flags;
+	WORD nFileOffset;
+	WORD nFileExtension;
+	LPCSTR lpstrDefExt;
+	LPARAM lCustData;
+	LPOFNHOOKPROC lpfnHook;
+	LPCSTR lpTemplateName;
+	void *pvReserved;
+	DWORD dwReserved;
+	DWORD FlagsEx;
+};
+
+struct w32api_open_file_name_utf8 {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HINSTANCE hInstance;
+	LPCSTR lpstrFilter;
+	LPSTR lpstrCustomFilter;
+	DWORD nMaxCustFilter;
+	DWORD nFilterIndex;
+	LPSTR lpstrFile;
+	DWORD nMaxFile;
+	LPSTR lpstrFileTitle;
+	DWORD nMaxFileTitle;
+	LPCSTR lpstrInitialDir;
+	LPCSTR lpstrTitle;
+	DWORD Flags;
+	WORD nFileOffset;
+	WORD nFileExtension;
+	LPCSTR lpstrDefExt;
+	LPARAM lCustData;
+	LPOFNHOOKPROC lpfnHook;
+	LPCSTR lpTemplateName;
+	void *pvReserved;
+	DWORD dwReserved;
+	DWORD FlagsEx;
+};
+
+struct w32api_open_file_name_utf16 {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HINSTANCE hInstance;
+	LPCWSTR lpstrFilter;
+	LPWSTR lpstrCustomFilter;
+	DWORD nMaxCustFilter;
+	DWORD nFilterIndex;
+	LPWSTR lpstrFile;
+	DWORD nMaxFile;
+	LPWSTR lpstrFileTitle;
+	DWORD nMaxFileTitle;
+	LPCWSTR lpstrInitialDir;
+	LPCWSTR lpstrTitle;
+	DWORD Flags;
+	WORD nFileOffset;
+	WORD nFileExtension;
+	LPCWSTR lpstrDefExt;
+	LPARAM lCustData;
+	LPOFNHOOKPROC lpfnHook;
+	LPCWSTR lpTemplateName;
+	void *pvReserved;
+	DWORD dwReserved;
+	DWORD FlagsEx;
+};
+
 typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
 typedef struct w32api_choosefont_utf16 CHOOSEFONTW, *LPCHOOSEFONTW;
@@ -226,6 +305,10 @@ typedef struct w32api_find_replace_utf16 FINDREPLACEW, *LPFINDREPLACEW;
 typedef struct w32api_print_dlg_ansi PRINTDLGA,*LPPRINTDLGA;
 typedef struct w32api_print_dlg_utf8 PRINTDLGM,*LPPRINTDLGM;
 typedef struct w32api_print_dlg_utf16 PRINTDLGW,*LPPRINTDLGW;
+
+typedef struct w32api_open_file_name_ansi OPENFILENAMEA,*LPOPENFILENAMEA;
+typedef struct w32api_open_file_name_utf8 OPENFILENAMEM,*LPOPENFILENAMEM;
+typedef struct w32api_open_file_name_utf16 OPENFILENAMEW,*LPOPENFILENAMEW;
 
 
 __dllimport int __stdcall ChooseFontA(LPCHOOSEFONTA);
