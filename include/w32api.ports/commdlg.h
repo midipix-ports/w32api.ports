@@ -7,6 +7,8 @@
 typedef UINT_PTR (__stdcall *LPCFHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPCCHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 typedef UINT_PTR (__stdcall *LPFRHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
+typedef UINT_PTR (__stdcall *LPPRINTHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
+typedef UINT_PTR (__stdcall *LPSETUPHOOKPROC) (HWND,UINT,WPARAM,LPARAM);
 
 struct w32api_choosefont_ansi {
     DWORD lStructSize;
@@ -143,6 +145,72 @@ struct w32api_find_replace_utf16 {
     LPCWSTR lpTemplateName;
 };
 
+struct w32api_print_dlg_ansi {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HGLOBAL hDevMode;
+	HGLOBAL hDevNames;
+	HDC hDC;
+	DWORD Flags;
+	WORD nFromPage;
+	WORD nToPage;
+	WORD nMinPage;
+	WORD nMaxPage;
+	WORD nCopies;
+	HINSTANCE hInstance;
+	LPARAM lCustData;
+	LPPRINTHOOKPROC lpfnPrintHook;
+	LPSETUPHOOKPROC lpfnSetupHook;
+	LPCSTR lpPrintTemplateName;
+	LPCSTR lpSetupTemplateName;
+	HGLOBAL hPrintTemplate;
+	HGLOBAL hSetupTemplate;
+};
+
+struct w32api_print_dlg_utf8 {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HGLOBAL hDevMode;
+	HGLOBAL hDevNames;
+	HDC hDC;
+	DWORD Flags;
+	WORD nFromPage;
+	WORD nToPage;
+	WORD nMinPage;
+	WORD nMaxPage;
+	WORD nCopies;
+	HINSTANCE hInstance;
+	LPARAM lCustData;
+	LPPRINTHOOKPROC lpfnPrintHook;
+	LPSETUPHOOKPROC lpfnSetupHook;
+	LPCSTR lpPrintTemplateName;
+	LPCSTR lpSetupTemplateName;
+	HGLOBAL hPrintTemplate;
+	HGLOBAL hSetupTemplate;
+};
+
+struct w32api_print_dlg_utf16 {
+	DWORD lStructSize;
+	HWND hwndOwner;
+	HGLOBAL hDevMode;
+	HGLOBAL hDevNames;
+	HDC hDC;
+	DWORD Flags;
+	WORD nFromPage;
+	WORD nToPage;
+	WORD nMinPage;
+	WORD nMaxPage;
+	WORD nCopies;
+	HINSTANCE hInstance;
+	LPARAM lCustData;
+	LPPRINTHOOKPROC lpfnPrintHook;
+	LPSETUPHOOKPROC lpfnSetupHook;
+	LPCWSTR lpPrintTemplateName;
+	LPCWSTR lpSetupTemplateName;
+	HGLOBAL hPrintTemplate;
+	HGLOBAL hSetupTemplate;
+};
+
 typedef struct w32api_choosefont_ansi CHOOSEFONTA, *LPCHOOSEFONTA;
 typedef struct w32api_choosefont_utf8 CHOOSEFONTM, *LPCHOOSEFONTM;
 typedef struct w32api_choosefont_utf16 CHOOSEFONTW, *LPCHOOSEFONTW;
@@ -154,6 +222,11 @@ typedef struct w32api_choose_color_utf16 CHOOSECOLORW, *LPCHOOSECOLORW;
 typedef struct w32api_find_replace_ansi FINDREPLACEA, *LPFINDREPLACEA;
 typedef struct w32api_find_replace_utf8 FINDREPLACEM, *LPFINDREPLACEM;
 typedef struct w32api_find_replace_utf16 FINDREPLACEW, *LPFINDREPLACEW;
+
+typedef struct w32api_print_dlg_ansi PRINTDLGA,*LPPRINTDLGA;
+typedef struct w32api_print_dlg_utf8 PRINTDLGM,*LPPRINTDLGM;
+typedef struct w32api_print_dlg_utf16 PRINTDLGW,*LPPRINTDLGW;
+
 
 __dllimport int __stdcall ChooseFontA(LPCHOOSEFONTA);
 __dllimport int __stdcall ChooseFontM(LPCHOOSEFONTM);
