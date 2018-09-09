@@ -64,7 +64,7 @@ typedef unsigned long long	QWORD,		*PQWORD;
 /* VOID pointer */
 typedef void *			PVOID;		/* "anonymous" */
 typedef void *			LPVOID;		/* "pointer"   */
-typedef void *			LPCVOID;	/* "legacy"    */
+typedef const void *		LPCVOID;	/* "legacy"    */
 
 /* LONGLONG, ULONGLONG */
 #if defined(__NT32)
