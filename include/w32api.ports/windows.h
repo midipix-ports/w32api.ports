@@ -21,6 +21,7 @@
 
 #include <processenv.h>
 
+#include <handleapi.h>
 #include <heapapi.h>
 #include <fileapi.h>
 #include <shellapi.h>
