@@ -97,6 +97,7 @@ __dllimport int __stdcall CreateProcessW(LPCWSTR lpApplicationName, LPWSTR lpCom
 
 __dllimport HANDLE __stdcall CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
 __dllimport DWORD __stdcall GetCurrentProcessId(void);
+__dllimport HANDLE __stdcall GetCurrentProcess(void);
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define CreateProcess CreateProcessA
