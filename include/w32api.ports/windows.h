@@ -26,6 +26,7 @@
 #include <fileapi.h>
 #include <shellapi.h>
 #include <synchapi.h>
+#include <datetimeapi.h>
 
 #include <winternl.h>
 
