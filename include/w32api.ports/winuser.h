@@ -1813,6 +1813,7 @@ typedef struct w32api_menu_item_info_utf16		MENUITEMINFO;
 #endif
 
 
+__dllimport int __stdcall EndDialog(HWND hDlg, INT_PTR nResult);
 __dllimport int __stdcall SetDlgItemInt(HWND hDlg, int nIDDlgItem, UINT uValue, int bSigned);
 __dllimport UINT __stdcall GetDlgItemInt(HWND hDlg, int nIDDlgItem, int *lpTranslated, int bSigned);
 __dllimport int __stdcall TrackPopupMenuEx(HMENU hMenu, UINT uFlags, int X, int Y, HWND hWnd, LPTPMPARAMS lptpm);
