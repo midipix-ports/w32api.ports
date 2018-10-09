@@ -2,6 +2,7 @@
 #define _W32API_MMSYSTEM_H_
 
 #include <windef.h>
+#include <winnt.h>
 
 struct mmsystem_wavehdr;
 
@@ -19,8 +20,15 @@ struct mmsystem_wavehdr {
 };
 
 
+
 #define SND_ASYNC	 		0x0001
 #define SND_FILENAME 			(uint32_t)(0x00020000)
+
+#define WHDR_DONE			0x00000001
+#define WHDR_PREPARED			0x00000002
+#define WHDR_BEGINLOOP			0x00000004
+#define WHDR_ENDLOOP			0x00000008
+#define WHDR_INQUEUE			0x00000010
 
 __stdcall int __stdcall PlaySoundA(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
 __stdcall int __stdcall PlaySoundM(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
