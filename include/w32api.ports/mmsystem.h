@@ -3,8 +3,24 @@
 
 #include <windef.h>
 
+struct mmsystem_wavehdr;
+
+typedef struct mmsystem_wavehdr         WAVEHDR,*PWAVEHDR,*NPWAVEHDR,*LPWAVEHDR;
+
+struct mmsystem_wavehdr {
+	LPSTR lpData;
+	DWORD dwBufferLength;
+	DWORD dwBytesRecorded;
+	DWORD_PTR dwUser;
+	DWORD dwFlags;
+	DWORD dwLoops;
+	struct wavehdr_tag *lpNext;
+	DWORD_PTR reserved;
+};
+
+
 #define SND_ASYNC	 		0x0001
-#define SND_FILENAME 			(0x00020000)//__MSABI_LONG(0x00020000)
+#define SND_FILENAME 			(uint32_t)(0x00020000)
 
 __stdcall int __stdcall PlaySoundA(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
 __stdcall int __stdcall PlaySoundM(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
