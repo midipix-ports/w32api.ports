@@ -5,8 +5,10 @@
 #include <winnt.h>
 
 struct mmsystem_wavehdr;
+struct mmsystem_wave_format_ex;
 
 typedef struct mmsystem_wavehdr         WAVEHDR,*PWAVEHDR,*NPWAVEHDR,*LPWAVEHDR;
+typedef struct mmsystem_wave_format_ex	WAVEFORMATEX,*PWAVEFORMATEX,*NPWAVEFORMATEX,*LPWAVEFORMATEX;
 
 struct mmsystem_wavehdr {
 	LPSTR lpData;
@@ -19,6 +21,15 @@ struct mmsystem_wavehdr {
 	DWORD_PTR reserved;
 };
 
+struct mmsystem_wave_format_ex {
+	WORD wFormatTag;
+	WORD nChannels;
+	DWORD nSamplesPerSec;
+	DWORD nAvgBytesPerSec;
+	WORD nBlockAlign;
+	WORD wBitsPerSample;
+	WORD cbSize;
+};
 
 
 #define SND_ASYNC	 		0x0001
