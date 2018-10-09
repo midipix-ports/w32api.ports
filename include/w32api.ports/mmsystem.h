@@ -41,6 +41,8 @@ struct mmsystem_wave_format_ex {
 #define WHDR_ENDLOOP			0x00000008
 #define WHDR_INQUEUE			0x00000010
 
+#define CALLBACK_EVENT			(uint32_t)(0x00050000)
+
 __stdcall int __stdcall PlaySoundA(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
 __stdcall int __stdcall PlaySoundM(LPCSTR pszSound, HMODULE hmod, DWORD fdwSound);
 __stdcall int __stdcall PlaySoundW(LPCWSTR pszSound, HMODULE hmod, DWORD fdwSound);
