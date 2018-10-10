@@ -28,6 +28,7 @@
 #include <synchapi.h>
 #include <datetimeapi.h>
 
+#include <mmsystem.h>
 #include <winternl.h>
 
 
