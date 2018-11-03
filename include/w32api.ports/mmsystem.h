@@ -4,6 +4,8 @@
 #include <windef.h>
 #include <winnt.h>
 
+typedef DWORD MCIERROR;
+
 struct mmsystem_wavehdr;
 struct mmsystem_wave_format_ex;
 
