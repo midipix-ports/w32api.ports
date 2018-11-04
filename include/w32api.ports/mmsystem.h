@@ -5,6 +5,9 @@
 #include <winnt.h>
 
 typedef DWORD MCIERROR;
+typedef UINT MMRESULT;
+
+DECLARE_HANDLE(HWAVEOUT);
 
 struct mmsystem_wavehdr;
 struct mmsystem_wave_format_ex;
