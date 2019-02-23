@@ -9,15 +9,84 @@ extern "C" {
 #endif
 
 
-__dllimport int __stdcall GetTimeFormatEx (LPCWSTR lpLocaleName, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCWSTR lpFormat, LPWSTR lpTimeStr, int cchTime);
-__dllimport int __stdcall GetDateFormatEx (LPCWSTR lpLocaleName, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCWSTR lpFormat, LPWSTR lpDateStr, int cchDate, LPCWSTR lpCalendar);
+typedef int __stdcall w32api_datetimeapi_get_time_format_ex(
+	LPCWSTR,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCWSTR,
+	LPWSTR,
+	int);
 
-__dllimport int __stdcall GetDateFormatA (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate);
-__dllimport int __stdcall GetDateFormatM (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate);
-__dllimport int __stdcall GetDateFormatW (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCWSTR lpFormat, LPWSTR lpDateStr, int cchDate);
-__dllimport int __stdcall GetTimeFormatA (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime);
-__dllimport int __stdcall GetTimeFormatM (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime);
-__dllimport int __stdcall GetTimeFormatW (LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCWSTR lpFormat, LPWSTR lpTimeStr, int cchTime);
+typedef int __stdcall w32api_datetimeapi_get_date_format_ex(
+	LPCWSTR,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCWSTR,
+	LPWSTR,
+	int,
+	LPCWSTR);
+
+typedef int __stdcall w32api_datetimeapi_get_date_format_ansi(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCSTR,
+	LPSTR,
+	int);
+
+typedef int __stdcall w32api_datetimeapi_get_date_format_utf8(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCSTR,
+	LPSTR,
+	int);
+
+typedef int __stdcall w32api_datetimeapi_get_date_format_utf16(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCWSTR,
+	LPWSTR,
+	int);
+
+typedef int __stdcall w32api_datetimeapi_get_time_format_ansi(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCSTR,
+	LPSTR,
+	int);
+
+typedef int __stdcall w32api_datetimeapi_get_time_format_utf8(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCSTR,
+	LPSTR,
+	int);
+
+typedef int __stdcall w32api_datetimeapi_get_time_format_utf16(
+	LCID,
+	DWORD,
+	const SYSTEMTIME *,
+	LPCWSTR,
+	LPWSTR,
+	int);
+
+
+
+
+__dllimport w32api_datetimeapi_get_time_format_ex					GetTimeFormatEx;
+__dllimport w32api_datetimeapi_get_date_format_ex					GetDateFormatEx;
+__dllimport w32api_datetimeapi_get_date_format_ansi					GetDateFormatA;
+__dllimport w32api_datetimeapi_get_date_format_utf8					GetDateFormatM;
+__dllimport w32api_datetimeapi_get_date_format_utf16					GetDateFormatW;
+__dllimport w32api_datetimeapi_get_time_format_ansi					GetTimeFormatA;
+__dllimport w32api_datetimeapi_get_time_format_utf8					GetTimeFormatM;
+__dllimport w32api_datetimeapi_get_time_format_utf16					GetTimeFormatW;
+
+
 
 #ifdef WINAPI_ANSI_DEFAULT
 #define GetDateFormat GetDateFormatA
@@ -39,4 +108,4 @@ __dllimport int __stdcall GetTimeFormatW (LCID Locale, DWORD dwFlags, const SYST
 }
 #endif
 
-#endif
+#endif /* _W32API_DATETIMEAPI_H_ */
