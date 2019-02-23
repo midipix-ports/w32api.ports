@@ -61,6 +61,10 @@ typedef unsigned long long	DWORD64,	*PDWORD64;
 typedef unsigned long long	DWORDLONG,	*PDWORDLONG;
 typedef unsigned long long	QWORD,		*PQWORD;
 
+/* miscellaneous types */
+typedef void			VOID;
+typedef const			CONST;
+
 /* VOID pointer */
 typedef void *			PVOID;		/* "anonymous" */
 typedef void *			LPVOID;		/* "pointer"   */
