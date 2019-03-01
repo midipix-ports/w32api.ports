@@ -61,10 +61,6 @@ typedef unsigned long long	DWORD64,	*PDWORD64;
 typedef unsigned long long	DWORDLONG,	*PDWORDLONG;
 typedef unsigned long long	QWORD,		*PQWORD;
 
-/* miscellaneous types */
-typedef void			VOID;
-typedef const			CONST;
-
 /* VOID pointer */
 typedef void *			PVOID;		/* "anonymous" */
 typedef void *			LPVOID;		/* "pointer"   */
@@ -173,6 +169,11 @@ typedef LONG 		HRESULT,	*PHRESULT;	/* test using:
 								SUCCEEDED(status),
 								FAILED(status) */
 typedef INT 		HFILE,		*PHFILE;	/* file descriptor */
+
+
+/* miscellaneous types */
+#define VOID		void
+#define CONST		const
 
 
 /* interpretation of the above API return types */
