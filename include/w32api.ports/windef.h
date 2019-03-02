@@ -33,6 +33,7 @@ typedef unsigned long long	UINT64,	*PUINT64;
 **/
 typedef char 			CHAR,	*PCHAR,		*LPCHAR;
 typedef char 			CCHAR,	*PCCHAR,	*LPCCHAR;
+typedef char			*PCH,	*LPCH;
 typedef short 			SHORT,	*PSHORT,	*LPSHORT;
 typedef int			BOOL,	*PBOOL,		*LPBOOL;
 typedef int 			INT,	*PINT,		*LPINT;
@@ -124,6 +125,7 @@ typedef LONG_PTR	LRESULT;
 
 /* variable strings */
 typedef unsigned short 	WCHAR,	*PWCHAR,*LPWCHAR;
+typedef WCHAR		*PWCH,	*LPWCH;
 typedef CHAR 		*PSTR,	*LPSTR;			/* "ansi"    */
 typedef WCHAR		*PWSTR,	*LPWSTR;		/* "unicode" */
 
