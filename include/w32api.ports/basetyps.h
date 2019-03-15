@@ -72,6 +72,7 @@ typedef struct IClassFactory			*LPCLASSFACTORY;
 
 typedef const  struct w32api_guid		*REFIID;
 typedef const  struct w32api_guid		*LPCLSID,*REFCLSID;
+typedef const  struct w32api_guid		*LPCGUID;
 
 struct w32api_guid {
         uint32_t        data1;
