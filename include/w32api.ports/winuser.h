@@ -7815,32 +7815,32 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define GMMP_USE_HIGH_RESOLUTION_POINTS 2
 
 
-#define DESKTOP_READOBJECTS (uint32_t)(0x0001)
-#define DESKTOP_CREATEWINDOW (uint32_t)(0x0002)
-#define DESKTOP_CREATEMENU (uint32_t)(0x0004)
-#define DESKTOP_HOOKCONTROL (uint32_t)(0x0008)
-#define DESKTOP_JOURNALRECORD (uint32_t)(0x0010)
-#define DESKTOP_JOURNALPLAYBACK (uint32_t)(0x0020)
-#define DESKTOP_ENUMERATE (uint32_t)(0x0040)
-#define DESKTOP_WRITEOBJECTS (uint32_t)(0x0080)
-#define DESKTOP_SWITCHDESKTOP (uint32_t)(0x0100)
+#define DESKTOP_READOBJECTS (int32_t)(0x0001)
+#define DESKTOP_CREATEWINDOW (int32_t)(0x0002)
+#define DESKTOP_CREATEMENU (int32_t)(0x0004)
+#define DESKTOP_HOOKCONTROL (int32_t)(0x0008)
+#define DESKTOP_JOURNALRECORD (int32_t)(0x0010)
+#define DESKTOP_JOURNALPLAYBACK (int32_t)(0x0020)
+#define DESKTOP_ENUMERATE (int32_t)(0x0040)
+#define DESKTOP_WRITEOBJECTS (int32_t)(0x0080)
+#define DESKTOP_SWITCHDESKTOP (int32_t)(0x0100)
 
-#define DF_ALLOWOTHERACCOUNTHOOK (uint32_t)(0x0001)
+#define DF_ALLOWOTHERACCOUNTHOOK (int32_t)(0x0001)
 
-#define WINSTA_ENUMDESKTOPS (uint32_t)(0x0001)
-#define WINSTA_READATTRIBUTES (uint32_t)(0x0002)
-#define WINSTA_ACCESSCLIPBOARD (uint32_t)(0x0004)
-#define WINSTA_CREATEDESKTOP (uint32_t)(0x0008)
-#define WINSTA_WRITEATTRIBUTES (uint32_t)(0x0010)
-#define WINSTA_ACCESSGLOBALATOMS (uint32_t)(0x0020)
-#define WINSTA_EXITWINDOWS (uint32_t)(0x0040)
-#define WINSTA_ENUMERATE (uint32_t)(0x0100)
-#define WINSTA_READSCREEN (uint32_t)(0x0200)
+#define WINSTA_ENUMDESKTOPS (int32_t)(0x0001)
+#define WINSTA_READATTRIBUTES (int32_t)(0x0002)
+#define WINSTA_ACCESSCLIPBOARD (int32_t)(0x0004)
+#define WINSTA_CREATEDESKTOP (int32_t)(0x0008)
+#define WINSTA_WRITEATTRIBUTES (int32_t)(0x0010)
+#define WINSTA_ACCESSGLOBALATOMS (int32_t)(0x0020)
+#define WINSTA_EXITWINDOWS (int32_t)(0x0040)
+#define WINSTA_ENUMERATE (int32_t)(0x0100)
+#define WINSTA_READSCREEN (int32_t)(0x0200)
 #define WINSTA_ALL_ACCESS (WINSTA_ENUMDESKTOPS | WINSTA_READATTRIBUTES | WINSTA_ACCESSCLIPBOARD | WINSTA_CREATEDESKTOP | WINSTA_WRITEATTRIBUTES | WINSTA_ACCESSGLOBALATOMS | WINSTA_EXITWINDOWS | WINSTA_ENUMERATE | WINSTA_READSCREEN)
 
 #define CWF_CREATE_ONLY 0x00000001
 
-#define WSF_VISIBLE (uint32_t)(0x0001)
+#define WSF_VISIBLE (int32_t)(0x0001)
 
 #define UOI_FLAGS 1
 #define UOI_NAME 2
@@ -8317,26 +8317,26 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 
 #define HOVER_DEFAULT 0xFFFFFFFF
 
-#define WS_OVERLAPPED (uint32_t)(0x00000000)
-#define WS_CHILD (uint32_t)(0x40000000)
-#define WS_MINIMIZE (uint32_t)(0x20000000)
-#define WS_VISIBLE (0x10000000)
-#define WS_DISABLED (uint32_t)(0x08000000)
-#define WS_CLIPSIBLINGS (uint32_t)(0x04000000)
-#define WS_CLIPCHILDREN (uint32_t)(0x02000000)
-#define WS_MAXIMIZE (uint32_t)(0x01000000)
-#define WS_BORDER (uint32_t)(0x00800000)
-#define WS_DLGFRAME (uint32_t)(0x00400000)
-#define WS_VSCROLL (uint32_t)(0x00200000)
-#define WS_HSCROLL (uint32_t)(0x00100000)
-#define WS_POPUP (uint32_t)(0x80000000)
-#define WS_CAPTION (uint32_t(0x00C00000)
-#define WS_SYSMENU (uint32_t)(0x00080000)
-#define WS_THICKFRAME (uint32_t)(0x00040000)
-#define WS_GROUP (uint32_t)(0x00020000)
-#define WS_TABSTOP (0x00010000)
-#define WS_MINIMIZEBOX (uint32_t)(0x00020000)
-#define WS_MAXIMIZEBOX (uint32_t)(0x00010000)
+#define WS_OVERLAPPED (int32_t)(0x00000000)
+#define WS_CHILD (int32_t)(0x40000000)
+#define WS_MINIMIZE (int32_t)(0x20000000)
+#define WS_VISIBLE (int32_t)(0x10000000)
+#define WS_DISABLED (int32_t)(0x08000000)
+#define WS_CLIPSIBLINGS (int32_t)(0x04000000)
+#define WS_CLIPCHILDREN (int32_t)(0x02000000)
+#define WS_MAXIMIZE (int32_t)(0x01000000)
+#define WS_BORDER (int32_t)(0x00800000)
+#define WS_DLGFRAME (int32_t)(0x00400000)
+#define WS_VSCROLL (int32_t)(0x00200000)
+#define WS_HSCROLL (int32_t)(0x00100000)
+#define WS_POPUP (int32_t)(0x80000000)
+#define WS_CAPTION (int32_t)(0x00C00000)
+#define WS_SYSMENU (int32_t)(0x00080000)
+#define WS_THICKFRAME (int32_t)(0x00040000)
+#define WS_GROUP (int32_t)(0x00020000)
+#define WS_TABSTOP (int32_t)(0x00010000)
+#define WS_MINIMIZEBOX (int32_t)(0x00020000)
+#define WS_MAXIMIZEBOX (int32_t)(0x00010000)
 #define WS_TILED WS_OVERLAPPED
 #define WS_ICONIC WS_MINIMIZE
 #define WS_SIZEBOX WS_THICKFRAME
@@ -8346,34 +8346,34 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define WS_POPUPWINDOW (WS_POPUP | WS_BORDER | WS_SYSMENU)
 #define WS_CHILDWINDOW (WS_CHILD)
 
-#define WS_EX_DLGMODALFRAME (uint32_t)(0x00000001)
-#define WS_EX_NOPARENTNOTIFY (uint32_t)(0x00000004)
-#define WS_EX_TOPMOST (uint32_t)(0x00000008)
-#define WS_EX_ACCEPTFILES (uint32_t)(0x00000010)
-#define WS_EX_TRANSPARENT (uint32_t)(0x00000020)
-#define WS_EX_MDICHILD (uint32_t)(0x00000040)
-#define WS_EX_TOOLWINDOW (uint32_t)(0x00000080)
-#define WS_EX_WINDOWEDGE (uint32_t)(0x00000100)
-#define WS_EX_CLIENTEDGE (uint32_t)(0x00000200)
-#define WS_EX_CONTEXTHELP (uint32_t)(0x00000400)
-#define WS_EX_RIGHT (uint32_t)(0x00001000)
-#define WS_EX_LEFT (uint32_t)(0x00000000)
-#define WS_EX_RTLREADING (uint32_t)(0x00002000)
-#define WS_EX_LTRREADING (uint32_t)(0x00000000)
-#define WS_EX_LEFTSCROLLBAR (uint32_t)(0x00004000)
-#define WS_EX_RIGHTSCROLLBAR (uint32_t)(0x00000000)
-#define WS_EX_CONTROLPARENT (uint32_t)(0x00010000)
-#define WS_EX_STATICEDGE (uint32_t)(0x00020000)
-#define WS_EX_APPWINDOW (uint32_t)(0x00040000)
+#define WS_EX_DLGMODALFRAME (int32_t)(0x00000001)
+#define WS_EX_NOPARENTNOTIFY (int32_t)(0x00000004)
+#define WS_EX_TOPMOST (int32_t)(0x00000008)
+#define WS_EX_ACCEPTFILES (int32_t)(0x00000010)
+#define WS_EX_TRANSPARENT (int32_t)(0x00000020)
+#define WS_EX_MDICHILD (int32_t)(0x00000040)
+#define WS_EX_TOOLWINDOW (int32_t)(0x00000080)
+#define WS_EX_WINDOWEDGE (int32_t)(0x00000100)
+#define WS_EX_CLIENTEDGE (int32_t)(0x00000200)
+#define WS_EX_CONTEXTHELP (int32_t)(0x00000400)
+#define WS_EX_RIGHT (int32_t)(0x00001000)
+#define WS_EX_LEFT (int32_t)(0x00000000)
+#define WS_EX_RTLREADING (int32_t)(0x00002000)
+#define WS_EX_LTRREADING (int32_t)(0x00000000)
+#define WS_EX_LEFTSCROLLBAR (int32_t)(0x00004000)
+#define WS_EX_RIGHTSCROLLBAR (int32_t)(0x00000000)
+#define WS_EX_CONTROLPARENT (int32_t)(0x00010000)
+#define WS_EX_STATICEDGE (int32_t)(0x00020000)
+#define WS_EX_APPWINDOW (int32_t)(0x00040000)
 
 #define WS_EX_OVERLAPPEDWINDOW (WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE)
 #define WS_EX_PALETTEWINDOW (WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST)
 #define WS_EX_LAYERED 0x00080000
-#define WS_EX_NOINHERITLAYOUT (uint32_t)(0x00100000)
-#define WS_EX_NOREDIRECTIONBITMAP (uint32_t)(0x00200000)
-#define WS_EX_LAYOUTRTL (uint32_t)(0x00400000)
-#define WS_EX_COMPOSITED (uint32_t)(0x02000000)
-#define WS_EX_NOACTIVATE (uint32_t)(0x08000000)
+#define WS_EX_NOINHERITLAYOUT (int32_t)(0x00100000)
+#define WS_EX_NOREDIRECTIONBITMAP (int32_t)(0x00200000)
+#define WS_EX_LAYOUTRTL (int32_t)(0x00400000)
+#define WS_EX_COMPOSITED (int32_t)(0x02000000)
+#define WS_EX_NOACTIVATE (int32_t)(0x08000000)
 
 #define CS_VREDRAW 0x0001
 #define CS_HREDRAW 0x0002
@@ -8389,12 +8389,12 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define CS_IME 0x00010000
 #define CS_DROPSHADOW 0x00020000
 
-#define PRF_CHECKVISIBLE (uint32_t)(0x00000001)
-#define PRF_NONCLIENT (uint32_t)(0x00000002)
-#define PRF_CLIENT (uint32_t)(0x00000004)
-#define PRF_ERASEBKGND (uint32_t)(0x00000008)
-#define PRF_CHILDREN (uint32_t)(0x00000010)
-#define PRF_OWNED (uint32_t)(0x00000020)
+#define PRF_CHECKVISIBLE (int32_t)(0x00000001)
+#define PRF_NONCLIENT (int32_t)(0x00000002)
+#define PRF_CLIENT (int32_t)(0x00000004)
+#define PRF_ERASEBKGND (int32_t)(0x00000008)
+#define PRF_CHILDREN (int32_t)(0x00000010)
+#define PRF_OWNED (int32_t)(0x00000020)
 
 #define BDR_RAISEDOUTER 0x0001
 #define BDR_SUNKENOUTER 0x0002
@@ -9011,30 +9011,30 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define HBMMENU_POPUP_MAXIMIZE ((HBITMAP) 10)
 #define HBMMENU_POPUP_MINIMIZE ((HBITMAP) 11)
 
-#define GMDI_USEDISABLED (uint32_t)(0x0001)
-#define GMDI_GOINTOPOPUPS (uint32_t)(0x0002)
+#define GMDI_USEDISABLED (int32_t)(0x0001)
+#define GMDI_GOINTOPOPUPS (int32_t)(0x0002)
 
-#define TPM_LEFTBUTTON (uint32_t)(0x0000)
-#define TPM_RIGHTBUTTON (uint32_t)(0x0002)
-#define TPM_LEFTALIGN (uint32_t)(0x0000)
-#define TPM_CENTERALIGN (uint32_t)(0x0004)
-#define TPM_RIGHTALIGN (uint32_t)(0x0008)
-#define TPM_TOPALIGN (uint32_t)(0x0000)
-#define TPM_VCENTERALIGN (uint32_t)(0x0010)
-#define TPM_BOTTOMALIGN (uint32_t)(0x0020)
+#define TPM_LEFTBUTTON (int32_t)(0x0000)
+#define TPM_RIGHTBUTTON (int32_t)(0x0002)
+#define TPM_LEFTALIGN (int32_t)(0x0000)
+#define TPM_CENTERALIGN (int32_t)(0x0004)
+#define TPM_RIGHTALIGN (int32_t)(0x0008)
+#define TPM_TOPALIGN (int32_t)(0x0000)
+#define TPM_VCENTERALIGN (int32_t)(0x0010)
+#define TPM_BOTTOMALIGN (int32_t)(0x0020)
 
-#define TPM_HORIZONTAL (uint32_t)(0x0000)
-#define TPM_VERTICAL (uint32_t)(0x0040)
-#define TPM_NONOTIFY (uint32_t)(0x0080)
-#define TPM_RETURNCMD (uint32_t)(0x0100)
-#define TPM_RECURSE (uint32_t)(0x0001)
-#define TPM_HORPOSANIMATION (uint32_t)(0x0400)
-#define TPM_HORNEGANIMATION (uint32_t)(0x0800)
-#define TPM_VERPOSANIMATION (uint32_t)(0x1000)
-#define TPM_VERNEGANIMATION (uint32_t)(0x2000)
-#define TPM_NOANIMATION (uint32_t)(0x4000)
-#define TPM_LAYOUTRTL (uint32_t)(0x8000)
-#define TPM_WORKAREA (uint32_t)(0x10000)
+#define TPM_HORIZONTAL (int32_t)(0x0000)
+#define TPM_VERTICAL (int32_t)(0x0040)
+#define TPM_NONOTIFY (int32_t)(0x0080)
+#define TPM_RETURNCMD (int32_t)(0x0100)
+#define TPM_RECURSE (int32_t)(0x0001)
+#define TPM_HORPOSANIMATION (int32_t)(0x0400)
+#define TPM_HORNEGANIMATION (int32_t)(0x0800)
+#define TPM_VERPOSANIMATION (int32_t)(0x1000)
+#define TPM_VERNEGANIMATION (int32_t)(0x2000)
+#define TPM_NOANIMATION (int32_t)(0x4000)
+#define TPM_LAYOUTRTL (int32_t)(0x8000)
+#define TPM_WORKAREA (int32_t)(0x10000)
 
 #define DOF_EXECUTABLE 0x8001
 #define DOF_DOCUMENT 0x8002
@@ -9043,8 +9043,8 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define DOF_PROGMAN 0x0001
 #define DOF_SHELLDATA 0x0002
 
-#define DO_DROPFILE (uint32_t)(0x454C4946)
-#define DO_PRINTFILE (uint32_t)(0x544E5250)
+#define DO_DROPFILE (int32_t)(0x454C4946)
+#define DO_PRINTFILE (int32_t)(0x544E5250)
 
 #define DT_TOP 0x00000000
 #define DT_LEFT 0x00000000
@@ -9090,19 +9090,19 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define LSFW_LOCK 1
 #define LSFW_UNLOCK 2
 
-#define DCX_WINDOW (uint32_t)(0x00000001)
-#define DCX_CACHE (uint32_t)(0x00000002)
-#define DCX_NORESETATTRS (uint32_t)(0x00000004)
-#define DCX_CLIPCHILDREN (uint32_t)(0x00000008)
-#define DCX_CLIPSIBLINGS (uint32_t)(0x00000010)
-#define DCX_PARENTCLIP (uint32_t)(0x00000020)
-#define DCX_EXCLUDERGN (uint32_t)(0x00000040)
-#define DCX_INTERSECTRGN (uint32_t)(0x00000080)
-#define DCX_EXCLUDEUPDATE (uint32_t)(0x00000100)
-#define DCX_INTERSECTUPDATE (uint32_t)(0x00000200)
-#define DCX_LOCKWINDOWUPDATE (uint32_t)(0x00000400)
+#define DCX_WINDOW (int32_t)(0x00000001)
+#define DCX_CACHE (int32_t)(0x00000002)
+#define DCX_NORESETATTRS (int32_t)(0x00000004)
+#define DCX_CLIPCHILDREN (int32_t)(0x00000008)
+#define DCX_CLIPSIBLINGS (int32_t)(0x00000010)
+#define DCX_PARENTCLIP (int32_t)(0x00000020)
+#define DCX_EXCLUDERGN (int32_t)(0x00000040)
+#define DCX_INTERSECTRGN (int32_t)(0x00000080)
+#define DCX_EXCLUDEUPDATE (int32_t)(0x00000100)
+#define DCX_INTERSECTUPDATE (int32_t)(0x00000200)
+#define DCX_LOCKWINDOWUPDATE (int32_t)(0x00000400)
 
-#define DCX_VALIDATE (uint32_t)(0x00200000)
+#define DCX_VALIDATE (int32_t)(0x00200000)
 
 #define RDW_INVALIDATE 0x0001
 #define RDW_INTERNALPAINT 0x0002
@@ -9140,43 +9140,43 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define HELPINFO_WINDOW 0x0001
 #define HELPINFO_MENUITEM 0x0002
 
-#define MB_OK (uint32_t)(0x00000000)
-#define MB_OKCANCEL (uint32_t)(0x00000001)
-#define MB_ABORTRETRYIGNORE (uint32_t)(0x00000002)
-#define MB_YESNOCANCEL (uint32_t)(0x00000003)
-#define MB_YESNO (uint32_t)(0x00000004)
-#define MB_RETRYCANCEL (uint32_t)(0x00000005)
-#define MB_CANCELTRYCONTINUE (uint32_t)(0x00000006)
-#define MB_ICONHAND (uint32_t)(0x00000010)
-#define MB_ICONQUESTION (uint32_t)(0x00000020)
-#define MB_ICONEXCLAMATION (uint32_t)(0x00000030)
-#define MB_ICONASTERISK (uint32_t)(0x00000040)
-#define MB_USERICON (uint32_t)(0x00000080)
+#define MB_OK (int32_t)(0x00000000)
+#define MB_OKCANCEL (int32_t)(0x00000001)
+#define MB_ABORTRETRYIGNORE (int32_t)(0x00000002)
+#define MB_YESNOCANCEL (int32_t)(0x00000003)
+#define MB_YESNO (int32_t)(0x00000004)
+#define MB_RETRYCANCEL (int32_t)(0x00000005)
+#define MB_CANCELTRYCONTINUE (int32_t)(0x00000006)
+#define MB_ICONHAND (int32_t)(0x00000010)
+#define MB_ICONQUESTION (int32_t)(0x00000020)
+#define MB_ICONEXCLAMATION (int32_t)(0x00000030)
+#define MB_ICONASTERISK (int32_t)(0x00000040)
+#define MB_USERICON (int32_t)(0x00000080)
 #define MB_ICONWARNING MB_ICONEXCLAMATION
 #define MB_ICONERROR MB_ICONHAND
 #define MB_ICONINFORMATION MB_ICONASTERISK
 #define MB_ICONSTOP MB_ICONHAND
-#define MB_DEFBUTTON1 (uint32_t)(0x00000000)
-#define MB_DEFBUTTON2 (uint32_t)(0x00000100)
-#define MB_DEFBUTTON3 (uint32_t)(0x00000200)
-#define MB_DEFBUTTON4 (uint32_t)(0x00000300)
-#define MB_APPLMODAL (uint32_t)(0x00000000)
-#define MB_SYSTEMMODAL (uint32_t)(0x00001000)
-#define MB_TASKMODAL (uint32_t)(0x00002000)
-#define MB_HELP (uint32_t)(0x00004000)
-#define MB_NOFOCUS (uint32_t)(0x00008000)
-#define MB_SETFOREGROUND (uint32_t)(0x00010000)
-#define MB_DEFAULT_DESKTOP_ONLY (uint32_t)(0x00020000)
-#define MB_TOPMOST (uint32_t)(0x00040000)
-#define MB_RIGHT (uint32_t)(0x00080000)
-#define MB_RTLREADING (uint32_t)(0x00100000)
-#define MB_SERVICE_NOTIFICATION (uint32_t)(0x00200000)
-#define MB_SERVICE_NOTIFICATION_NT3X (uint32_t)(0x00040000)
-#define MB_TYPEMASK (uint32_t)(0x0000000F)
-#define MB_ICONMASK (uint32_t)(0x000000F0)
-#define MB_DEFMASK (uint32_t)(0x00000F00)
-#define MB_MODEMASK (uint32_t)(0x00003000)
-#define MB_MISCMASK (uint32_t)(0x0000C000)
+#define MB_DEFBUTTON1 (int32_t)(0x00000000)
+#define MB_DEFBUTTON2 (int32_t)(0x00000100)
+#define MB_DEFBUTTON3 (int32_t)(0x00000200)
+#define MB_DEFBUTTON4 (int32_t)(0x00000300)
+#define MB_APPLMODAL (int32_t)(0x00000000)
+#define MB_SYSTEMMODAL (int32_t)(0x00001000)
+#define MB_TASKMODAL (int32_t)(0x00002000)
+#define MB_HELP (int32_t)(0x00004000)
+#define MB_NOFOCUS (int32_t)(0x00008000)
+#define MB_SETFOREGROUND (int32_t)(0x00010000)
+#define MB_DEFAULT_DESKTOP_ONLY (int32_t)(0x00020000)
+#define MB_TOPMOST (int32_t)(0x00040000)
+#define MB_RIGHT (int32_t)(0x00080000)
+#define MB_RTLREADING (int32_t)(0x00100000)
+#define MB_SERVICE_NOTIFICATION (int32_t)(0x00200000)
+#define MB_SERVICE_NOTIFICATION_NT3X (int32_t)(0x00040000)
+#define MB_TYPEMASK (int32_t)(0x0000000F)
+#define MB_ICONMASK (int32_t)(0x000000F0)
+#define MB_DEFMASK (int32_t)(0x00000F00)
+#define MB_MODEMASK (int32_t)(0x00003000)
+#define MB_MISCMASK (int32_t)(0x0000C000)
 
 #define CWP_ALL 0x0000
 #define CWP_SKIPINVISIBLE 0x0001
@@ -9240,46 +9240,46 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define GW_ENABLEDPOPUP 6
 #define GW_MAX 6
 
-#define MF_INSERT (uint32_t)(0x00000000)
-#define MF_CHANGE (uint32_t)(0x00000080)
-#define MF_APPEND (uint32_t)(0x00000100)
-#define MF_DELETE (uint32_t)(0x00000200)
-#define MF_REMOVE (uint32_t)(0x00001000)
-#define MF_BYCOMMAND (uint32_t)(0x00000000)
-#define MF_BYPOSITION (uint32_t)(0x00000400)
-#define MF_SEPARATOR (uint32_t)(0x00000800)
-#define MF_ENABLED (uint32_t)(0x00000000)
-#define MF_GRAYED (uint32_t)(0x00000001)
-#define MF_DISABLED (uint32_t)(0x00000002)
-#define MF_UNCHECKED (uint32_t)(0x00000000)
-#define MF_CHECKED (uint32_t)(0x00000008)
-#define MF_USECHECKBITMAPS (uint32_t)(0x00000200)
-#define MF_STRING (uint32_t)(0x00000000)
-#define MF_BITMAP (uint32_t)(0x00000004)
-#define MF_OWNERDRAW (uint32_t)(0x00000100)
-#define MF_POPUP (uint32_t)(0x00000010)
-#define MF_MENUBARBREAK (uint32_t)(0x00000020)
-#define MF_MENUBREAK (uint32_t)(0x00000040)
-#define MF_UNHILITE (uint32_t)(0x00000000)
-#define MF_HILITE (uint32_t)(0x00000080)
-#define MF_DEFAULT (uint32_t)(0x00001000)
-#define MF_SYSMENU (uint32_t)(0x00002000)
-#define MF_HELP (uint32_t)(0x00004000)
-#define MF_RIGHTJUSTIFY (uint32_t)(0x00004000)
-#define MF_MOUSESELECT (uint32_t)(0x00008000)
-#define MF_END (uint32_t)(0x00000080)
+#define MF_INSERT (int32_t)(0x00000000)
+#define MF_CHANGE (int32_t)(0x00000080)
+#define MF_APPEND (int32_t)(0x00000100)
+#define MF_DELETE (int32_t)(0x00000200)
+#define MF_REMOVE (int32_t)(0x00001000)
+#define MF_BYCOMMAND (int32_t)(0x00000000)
+#define MF_BYPOSITION (int32_t)(0x00000400)
+#define MF_SEPARATOR (int32_t)(0x00000800)
+#define MF_ENABLED (int32_t)(0x00000000)
+#define MF_GRAYED (int32_t)(0x00000001)
+#define MF_DISABLED (int32_t)(0x00000002)
+#define MF_UNCHECKED (int32_t)(0x00000000)
+#define MF_CHECKED (int32_t)(0x00000008)
+#define MF_USECHECKBITMAPS (int32_t)(0x00000200)
+#define MF_STRING (int32_t)(0x00000000)
+#define MF_BITMAP (int32_t)(0x00000004)
+#define MF_OWNERDRAW (int32_t)(0x00000100)
+#define MF_POPUP (int32_t)(0x00000010)
+#define MF_MENUBARBREAK (int32_t)(0x00000020)
+#define MF_MENUBREAK (int32_t)(0x00000040)
+#define MF_UNHILITE (int32_t)(0x00000000)
+#define MF_HILITE (int32_t)(0x00000080)
+#define MF_DEFAULT (int32_t)(0x00001000)
+#define MF_SYSMENU (int32_t)(0x00002000)
+#define MF_HELP (int32_t)(0x00004000)
+#define MF_RIGHTJUSTIFY (int32_t)(0x00004000)
+#define MF_MOUSESELECT (int32_t)(0x00008000)
+#define MF_END (int32_t)(0x00000080)
 
 #define MFT_STRING MF_STRING
 #define MFT_BITMAP MF_BITMAP
 #define MFT_MENUBARBREAK MF_MENUBARBREAK
 #define MFT_MENUBREAK MF_MENUBREAK
 #define MFT_OWNERDRAW MF_OWNERDRAW
-#define MFT_RADIOCHECK (uint32_t)(0x00000200)
+#define MFT_RADIOCHECK (int32_t)(0x00000200)
 #define MFT_SEPARATOR MF_SEPARATOR
-#define MFT_RIGHTORDER (uint32_t)(0x00002000)
+#define MFT_RIGHTORDER (int32_t)(0x00002000)
 #define MFT_RIGHTJUSTIFY MF_RIGHTJUSTIFY
 
-#define MFS_GRAYED (uint32_t)(0x00000003)
+#define MFS_GRAYED (int32_t)(0x00000003)
 #define MFS_DISABLED MFS_GRAYED
 #define MFS_CHECKED MF_CHECKED
 #define MFS_HILITE MF_HILITE
@@ -9288,7 +9288,7 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define MFS_UNHILITE MF_UNHILITE
 #define MFS_DEFAULT MF_DEFAULT
 
-#define MF_END (uint32_t)(0x00000080)
+#define MF_END (int32_t)(0x00000080)
 
 #define SC_SIZE 0xF000
 #define SC_MOVE 0xF010
@@ -9454,20 +9454,20 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define IDCONTINUE 11
 #define IDTIMEOUT 32000
 
-#define ES_LEFT (uint32_t)(0x0000)
-#define ES_CENTER (uint32_t)(0x0001)
-#define ES_RIGHT (uint32_t)(0x0002)
-#define ES_MULTILINE (uint32_t)(0x0004)
-#define ES_UPPERCASE (uint32_t)(0x0008)
-#define ES_LOWERCASE (uint32_t)(0x0010)
-#define ES_PASSWORD (uint32_t)(0x0020)
-#define ES_AUTOVSCROLL (uint32_t)(0x0040)
-#define ES_AUTOHSCROLL (uint32_t)(0x0080)
-#define ES_NOHIDESEL (uint32_t)(0x0100)
-#define ES_OEMCONVERT (uint32_t)(0x0400)
-#define ES_READONLY (uint32_t)(0x0800)
-#define ES_WANTRETURN (uint32_t)(0x1000)
-#define ES_NUMBER (uint32_t)(0x2000)
+#define ES_LEFT (int32_t)(0x0000)
+#define ES_CENTER (int32_t)(0x0001)
+#define ES_RIGHT (int32_t)(0x0002)
+#define ES_MULTILINE (int32_t)(0x0004)
+#define ES_UPPERCASE (int32_t)(0x0008)
+#define ES_LOWERCASE (int32_t)(0x0010)
+#define ES_PASSWORD (int32_t)(0x0020)
+#define ES_AUTOVSCROLL (int32_t)(0x0040)
+#define ES_AUTOHSCROLL (int32_t)(0x0080)
+#define ES_NOHIDESEL (int32_t)(0x0100)
+#define ES_OEMCONVERT (int32_t)(0x0400)
+#define ES_READONLY (int32_t)(0x0800)
+#define ES_WANTRETURN (int32_t)(0x1000)
+#define ES_NUMBER (int32_t)(0x2000)
 
 #define EN_SETFOCUS 0x0100
 #define EN_KILLFOCUS 0x0200
@@ -9534,33 +9534,33 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define WB_RIGHT 1
 #define WB_ISDELIMITER 2
 
-#define BS_PUSHBUTTON (uint32_t)(0x00000000)
-#define BS_DEFPUSHBUTTON (uint32_t)(0x00000001)
-#define BS_CHECKBOX (uint32_t)(0x00000002)
-#define BS_AUTOCHECKBOX (uint32_t)(0x00000003)
-#define BS_RADIOBUTTON (uint32_t)(0x00000004)
-#define BS_3STATE (uint32_t)(0x00000005)
-#define BS_AUTO3STATE (uint32_t)(0x00000006)
-#define BS_GROUPBOX (uint32_t)(0x00000007)
-#define BS_USERBUTTON (uint32_t)(0x00000008)
-#define BS_AUTORADIOBUTTON (uint32_t)(0x00000009)
-#define BS_PUSHBOX (uint32_t)(0x0000000A)
-#define BS_OWNERDRAW (uint32_t)(0x0000000B)
-#define BS_TYPEMASK (uint32_t)(0x0000000F)
-#define BS_LEFTTEXT (uint32_t)(0x00000020)
-#define BS_TEXT (uint32_t)(0x00000000)
-#define BS_ICON (uint32_t)(0x00000040)
-#define BS_BITMAP (uint32_t)(0x00000080)
-#define BS_LEFT (uint32_t)(0x00000100)
-#define BS_RIGHT (uint32_t)(0x00000200)
-#define BS_CENTER (uint32_t)(0x00000300)
-#define BS_TOP (uint32_t)(0x00000400)
-#define BS_BOTTOM (uint32_t)(0x00000800)
-#define BS_VCENTER (uint32_t)(0x00000C00)
-#define BS_PUSHLIKE (uint32_t)(0x00001000)
-#define BS_MULTILINE (uint32_t)(0x00002000)
-#define BS_NOTIFY (uint32_t)(0x00004000)
-#define BS_FLAT (uint32_t)(0x00008000)
+#define BS_PUSHBUTTON (int32_t)(0x00000000)
+#define BS_DEFPUSHBUTTON (int32_t)(0x00000001)
+#define BS_CHECKBOX (int32_t)(0x00000002)
+#define BS_AUTOCHECKBOX (int32_t)(0x00000003)
+#define BS_RADIOBUTTON (int32_t)(0x00000004)
+#define BS_3STATE (int32_t)(0x00000005)
+#define BS_AUTO3STATE (int32_t)(0x00000006)
+#define BS_GROUPBOX (int32_t)(0x00000007)
+#define BS_USERBUTTON (int32_t)(0x00000008)
+#define BS_AUTORADIOBUTTON (int32_t)(0x00000009)
+#define BS_PUSHBOX (int32_t)(0x0000000A)
+#define BS_OWNERDRAW (int32_t)(0x0000000B)
+#define BS_TYPEMASK (int32_t)(0x0000000F)
+#define BS_LEFTTEXT (int32_t)(0x00000020)
+#define BS_TEXT (int32_t)(0x00000000)
+#define BS_ICON (int32_t)(0x00000040)
+#define BS_BITMAP (int32_t)(0x00000080)
+#define BS_LEFT (int32_t)(0x00000100)
+#define BS_RIGHT (int32_t)(0x00000200)
+#define BS_CENTER (int32_t)(0x00000300)
+#define BS_TOP (int32_t)(0x00000400)
+#define BS_BOTTOM (int32_t)(0x00000800)
+#define BS_VCENTER (int32_t)(0x00000C00)
+#define BS_PUSHLIKE (int32_t)(0x00001000)
+#define BS_MULTILINE (int32_t)(0x00002000)
+#define BS_NOTIFY (int32_t)(0x00004000)
+#define BS_FLAT (int32_t)(0x00008000)
 #define BS_RIGHTBUTTON BS_LEFTTEXT
 
 #define BN_CLICKED 0
@@ -9591,38 +9591,38 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define BST_PUSHED 0x0004
 #define BST_FOCUS 0x0008
 
-#define SS_LEFT (uint32_t)(0x00000000)
-#define SS_CENTER (uint32_t)(0x00000001)
-#define SS_RIGHT (uint32_t)(0x00000002)
-#define SS_ICON (uint32_t)(0x00000003)
-#define SS_BLACKRECT (uint32_t)(0x00000004)
-#define SS_GRAYRECT (uint32_t)(0x00000005)
-#define SS_WHITERECT (uint32_t)(0x00000006)
-#define SS_BLACKFRAME (uint32_t)(0x00000007)
-#define SS_GRAYFRAME (uint32_t)(0x00000008)
-#define SS_WHITEFRAME (uint32_t)(0x00000009)
-#define SS_USERITEM (uint32_t)(0x0000000A)
-#define SS_SIMPLE (uint32_t)(0x0000000B)
-#define SS_LEFTNOWORDWRAP (uint32_t)(0x0000000C)
-#define SS_OWNERDRAW (uint32_t)(0x0000000D)
-#define SS_BITMAP (uint32_t)(0x0000000E)
-#define SS_ENHMETAFILE (uint32_t)(0x0000000F)
-#define SS_ETCHEDHORZ (uint32_t)(0x00000010)
-#define SS_ETCHEDVERT (uint32_t)(0x00000011)
-#define SS_ETCHEDFRAME (uint32_t)(0x00000012)
-#define SS_TYPEMASK (uint32_t)(0x0000001F)
-#define SS_REALSIZECONTROL (uint32_t)(0x00000040)
-#define SS_NOPREFIX (uint32_t)(0x00000080)
-#define SS_NOTIFY (uint32_t)(0x00000100)
-#define SS_CENTERIMAGE (uint32_t)(0x00000200)
-#define SS_RIGHTJUST (uint32_t)(0x00000400)
-#define SS_REALSIZEIMAGE (uint32_t)(0x00000800)
-#define SS_SUNKEN (uint32_t)(0x00001000)
-#define SS_EDITCONTROL (uint32_t)(0x00002000)
-#define SS_ENDELLIPSIS (uint32_t)(0x00004000)
-#define SS_PATHELLIPSIS (uint32_t)(0x00008000)
-#define SS_WORDELLIPSIS (uint32_t)(0x0000C000)
-#define SS_ELLIPSISMASK (uint32_t)(0x0000C000)
+#define SS_LEFT (int32_t)(0x00000000)
+#define SS_CENTER (int32_t)(0x00000001)
+#define SS_RIGHT (int32_t)(0x00000002)
+#define SS_ICON (int32_t)(0x00000003)
+#define SS_BLACKRECT (int32_t)(0x00000004)
+#define SS_GRAYRECT (int32_t)(0x00000005)
+#define SS_WHITERECT (int32_t)(0x00000006)
+#define SS_BLACKFRAME (int32_t)(0x00000007)
+#define SS_GRAYFRAME (int32_t)(0x00000008)
+#define SS_WHITEFRAME (int32_t)(0x00000009)
+#define SS_USERITEM (int32_t)(0x0000000A)
+#define SS_SIMPLE (int32_t)(0x0000000B)
+#define SS_LEFTNOWORDWRAP (int32_t)(0x0000000C)
+#define SS_OWNERDRAW (int32_t)(0x0000000D)
+#define SS_BITMAP (int32_t)(0x0000000E)
+#define SS_ENHMETAFILE (int32_t)(0x0000000F)
+#define SS_ETCHEDHORZ (int32_t)(0x00000010)
+#define SS_ETCHEDVERT (int32_t)(0x00000011)
+#define SS_ETCHEDFRAME (int32_t)(0x00000012)
+#define SS_TYPEMASK (int32_t)(0x0000001F)
+#define SS_REALSIZECONTROL (int32_t)(0x00000040)
+#define SS_NOPREFIX (int32_t)(0x00000080)
+#define SS_NOTIFY (int32_t)(0x00000100)
+#define SS_CENTERIMAGE (int32_t)(0x00000200)
+#define SS_RIGHTJUST (int32_t)(0x00000400)
+#define SS_REALSIZEIMAGE (int32_t)(0x00000800)
+#define SS_SUNKEN (int32_t)(0x00001000)
+#define SS_EDITCONTROL (int32_t)(0x00002000)
+#define SS_ENDELLIPSIS (int32_t)(0x00004000)
+#define SS_PATHELLIPSIS (int32_t)(0x00008000)
+#define SS_WORDELLIPSIS (int32_t)(0x0000C000)
+#define SS_ELLIPSISMASK (int32_t)(0x0000C000)
 
 #define STM_SETICON 0x0170
 #define STM_GETICON 0x0171
@@ -9659,31 +9659,22 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define DDL_EXCLUSIVE 0x8000
 
 
-#define DS_ABSALIGN (uint32_t)(0x01)
-#define DS_SYSMODAL (uint32_t)(0x02)
-#define DS_LOCALEDIT (uint32_t)(0x20)
+#define DS_ABSALIGN (int32_t)(0x01)
+#define DS_SYSMODAL (int32_t)(0x02)
+#define DS_LOCALEDIT (int32_t)(0x20)
 
-#ifdef RC_INVOKED
-#define DS_SHELLFONT 0x40
-#define DS_MODALFRAME 0x80
-#else
-#define DS_SETFONT (uint32_t)(0x40)
-#define DS_MODALFRAME (uint32_t)(0x80)
-#endif
-#define DS_NOIDLEMSG (uint32_t)(0x100)
-#define DS_SETFOREGROUND (uint32_t)(0x200)
+#define DS_SETFONT (int32_t)(0x40)
+#define DS_MODALFRAME (int32_t)(0x80)
+#define DS_NOIDLEMSG (int32_t)(0x100)
+#define DS_SETFOREGROUND (int32_t)(0x200)
 
-#define DS_3DLOOK (uint32_t)(0x0004)
-#ifdef RC_INVOKED
-#define DS_FIXEDSYS 0x0008
-#else
-#define DS_FIXEDSYS (uint32_t)(0x0008)
-#endif
-#define DS_NOFAILCREATE (uint32_t)(0x0010)
-#define DS_CONTROL (uint32_t)(0x0400)
-#define DS_CENTER (uint32_t)(0x0800)
-#define DS_CENTERMOUSE (uint32_t)(0x1000)
-#define DS_CONTEXTHELP (uint32_t)(0x2000)
+#define DS_3DLOOK (int32_t)(0x0004)
+#define DS_FIXEDSYS (int32_t)(0x0008)
+#define DS_NOFAILCREATE (int32_t)(0x0010)
+#define DS_CONTROL (int32_t)(0x0400)
+#define DS_CENTER (int32_t)(0x0800)
+#define DS_CENTERMOUSE (int32_t)(0x1000)
+#define DS_CONTEXTHELP (int32_t)(0x2000)
 
 #define DS_SHELLFONT (DS_SETFONT | DS_FIXEDSYS)
 
@@ -9705,7 +9696,7 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define DLGC_STATIC 0x0100
 #define DLGC_BUTTON 0x2000
 
-#define LB_CTLCODE (uint32_t)(0)
+#define LB_CTLCODE (int32_t)(0)
 
 #define LB_OKAY 0
 #define LB_ERR (-1)
@@ -9761,22 +9752,22 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define LB_GETLISTBOXINFO 0x01B2
 #define LB_MSGMAX 0x01B3
 
-#define LBS_NOTIFY (uint32_t)(0x0001)
-#define LBS_SORT (uint32_t)(0x0002)
-#define LBS_NOREDRAW (uint32_t)(0x0004)
-#define LBS_MULTIPLESEL (uint32_t)(0x0008)
-#define LBS_OWNERDRAWFIXED (uint32_t)(0x0010)
-#define LBS_OWNERDRAWVARIABLE (uint32_t)(0x0020)
-#define LBS_HASSTRINGS (uint32_t)(0x0040)
-#define LBS_USETABSTOPS (uint32_t)(0x0080)
-#define LBS_NOINTEGRALHEIGHT (uint32_t)(0x0100)
-#define LBS_MULTICOLUMN (uint32_t)(0x0200)
-#define LBS_WANTKEYBOARDINPUT (uint32_t)(0x0400)
-#define LBS_EXTENDEDSEL (uint32_t)(0x0800)
-#define LBS_DISABLENOSCROLL (uint32_t)(0x1000)
-#define LBS_NODATA (uint32_t)(0x2000)
-#define LBS_NOSEL (uint32_t)(0x4000)
-#define LBS_COMBOBOX (uint32_t)(0x8000)
+#define LBS_NOTIFY (int32_t)(0x0001)
+#define LBS_SORT (int32_t)(0x0002)
+#define LBS_NOREDRAW (int32_t)(0x0004)
+#define LBS_MULTIPLESEL (int32_t)(0x0008)
+#define LBS_OWNERDRAWFIXED (int32_t)(0x0010)
+#define LBS_OWNERDRAWVARIABLE (int32_t)(0x0020)
+#define LBS_HASSTRINGS (int32_t)(0x0040)
+#define LBS_USETABSTOPS (int32_t)(0x0080)
+#define LBS_NOINTEGRALHEIGHT (int32_t)(0x0100)
+#define LBS_MULTICOLUMN (int32_t)(0x0200)
+#define LBS_WANTKEYBOARDINPUT (int32_t)(0x0400)
+#define LBS_EXTENDEDSEL (int32_t)(0x0800)
+#define LBS_DISABLENOSCROLL (int32_t)(0x1000)
+#define LBS_NODATA (int32_t)(0x2000)
+#define LBS_NOSEL (int32_t)(0x4000)
+#define LBS_COMBOBOX (int32_t)(0x8000)
 
 #define LBS_STANDARD (LBS_NOTIFY | LBS_SORT | WS_VSCROLL | WS_BORDER)
 
@@ -9796,19 +9787,19 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define CBN_SELENDOK 9
 #define CBN_SELENDCANCEL 10
 
-#define CBS_SIMPLE (uint32_t)(0x0001)
-#define CBS_DROPDOWN (uint32_t)(0x0002)
-#define CBS_DROPDOWNLIST (uint32_t)(0x0003)
-#define CBS_OWNERDRAWFIXED (uint32_t)(0x0010)
-#define CBS_OWNERDRAWVARIABLE (uint32_t)(0x0020)
-#define CBS_AUTOHSCROLL (uint32_t)(0x0040)
-#define CBS_OEMCONVERT (uint32_t)(0x0080)
-#define CBS_SORT (uint32_t)(0x0100)
-#define CBS_HASSTRINGS (uint32_t)(0x0200)
-#define CBS_NOINTEGRALHEIGHT (uint32_t)(0x0400)
-#define CBS_DISABLENOSCROLL (uint32_t)(0x0800)
-#define CBS_UPPERCASE (uint32_t)(0x2000)
-#define CBS_LOWERCASE (uint32_t)(0x4000)
+#define CBS_SIMPLE (int32_t)(0x0001)
+#define CBS_DROPDOWN (int32_t)(0x0002)
+#define CBS_DROPDOWNLIST (int32_t)(0x0003)
+#define CBS_OWNERDRAWFIXED (int32_t)(0x0010)
+#define CBS_OWNERDRAWVARIABLE (int32_t)(0x0020)
+#define CBS_AUTOHSCROLL (int32_t)(0x0040)
+#define CBS_OEMCONVERT (int32_t)(0x0080)
+#define CBS_SORT (int32_t)(0x0100)
+#define CBS_HASSTRINGS (int32_t)(0x0200)
+#define CBS_NOINTEGRALHEIGHT (int32_t)(0x0400)
+#define CBS_DISABLENOSCROLL (int32_t)(0x0800)
+#define CBS_UPPERCASE (int32_t)(0x2000)
+#define CBS_LOWERCASE (int32_t)(0x4000)
 
 #define CB_GETEDITSEL 0x0140
 #define CB_LIMITTEXT 0x0141
@@ -9847,16 +9838,16 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 #define CB_GETCOMBOBOXINFO 0x0164
 #define CB_MSGMAX 0x0165
 
-#define SBS_HORZ (uint32_t)(0x0000)
-#define SBS_VERT (uint32_t)(0x0001)
-#define SBS_TOPALIGN (uint32_t)(0x0002)
-#define SBS_LEFTALIGN (uint32_t)(0x0002)
-#define SBS_BOTTOMALIGN (uint32_t)(0x0004)
-#define SBS_RIGHTALIGN (uint32_t)(0x0004)
-#define SBS_SIZEBOXTOPLEFTALIGN (uint32_t)(0x0002)
-#define SBS_SIZEBOXBOTTOMRIGHTALIGN (uint32_t)(0x0004)
-#define SBS_SIZEBOX (uint32_t)(0x0008)
-#define SBS_SIZEGRIP (uint32_t)(0x0010)
+#define SBS_HORZ (int32_t)(0x0000)
+#define SBS_VERT (int32_t)(0x0001)
+#define SBS_TOPALIGN (int32_t)(0x0002)
+#define SBS_LEFTALIGN (int32_t)(0x0002)
+#define SBS_BOTTOMALIGN (int32_t)(0x0004)
+#define SBS_RIGHTALIGN (int32_t)(0x0004)
+#define SBS_SIZEBOXTOPLEFTALIGN (int32_t)(0x0002)
+#define SBS_SIZEBOXBOTTOMRIGHTALIGN (int32_t)(0x0004)
+#define SBS_SIZEBOX (int32_t)(0x0008)
+#define SBS_SIZEGRIP (int32_t)(0x0010)
 
 #define SBM_SETPOS 0x00E0
 #define SBM_GETPOS 0x00E1
@@ -10195,19 +10186,19 @@ __dllimport w32api_user_set_class_long_ptr_utf16				SetClassLongPtrW;
 
 #define METRICS_USEDEFAULT -1
 
-#define ARW_BOTTOMLEFT (uint32_t)(0x0000)
-#define ARW_BOTTOMRIGHT (uint32_t)(0x0001)
-#define ARW_TOPLEFT (uint32_t)(0x0002)
-#define ARW_TOPRIGHT (uint32_t)(0x0003)
-#define ARW_STARTMASK (uint32_t)(0x0003)
-#define ARW_STARTRIGHT (uint32_t)(0x0001)
-#define ARW_STARTTOP (uint32_t)(0x0002)
+#define ARW_BOTTOMLEFT (int32_t)(0x0000)
+#define ARW_BOTTOMRIGHT (int32_t)(0x0001)
+#define ARW_TOPLEFT (int32_t)(0x0002)
+#define ARW_TOPRIGHT (int32_t)(0x0003)
+#define ARW_STARTMASK (int32_t)(0x0003)
+#define ARW_STARTRIGHT (int32_t)(0x0001)
+#define ARW_STARTTOP (int32_t)(0x0002)
 
-#define ARW_LEFT (uint32_t)(0x0000)
-#define ARW_RIGHT (uint32_t)(0x0000)
-#define ARW_UP (uint32_t)(0x0004)
-#define ARW_DOWN (uint32_t)(0x0004)
-#define ARW_HIDE (uint32_t)(0x0008)
+#define ARW_LEFT (int32_t)(0x0000)
+#define ARW_RIGHT (int32_t)(0x0000)
+#define ARW_UP (int32_t)(0x0004)
+#define ARW_DOWN (int32_t)(0x0004)
+#define ARW_HIDE (int32_t)(0x0008)
 
 #define SERKF_SERIALKEYSON 0x00000001
 #define SERKF_AVAILABLE 0x00000002
