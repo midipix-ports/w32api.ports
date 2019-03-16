@@ -1109,4 +1109,4 @@
 #define IDH_CANCEL 28444
 #define IDH_HELP 28445
 
-#endif /* _W32API_WINUSER_RH_ *
+#endif /* _W32API_WINUSER_RH_ */
