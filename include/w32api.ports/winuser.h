@@ -547,7 +547,7 @@ typedef struct winuser_gesture_notify_struct					GESTURENOTIFYSTRUCT, *PGESTUREN
 typedef struct winuser_gesture_config						GESTURECONFIG, *PGESTURECONFIG;
 typedef struct winuser_input_message_source					INPUT_MESSAGE_SOURCE;
 typedef struct winuser_input_transform						INPUT_TRANSFORM;
-struct winuser_video_parameters							VIDEOPARAMETERS, *PVIDEOPARAMETERS, *LPVIDEOPARAMETERS;
+typedef struct winuser_video_parameters						VIDEOPARAMETERS, *PVIDEOPARAMETERS, *LPVIDEOPARAMETERS;
 
 
 
